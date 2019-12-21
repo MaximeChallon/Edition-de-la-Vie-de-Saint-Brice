@@ -3,7 +3,28 @@
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?>
 
-<!DOCTYPE TEI SYSTEM "abreviations.dtd">
+<!DOCTYPE text [
+<!ENTITY neuf "<choice><abbr type='abreviation'>&#8329;</abbr><expan>con</expan></choice>" >
+<!ENTITY o_tilde "<choice><abbr type='abreviation'>&#333;</abbr><expan>on</expan></choice>" >
+<!ENTITY i_tilde "<choice><abbr type='abreviation'>&#299;</abbr><expan>in</expan></choice>" >
+<!ENTITY a_tilde "<choice><abbr type='abreviation'>&#227;</abbr><expan>an</expan></choice>" >
+<!ENTITY e_tilde_en "<choice><abbr type='abreviation'>&#275;</abbr><expan>en</expan></choice>" >
+<!ENTITY e_tilde_ein "<choice><abbr type='abreviation'>&#275;</abbr><expan>ein</expan></choice>" >
+<!ENTITY q_pointe "<choice><abbr type='abreviation'>&#59010;</abbr><expan>qu</expan></choice>" >
+<!ENTITY b_pointe "<choice><abbr type='abreviation'>&#7683;</abbr><expan>bie</expan></choice>" >
+<!ENTITY q_tilde "<choice><abbr type='abreviation'>&#59009;</abbr><expan>que</expan></choice>" >
+<!ENTITY p_tilde "<choice><abbr type='abreviation'>&#58981;</abbr><expan>pre</expan></choice>" >
+<!ENTITY u_tilde "<choice><abbr type='abreviation'>&#363;</abbr><expan>ver</expan></choice>" >
+<!ENTITY et_tironien "<choice><abbr type='abreviation'>&#8266;</abbr><expan>et</expan></choice>" >
+
+<!ENTITY s_long "<choice><abbr type='graphie'>&#383;</abbr><expan>s</expan></choice>" >
+
+<!ENTITY u_to_v "<choice><orig>u</orig><reg type='ramiste'>v</reg></choice>" >
+<!ENTITY i_to_j "<choice><orig>i</orig><reg type='ramiste'>j</reg></choice>" >
+
+<!ENTITY b_to_B "<choice><orig>b</orig><reg type='majuscule'>B</reg></choice>" >
+<!ENTITY m_to_M "<choice><orig>m</orig><reg type='majuscule'>M</reg></choice>" >
+]>
 
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
@@ -769,13 +790,28 @@
       <body>
          <div type="book">
             <div type="section">
-               <!-- pour la réclame on utilise fw  avec lb dedans -->
-               <fw type="catch"></fw>
-               <!-- cb/ peut prendre un @facs renvoyant à la nouvelle colonne introduite avec par le cb/ -->
-               <figure type="miniature"/><cb/>
-               <!-- les lb/ se mettent toujours en début de ligne et peuvent porter un @facs -->
+               <pb facs="#f174"/>
+               <cb/>
+               <fw type="catch">
+                  <lb facs="#reclame1"/>Ci &neuf;mence la &u_to_v;ie
+                  <lb facs="#reclame2"/>de m&o_tilde;&s_long;eigneur &s_long;eint &b_to_B;rice
+               </fw>
+               <figure type="miniature" facs="#miniature"/>
+               <cb/>
                <p>
-                  <hi rend="grande_lettrine"></hi>
+                  <hi rend="grande_lettrine" facs="#grande_lettrine">
+                     <hi rend="lettre_attente">q</hi>
+                  </hi>
+                  <lb facs="#l1"/><hi rend="majuscule">u</hi>ant &s_long;e&i_tilde;z &b_to_B;rices e&s_long;toit
+                  <lb facs="#l2"/>&i_to_j;ou&u_to_v;enciaus il guetoit
+                  <lb facs="#l3"/>molt &s_long;e&i_tilde;t &m_to_M;artin <hi rend="majuscule">p</hi>or
+                  <lb facs="#l4"/>ce qil le &u_to_v;eoit &u_to_v;iell home
+                  <lb facs="#l5"/>&et_tironien; de gr&a_tilde;t ab&s_long;tin&e_tilde_en;ce &et_tironien; de
+                  <lb facs="#l6"/>&s_long;einte &u_to_v;ie <hi rend="majuscule">e</hi>t li &i_to_j;ou&u_to_v;&e_tilde_en;ciaus avoit le cuer
+                  <lb facs="#l7"/>&i_to_j;oeune &s_long;i ne li ple&s_long;i&e_tilde_en;t mie les oe&u_to_v;res
+                  <lb facs="#l8"/>del &s_long;e&i_tilde;t home &q_pointe;i e&s_long;toit arce&u_to_v;e&s_long;qes <hi rend="majuscule">c</hi>ar
+                  <lb facs="#l9"/>il &u_to_v;ol&s_long;i&s_long;t &b_pointe;n qil &s_long;e m&e_tilde_ein;teni&s_long;t de dras &et_tironien; da-
+                  <lb facs="#l10"/>utres cho&s_long;es plus belem&e_tilde_en;t &s_long;i com li pla
                </p>
             </div>
          </div>
