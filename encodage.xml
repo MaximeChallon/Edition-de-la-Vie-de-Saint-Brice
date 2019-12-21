@@ -642,6 +642,113 @@
          <change when="2019-12-20">Création du teiHeader et du msDesc</change>
       </revisionDesc>
    </teiHeader>
+   <facsimile>
+      <surface xml:id="f174">
+         <graphic url='img/f174.jpg' width='8682.33334px' height='6181.33334px' />
+         <zone xml:id="reclame1" ulx="5097" uly="3413" lrx="5621" lry="3519" />
+         <zone xml:id="reclame2" ulx="4494" uly="3486" lrx="5264" lry="3603" />
+         <zone xml:id="miniature" ulx="4491" uly="3636" lrx="5604" lry="4539" />
+         <zone xml:id="grande_lettrine" ulx="6034" uly="813" lrx="6477" lry="1256" />
+         <zone xml:id="l1" ulx="6494" uly="789" lrx="7221" lry="916" />
+         <zone xml:id="l2" ulx="6497" uly="919" lrx="7187" lry="1006" />
+         <zone xml:id="l3" ulx="6501" uly="1013" lrx="7191" lry="1103" />
+         <zone xml:id="l4" ulx="6481" uly="1106" lrx="7201" lry="1199" />
+         <zone xml:id="l5" ulx="6494" uly="1199" lrx="7171" lry="1283" />
+         <zone xml:id="l6" ulx="6021" uly="1269" lrx="7227" lry="1376" />
+         <zone xml:id="l7" ulx="6031" uly="1363" lrx="7161" lry="1476" />
+         <zone xml:id="l8" ulx="6034" uly="1459" lrx="7144" lry="1559" />
+         <zone xml:id="l9" ulx="6024" uly="1546" lrx="7164" lry="1663" />
+         <zone xml:id="l10" ulx="6027" uly="1643" lrx="7161" lry="1759" />
+         <zone xml:id="l11" ulx="6027" uly="1743" lrx="7167" lry="1859" />
+         <zone xml:id="l12" ulx="6024" uly="1843" lrx="7144" lry="1949" />
+         <zone xml:id="l13" ulx="6027" uly="1936" lrx="7164" lry="2053" />
+         <zone xml:id="l14" ulx="6017" uly="2026" lrx="7171" lry="2153" />
+         <zone xml:id="l15" ulx="6014" uly="2123" lrx="7167" lry="2239" />
+         <zone xml:id="petite_lettrine1" ulx="6011" uly="2209" lrx="6154" lry="2393" />
+         <zone xml:id="l16" ulx="6171" uly="2226" lrx="7167" lry="2333" />
+         <zone xml:id="l17" ulx="6161" uly="2323" lrx="7144" lry="2429" />
+         <zone xml:id="l18" ulx="5984" uly="2406" lrx="7141" lry="2516" />
+         <zone xml:id="l19" ulx="5984" uly="2489" lrx="7127" lry="2609" />
+         <zone xml:id="l20" ulx="5987" uly="2603" lrx="7134" lry="2709" />
+         <zone xml:id="l21" ulx="5981" uly="2689" lrx="7131" lry="2799" />
+         <zone xml:id="l22" ulx="5987" uly="2779" lrx="7111" lry="2896" />
+         <zone xml:id="l23" ulx="5977" uly="2876" lrx="7107" lry="2976" />
+         <zone xml:id="l24" ulx="5977" uly="2966" lrx="7114" lry="3073" />
+         <zone xml:id="l25" ulx="5981" uly="3053" lrx="7117" lry="3156" />
+         <zone xml:id="moyenne_lettrine1" ulx="5974" uly="3169" lrx="6211" lry="3436" />
+         <zone xml:id="l26" ulx="6224" uly="3153" lrx="7141" lry="3263" />
+         <zone xml:id="l27" ulx="6214" uly="3269" lrx="7131" lry="3353" />
+         <zone xml:id="l28" ulx="6221" uly="3356" lrx="7107" lry="3429" />
+         <zone xml:id="l29" ulx="5961" uly="3446" lrx="7111" lry="3536" />
+         <zone xml:id="l30" ulx="5964" uly="3543" lrx="7097" lry="3626" />
+         <zone xml:id="l31" ulx="5964" uly="3636" lrx="7074" lry="3713" />
+         <zone xml:id="l32" ulx="5951" uly="3729" lrx="7094" lry="3809" />
+         <zone xml:id="l33" ulx="5957" uly="3816" lrx="7097" lry="3903" />
+         <zone xml:id="l34" ulx="5954" uly="3909" lrx="7127" lry="3996" />
+         <zone xml:id="l35" ulx="5957" uly="4009" lrx="7104" lry="4093" />
+         <zone xml:id="l36" ulx="5944" uly="4103" lrx="7144" lry="4193" />
+         <zone xml:id="l37" ulx="5944" uly="4196" lrx="7107" lry="4276" />
+         <zone xml:id="l38" ulx="5951" uly="4283" lrx="7087" lry="4366" />
+         <zone xml:id="l39" ulx="5944" uly="4379" lrx="7087" lry="4459" />
+         <zone xml:id="l40" ulx="5944" uly="4463" lrx="7097" lry="4559" />
+      </surface>
+      <surface xml:id="f175">
+         <graphic url='img/f175.jpg' width='8697.33334px' height='6172.33334px' />
+         <zone xml:id="l41" ulx="1471" uly="783" lrx="2694" lry="833" />
+         <zone xml:id="l42" ulx="1474" uly="886" lrx="2674" lry="929" />
+         <zone xml:id="l43" ulx="1484" uly="973" lrx="2654" lry="1033" />
+         <zone xml:id="l44" ulx="1477" uly="1073" lrx="2647" lry="1123" />
+         <zone xml:id="l45" ulx="1481" uly="1176" lrx="2674" lry="1229" />
+         <zone xml:id="l46" ulx="1491" uly="1259" lrx="2654" lry="1303" />
+         <zone xml:id="l47" ulx="1494" uly="1349" lrx="2667" lry="1399" />
+         <zone xml:id="l48" ulx="1501" uly="1439" lrx="2681" lry="1516" />
+         <zone xml:id="l49" ulx="1507" uly="1546" lrx="2671" lry="1603" />
+         <zone xml:id="l50" ulx="1507" uly="1636" lrx="2677" lry="1696" />
+         <zone xml:id="l51" ulx="1514" uly="1736" lrx="2667" lry="1793" />
+         <zone xml:id="l52" ulx="1504" uly="1836" lrx="2681" lry="1893" />
+         <zone xml:id="l53" ulx="1517" uly="1929" lrx="2681" lry="1983" />
+         <zone xml:id="l54" ulx="1514" uly="2029" lrx="2694" lry="2076" />
+         <zone xml:id="l55" ulx="1507" uly="2126" lrx="2727" lry="2196" />
+         <zone xml:id="l56" ulx="1524" uly="2226" lrx="2677" lry="2273" />
+         <zone xml:id="l57" ulx="1517" uly="2326" lrx="2707" lry="2379" />
+         <zone xml:id="l58" ulx="1534" uly="2416" lrx="2644" lry="2473" />
+         <zone xml:id="moyenne_lettrine2" ulx="1531" uly="2506" lrx="1797" lry="2769" />
+         <zone xml:id="l59" ulx="1807" uly="2476" lrx="2697" lry="2573" />
+         <zone xml:id="l60" ulx="1817" uly="2603" lrx="2687" lry="2659" />
+         <zone xml:id="l61" ulx="1814" uly="2683" lrx="2697" lry="2763" />
+         <zone xml:id="l62" ulx="1544" uly="2786" lrx="2691" lry="2843" />
+         <zone xml:id="l63" ulx="1541" uly="2869" lrx="2704" lry="2936" />
+         <zone xml:id="l64" ulx="1537" uly="2963" lrx="2707" lry="3026" />
+         <zone xml:id="l65" ulx="1544" uly="3056" lrx="2704" lry="3126" />
+         <zone xml:id="l66" ulx="1547" uly="3149" lrx="2711" lry="3219" />
+         <zone xml:id="l67" ulx="1554" uly="3243" lrx="2721" lry="3306" />
+         <zone xml:id="l68" ulx="1551" uly="3343" lrx="2757" lry="3399" />
+         <zone xml:id="l69" ulx="1561" uly="3429" lrx="2731" lry="3499" />
+         <zone xml:id="l70" ulx="1534" uly="3523" lrx="2731" lry="3593" />
+         <zone xml:id="l71" ulx="1557" uly="3626" lrx="2751" lry="3693" />
+         <zone xml:id="l72" ulx="1557" uly="3716" lrx="2707" lry="3773" />
+         <zone xml:id="l73" ulx="1557" uly="3806" lrx="2711" lry="3866" />
+         <zone xml:id="l74" ulx="1571" uly="3916" lrx="2694" lry="3969" />
+         <zone xml:id="l75" ulx="1551" uly="3989" lrx="2711" lry="4066" />
+         <zone xml:id="l76" ulx="1554" uly="4086" lrx="2744" lry="4146" />
+         <zone xml:id="l77" ulx="1564" uly="4179" lrx="2737" lry="4263" />
+         <zone xml:id="l78" ulx="1554" uly="4276" lrx="2781" lry="4356" />
+         <zone xml:id="l79" ulx="1571" uly="4363" lrx="2754" lry="4436" />
+         <zone xml:id="l80" ulx="1567" uly="4469" lrx="2731" lry="4523" />
+         <zone xml:id="l81" ulx="3021" uly="739" lrx="4154" lry="823" />
+         <zone xml:id="l82" ulx="3031" uly="836" lrx="4164" lry="916" />
+         <zone xml:id="l83" ulx="3031" uly="923" lrx="4167" lry="996" />
+         <zone xml:id="l84" ulx="3034" uly="1013" lrx="4204" lry="1099" />
+         <zone xml:id="l85" ulx="3041" uly="1109" lrx="4167" lry="1183" />
+         <zone xml:id="l86" ulx="3041" uly="1196" lrx="4167" lry="1279" />
+         <zone xml:id="l87" ulx="3034" uly="1296" lrx="4177" lry="1376" />
+         <zone xml:id="l88" ulx="3037" uly="1386" lrx="4167" lry="1479" />
+         <zone xml:id="l89" ulx="3044" uly="1496" lrx="4174" lry="1573" />
+         <zone xml:id="l90" ulx="3051" uly="1586" lrx="4177" lry="1663" />
+         <zone xml:id="l91" ulx="3047" uly="1683" lrx="4181" lry="1753" />
+         <zone xml:id="l92" ulx="3054" uly="1769" lrx="4227" lry="1876" />
+      </surface>
+   </facsimile>
    <text>
       <body>
          <div type="book">
