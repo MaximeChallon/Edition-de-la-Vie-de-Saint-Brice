@@ -637,6 +637,20 @@
          <langUsage>
             <language ident="oil">Français, langue d'oïl</language>
          </langUsage>
+         <settingDesc>
+            <listPlace>
+               <place xml:id="">
+                  <placeName></placeName>
+               </place>
+            </listPlace>
+         </settingDesc>
+         <particDesc>
+            <listPerson>
+               <person xml:id="">
+                  <persName></persName>
+               </person>
+            </listPerson>
+         </particDesc>
       </profileDesc>
       <revisionDesc>
          <change when="2019-12-20">Création du teiHeader et du msDesc</change>
