@@ -571,6 +571,11 @@
                            <height unit="lines">2</height>
                         </dimensions>
                      </decoNote>
+                     <decoNote type="majuscule">
+                        <dimensions>
+                           <height unit="lines">1</height>
+                        </dimensions>
+                     </decoNote>
                      <decoNote type="titre_courant" rend="top center">De seint Brice</decoNote>
                      <decoNote type="lettre_attente" xml:id="lettre_attente">
                         <note>Lettre minuscule à la mine de plomb de dimensions <dimensions><height unit="lines">0.5</height></dimensions> positionnée en haut à gauche de la position de l'initiale prévue.</note>
@@ -640,10 +645,15 @@
    <text>
       <body>
          <div type="book">
-            <div type="chapter">
-               <head type="rubrication"></head>
-               <figure type="miniature"/>
-               <p></p>
+            <div type="section">
+               <!-- pour la réclame on utilise fw  avec lb dedans -->
+               <fw type="catch"></fw>
+               <!-- cb/ peut prendre un @facs renvoyant à la nouvelle colonne introduite avec par le cb/ -->
+               <figure type="miniature"/><cb/>
+               <!-- les lb/ se mettent toujours en début de ligne et peuvent porter un @facs -->
+               <p>
+                  <hi rend="grande_lettrine"></hi>
+               </p>
             </div>
          </div>
       </body>
