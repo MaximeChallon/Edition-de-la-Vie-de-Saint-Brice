@@ -16,10 +16,13 @@
 <!ENTITY p_tilde "<choice><abbr type='abreviation'>&#58981;</abbr><expan>pre</expan></choice>" >
 <!ENTITY u_tilde "<choice><abbr type='abreviation'>&#363;</abbr><expan>ver</expan></choice>" >
 <!ENTITY et_tironien "<choice><abbr type='abreviation'>&#8266;</abbr><expan>et</expan></choice>" >
+<!ENTITY p_barre "<choice><abbr type='abreviation'>&#42833;</abbr><expan>per</expan></choice>" >
+<!ENTITY r_tilde_ostr "<choice><abbr type='abreviation'>&#7769;</abbr><expan>ostr</expan></choice>" >
 
 <!ENTITY s_long "<choice><abbr type='graphie'>&#383;</abbr><expan>s</expan></choice>" >
 
 <!ENTITY u_to_v "<choice><orig>u</orig><reg type='ramiste'>v</reg></choice>" >
+<!ENTITY u_to_n "<choice><orig>u</orig><reg type='ramiste'>n</reg></choice>" >
 <!ENTITY i_to_j "<choice><orig>i</orig><reg type='ramiste'>j</reg></choice>" >
 
 <!ENTITY b_to_B "<choice><orig>b</orig><reg type='majuscule'>B</reg></choice>" >
@@ -812,6 +815,11 @@
                   <lb facs="#l8"/>del &s_long;e&i_tilde;t home &q_pointe;i e&s_long;toit arce&u_to_v;e&s_long;qes <hi rend="majuscule">c</hi>ar
                   <lb facs="#l9"/>il &u_to_v;ol&s_long;i&s_long;t &b_pointe;n qil &s_long;e m&e_tilde_ein;teni&s_long;t de dras &et_tironien; da-
                   <lb facs="#l10"/>utres cho&s_long;es plus belem&e_tilde_en;t &s_long;i com li pla
+                  <lb facs="#l11"/>eu &s_long;ervi&e_tilde_en;t encore <hi rend="majuscule">q</hi>e &s_long;il &u_to_v;eoi&e_tilde_en;t les e&u_to_v;e&s_long;-
+                  <lb facs="#l12"/>-qes &et_tironien; les autres &p_barre;&s_long;ones deduire poure-
+                  <lb facs="#l13"/>-m&e_tilde_en;t &et_tironien; en &u_to_v;ielz abiz &et_tironien; en gr&a_tilde;z ab&s_long;tin&e_tilde_en;ces
+                  <lb facs="#l14"/> por la mor n&r_tilde_ostr;e &s_long;eig&u_to_n;or <hi rend="majuscule">i</hi>l les enbla&s_long;mero-
+                  <lb facs="#l15"/>-ient &et_tironien;diroi&e_tilde_en;t &q_tilde; ce seroit ypocri&s_long;ie
                </p>
             </div>
          </div>
