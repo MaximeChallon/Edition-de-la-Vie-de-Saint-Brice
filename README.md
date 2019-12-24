@@ -14,7 +14,7 @@ Compléter de la manière la plus précise possible le teiHeader de votre éditi
 	- Présenter en introduction votre projet et ses exploitations possibles (/4);
 	- Documenter le fonctionnement de votre encodage et vos choix de balises (/2).
 
-# Edition à visée paléographique : Récits hagiographiques dumanuscrit 411 de la Bibliothèque nationale de France.
+# Edition à visée paléographique : Récits hagiographiques du manuscrit 411 de la Bibliothèque nationale de France.
 
 - Structurer le texte fourni en divisions de type section en fonction des initiales ornées, et en paragraphes si des subdivisions vous semblent nécessaires pour le sens ;
 - Renseigner le teiHeader, et plus précisément le msDesc à l’aide de la notice Gallica du manuscrit 411 et de la notice Jonas : http://jonas.irht.cnrs.fr/consulter/manuscrit/detail_manuscrit.php?projet=71287#Association ;
@@ -26,4 +26,4 @@ Compléter de la manière la plus précise possible le teiHeader de votre éditi
 encodés : pourquoi et comment.
 - Présenter comment votre encodage pourrait être exploité.
 
-Sujet n°1 choisi : Début de la Vie de saint Brice, fol.169a-169c : de « Ci commence la vie monseigneur seint Brice » à « seint Brice parla et si dist » https://gallica.bnf.fr/ark:/12148/btv1b107209247/f174.item.zoom
+# Sujet choisi : 1: Début de la Vie de saint Brice, fol.169a-169c : de « Ci commence la vie monseigneur seint Brice » à « seint Brice parla et si dist » https://gallica.bnf.fr/ark:/12148/btv1b107209247/f174.item.zoom
