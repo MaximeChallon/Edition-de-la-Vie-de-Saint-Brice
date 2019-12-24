@@ -16,7 +16,8 @@
 <!ENTITY p_tilde "<choice><abbr type='abreviation'>&#58981;</abbr><expan>pre</expan></choice>" >
 <!ENTITY u_tilde "<choice><abbr type='abreviation'>&#363;</abbr><expan>ver</expan></choice>" >
 <!ENTITY et_tironien "<choice><abbr type='abreviation'>&#8266;</abbr><expan>et</expan></choice>" >
-<!ENTITY p_barre "<choice><abbr type='abreviation'>&#42833;</abbr><expan>per</expan></choice>" >
+<!ENTITY p_barre_per "<choice><abbr type='abreviation'>&#42833;</abbr><expan>per</expan></choice>" >
+<!ENTITY p_barre_par "<choice><abbr type='abreviation'>&#42833;</abbr><expan>par</expan></choice>" >
 <!ENTITY r_tilde_ostr "<choice><abbr type='abreviation'>&#7769;</abbr><expan>ostr</expan></choice>" >
 
 <!ENTITY s_long "<choice><abbr type='graphie'>&#383;</abbr><expan>s</expan></choice>" >
@@ -27,6 +28,7 @@
 
 <!ENTITY b_to_B "<choice><orig>b</orig><reg type='majuscule'>B</reg></choice>" >
 <!ENTITY m_to_M "<choice><orig>m</orig><reg type='majuscule'>M</reg></choice>" >
+<!ENTITY c_to_C "<choice><orig>c</orig><reg type='majuscule'>C</reg></choice>" >
 ]>
 
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
@@ -34,302 +36,52 @@
       <fileDesc>
          <titleStmt>
             <title>La Vie de pluseurs seins et seintes</title>
-            <author>Anonyme</author>
+            <title type="sub">Début de la vie de saint Brice</title>
             <author>
                <forename>Wauchier</forename>
                <surname>de Denain</surname>
             </author>
          </titleStmt>
-         <publicationStmt><p>Texte encodé pour le devoir de XML/TEI du master 2 TNAH de l'Ecole nationale des Chartes</p>
+         <publicationStmt><p>Texte encodé pour l'évaluation de XML/TEI du master 2 TNAH de l'Ecole nationale des Chartes</p>
          </publicationStmt>
          <sourceDesc>
             <msDesc>
                <msIdentifier>
                   <country>France</country>
                   <settlement>Paris</settlement>
-                  <repository>Bibliothèque Nationale de France, département des manuscrits</repository>
+                  <repository>Bibliothèque Nationale de France</repository>
+                  <collection>département ddes manuscrits</collection>
                   <idno>Français 411</idno>
                   <altIdentifier>
                      <idno>Anc. 7019</idno>
+                     <note>ancienne cote de la Bibliothèque nationale de France</note>
+                  </altIdentifier>
+                  <altIdentifier>
+                     <idno>
+                        ark:/12148/btv1b107209247 </idno>
+                     <note>permalien de la notice</note>
+                  </altIdentifier>
+                  <altIdentifier>
+                     <idno>MF 16080</idno>
+                     <note>cote de consultation du microfilm en noir et blanc en salle de lecture</note>
+                  </altIdentifier>
+                  <altIdentifier>
+                     <idno>R 29400</idno>
+                     <note>cote de la matrice du microfilm MF 16080 pour demander une reproduction</note>
                   </altIdentifier>
                </msIdentifier>
                <head>
                   <title>La Vie de pluseurs seins et seintes</title>
-                  <origDate notAfter="1399" notBefore="1300"/>
+                  <origDate notAfter="1399" notBefore="1300">Manuscrit du XIVème siècle.</origDate>
                </head>
                <msContents>
-                  <msItemStruct>
+                  <msItemStruct n="1" xml:lang="fro">
                      <author>Anonyme</author>
                      <title>Légendier C de Meyer</title>
                      <incipit>Quant saint Pous fu venus a Rome li juif vindrent a lui et li distrent</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
+                     <textLang mainLang="fro">Français, langue d'oïl</textLang>
                   </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f1ra" to="f3ra">f1ra-f3ra</locus>
-                     <author>Anonyme</author>
-                     <title>Nativité de Jésus-Christ</title>
-                     <incipit>Quant li tens fu raemplis que Nostre Sires Jhesucrist volt naistre de Nostre Dame sainte Marie il honora mout sa nativité</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f3ra" to="f4ra">f3ra-f4ra</locus>
-                     <author>Anonyme</author>
-                     <title>Circoncision et épiphanie</title>
-                     <incipit>Veritez est que quant nostre sires fu nes en Bellem de la vierge Marie et ce vint as huitieves apres li parent a l'enfant et Jospeh distrent qu'il convenoit qu'il fust circoncis a la loy des Juys</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f4ra" to="f5ra">f4ra-f5ra</locus>
-                     <author>Anonyme</author>
-                     <title>Purification Notre-Dame</title>
-                     <incipit>Quant li temps fu acompliz de la gesine madame sainte Marie si prindrent Nostre Seigneur cil qui eirent si parent selonc la char</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f5ra" to="f11va">f5ra-f11va</locus>
-                     <author>Anonyme</author>
-                     <title>Evangile de Nicodème</title>
-                     <incipit>Annas et Cayphas et Symiine et Dadami et Gamaliel Judas Levi Neptalim Alexander Ochiarus, cil x prince de la loy et autre iiij de llor conseil vindrent a Pylate</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f11va" to="f12rb">f11va-f12rb</locus>
-                     <author>Anonyme</author>
-                     <title>Conversion de Saint-Paul</title>
-                     <incipit>Apres ce que sainz Estienez fu lapidez li jovenciaux qui gardoit les roubes de ceus qui le lapiderent</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f12rb" to="f13va"></locus>
-                     <author>Anonyme</author>
-                     <title>Chaire de Saint-Pierre</title>
-                     <incipit>Sainte esglyse fet ceste feste en remenbrance de l'onnour que saint Pierre ot quant il fu le premerain evesque qui oncques fu en Enthioche la cité</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f13va" to="f18rb">f13va-f18rb</locus>
-                     <author>Anonyme</author>
-                     <title>	Dispute de saint Pierre et de saint Paul contre Simon le magicien</title>
-                     <incipit>Quant saint Pous fu venus a Rome li juif vindrent a lui et li distrent</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f18va" to="f23ra">f18va-f23ra</locus>
-                     <author>Anonyme</author>
-                     <title>Vie et passion de saint Pierre apôtre</title>
-                     <incipit>A entendre la glorieuse passion saint Pierre l'apostre de son martire qu'il reçut pour NS</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f23rb" to="f27rb">f23rb-f27rb</locus>
-                     <author>Anonyme</author>
-                     <title>Passion de saint Paul</title>
-                     <incipit>De la passion saint Pol sachent tuit creant en Nostre Seignor que quant s Lucas l'euvangelistre fu venus a Rome de Galatie</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f27rb" to="f27va">f27rb-f27va</locus>
-                     <author>Anonyme</author>
-                     <title>Martyre de saint Jean devant la Porte Latine</title>
-                     <incipit>En cel tans qe Domitien estoit empereres de Rome estoit seinz Jehans euvangelistes li freres seint Jaqe l'apostre en Ephese la cite ou il preeschoit le non nostre signeur</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f27va" to="f32ra">f27ra-f32ra</locus>
-                     <author>Anonyme</author>
-                     <title>	Vie de saint Jean l'évangéliste</title>
-                     <incipit>Bien est seue chose que la seconde persecussions qui puis Noiron fu faite sor crestiens si fist Domitiens li emperes</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f32ra" to="f49ra">f32ra-f49ra</locus>
-                     <author>Anonyme</author>
-                     <title>Passion, translation et miracles de saint Jacques le Majeur</title>
-                     <incipit>Apres le jour de la sainte pentecouste que li sainsz esperis fu descendus sour les apostres que nostre sires lor ot ensignie toutes manieres de langage</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f49ra" to="f55va">f49ra-f55va</locus>
-                     <author>Anonyme</author>
-                     <title>Vie de saint Matthieu</title>
-                     <incipit>En la terre d'Ethiope la ou la gent sont noir pour la chalor qui y est avoit II enchanteurs dont li ung avoit non Zaroes et li autres Arphazar</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f55va" to="f62rb">f55va-f62rb</locus>
-                     <author>Anonyme</author>
-                     <title>Vie des saints Simon et Jude</title>
-                     <incipit>Puis le haut jor de l'ascension nostre seigneur et apres la venue del seint esperit se departirent li apostres par les diversez partiez del monde por annoncier as divers pueples la nessance</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f62rb" to="f63rb">f62rb-f63rb</locus>
-                     <author>Anonyme</author>
-                     <title>Vie de saint Philippe</title>
-                     <incipit>Si comme la devine page tesmoigne xx ans apres l'acension Nostre Seigneur</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f63rb" to="f64va">f63rb-f64va</locus>
-                     <author>Anonyme</author>
-                     <title>	Vie de saint Jacques le Mineur</title>
-                     <incipit>Ne voz doit mie anoier se je vous conte ici apres la vie et la passion de monsigneur seint Jaque le petit</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f64vb" to="f68vb">f64vb-f68vb</locus>
-                     <author>Anonyme</author>
-                     <title>Vie de saint Barthelemy</title>
-                     <incipit>Or vous dirons de monseigneur seint Bertelemi l'apostre qui apres le haut jour de l'acenssion NS fu par l'anoncement del Seint Esperit</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f68vb" to="f70va">f68vb-f70va</locus>
-                     <author>Anonyme</author>
-                     <title>Vie de saint Marc</title>
-                     <incipit>Resons est et droiture que l'en truisse en l'escripture comment misires saint March li evangelistres ala en Esgypte</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f70va" to="f72vb">f70va-f72vb</locus>
-                     <author>Anonyme</author>
-                     <title>Vie de saint Longin</title>
-                     <incipit>Au tens ke Nostre Sires Jhesucris fu mis en crois estoit un chevalier qui Longins avoit nom. Il par le commandement Pilate feri Nostre Sires</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f72vb" to="f76rb">f72vb-f76rb</locus>
-                     <author>Anonyme</author>
-                     <title>	Vie de saint Sébastien</title>
-                     <incipit>Au tens que Dyocletiens et Maximiens estoient empereeur de Rome et il destruisoient touz ceuls qui aoroient Nostre Seigneur</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f76rb" to="f80vb">f76rb-f80vb</locus>
-                     <author>Anonyme</author>
-                     <title>Vie de saint Vincent</title>
-                     <incipit>Vincent fu de haute lingniee et ses peres ot non Eutycius qui fu fiulz a Gresse le concele</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f81ra" to="f85rb">f81ra-f85rb</locus>
-                     <author>Anonyme</author>
-                     <title>Vie de saint Georges</title>
-                     <incipit>Veraiement raconte la divine page que quant li saint home se penoient et efforçoient d'acroistre et d'essaucier la seinte loi</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f85rb" to="f94ra">f85rb-f94ra</locus>
-                     <author>Anonyme</author>
-                     <title>Vie de saint Christophe</title>
-                     <incipit>Moult puet estre lieez a qui NS donne tant de sa grace qu'il ne li deplaise mie a oir les parolles qui de lui sont et les vies des sains martirs qui m</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f94ra" to="f97ra"></locus>
-                     <author>Anonyme</author>
-                     <title>Vie de sainte Agathe</title>
-                     <incipit>Au tens que seinte crestientez croissoit et essauçoit par les paroles et par les hauz miracles qe Nostre Sires faisoit</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f97ra" to="f99rb">f97ra-f99rb</locus>
-                     <author>Anonyme</author>
-                     <title> Vie de sainte Luce ou Lucie</title>
-                     <incipit>Au jour que la renommee et la parole croissoit et enforçoit rudement par pluseurs contrees des halz miracles que Damlediex demoutroit et faisoit en la cite de Cathenense</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f99rb" to="f103rb">f99rb-f103rb</locus>
-                     <author>Anonyme</author>
-                     <title>Vie de sainte Agnès</title>
-                     <incipit>Tuit devons graces et loenges rendre a nostre seigneur Jhesucrist des seintes virges et des passions que eles soufrirent</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f103va" to="f105ra">f103va-f105ra</locus>
-                     <author>Anonyme</author>
-                     <title>Vie de sainte Félicité et de ses sept fils</title>
-                     <incipit> Veritez est si com l'escripture tesmoingne que en cel tens que Antoninus estoit empereres a Rome estoient cil qui creoient</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f105ra" to="f112ra">f105ra-f112ra</locus>
-                     <author>Anonyme</author>
-                     <title>Vie de sainte Christine</title>
-                     <incipit>Quant seinte crestientez croissoit et florissoit par les hautes miracles que Nostre Sires fesoit por les seinz et por les seintes qui por sa loi essaucier recevoient martire</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f112ra" to="f118va">f112ra-f118va</locus>
-                     <author>Anonyme</author>
-                     <title>Vie de sainte Cécile</title>
-                     <incipit>Haute chose est d'oir et de retenir la sainte foy et la sainte loy nostre seigneur que li apostre tindrent et ensuivoient</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f118va" to="f120rb">f118va-f120rb</locus>
-                     <author>Anonyme</author>
-                     <title>	Vie de saint Sixte</title>
-                     <incipit>Ce fu el temps que Decius Cesar fu emperieres que cil qui NS apeloient estoient martirié et soufroient griez tourmens pour l'amour de lui. En ce temps estoit mesire saint Sixte qui estoit nes d'Athenes</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f120rb" to="f123rb">f120rb-f123rb</locus>
-                     <author>Anonyme</author>
-                     <title>Vie de saint Laurent</title>
-                     <incipit>Apres çou que sains Siextes fu martiriés si con vous avés oi devant li chevalier qui avoient pris seint Lorens le baillerent et li livrerent a Parthesmes</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f123rb" to="f125va">f123rb-f125va</locus>
-                     <author>Anonyme</author>
-                     <title>Vie de saint Hippolyte</title>
-                     <incipit>Vos avez oi de seint Lorenz le beneoit martir conment il reçut martire por l'amor nostre seigneur JC et conment seinz Justins li prestres et seinz Ypolites</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f125vb" to="f130va">f125vb-f130va</locus>
-                     <author>Anonyme</author>
-                     <title>Vie de saint Lambert de Liège</title>
-                     <incipit>Messires seint Lambert li gloriex martirs et qui fu seinz prestres et tres chiers amis NSJC fu nez</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f130va" to="f136rb">f130va-f136rb</locus>
-                     <author>Anonyme</author>
-                     <title>Vie de saint Pantaléon</title>
-                     <incipit>A cel tens que Maximiens estoit empereres a Rome ert granz persecutions sur cels qui en Nostre Seignor JC creoient</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f136va" to="f138va">f136va-f138va</locus>
-                     <author>Anonyme</author>
-                     <title>Vie de saint Clément</title>
-                     <incipit>Sainz Climenz fu li tierz apostoiles de Rome. Il fesoit molt volentiers les enseignemenz seint Pere et saint Pere li donna la dignite de estre apostoile</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f138va" to="f152va">f138va-f152va</locus>
-                     <author>
-                        <forename>Wauchier</forename>
-                        <surname>de Denain</surname>
-                     </author>
-                     <title> Dossier sur saint Martin de Tours</title>
-                     <incipit>Sainz Martins fu nez de la contree de Pannonie d'un chastel qui Ysaphane avoit non</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f152va" to="f169ra">f152va-f169ra</locus>
-                     <author>
-                        <forename>Wauchier</forename>
-                        <surname>de Denain</surname>
-                     </author>
-                     <title>Dialogues de Sulpice-Sévère</title>
-                     <incipit>Un jor avint que je Gallus et mes chier compeinz qui deciples fu seint Martin</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
+                  <msItemStruct n="39" xml:lang="fro">
                      <locus from="f169rb" to="f170rb">f169rb-f170rb</locus>
                      <author>
                         <forename>Wauchier</forename>
@@ -337,209 +89,17 @@
                      </author>
                      <title>	Vie de saint Brice</title>
                      <incipit>Quant seinz Brices estoit jouvenciaus il guetoit molt seint Martin por ce qu'il le veoit viell home et de grant abstinence et de seinte vie</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f170rb" to="f174rb">f170rb-f174rb</locus>
-                     <author>
-                        <forename>Wauchier</forename>
-                        <surname>de Denain</surname>
-                     </author>
-                     <title>Vie de saint Gilles</title>
-                     <incipit>Nus crestiens n'est en terre qui nostre segneur velle servir ne amer qui volentiers n'entende et oie cels qui racontent et dient</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f174rb" to="f187vb">f174rb-f187vb</locus>
-                     <author>
-                        <forename>Wauchier</forename>
-                        <surname>de Denain</surname>
-                     </author>
-                     <title>Vie de saint Martial de Limoges</title>
-                     <incipit>Au tens que nostre sire JC preechoit et ensegnoit les juis qui estoient de la ligniee Benjamin</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f188ra" to="f206rb">f188ra-f206rb</locus>
-                     <author>
-                        <forename>Wauchier</forename>
-                        <surname>de Denain</surname>
-                     </author>
-                     <title>Dossier sur saint Nicolas</title>
-                     <incipit>Mout doit volentiers oir et entendre tote creature qi nostre signour aime et croit les vies et les oevres des seinz</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f206rb" to="f208va">f206rb-f208va</locus>
-                     <author>
-                        <forename>Wauchier</forename>
-                        <surname>de Denain</surname>
-                     </author>
-                     <title>Vie de saint Jérôme</title>
-                     <incipit>Seinz Jeroimes fu nez de haute ligniee d'un chastel qui fu apelez Stridons si estoit en la marche Dalmasse et de Pannonie</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f208va" to="f218vb">f208va-f218vb</locus>
-                     <author>
-                        <forename>Wauchier</forename>
-                        <surname>de Denain</surname>
-                     </author>
-                     <title>Vie de saint Benoît</title>
-                     <incipit>Uns hom fu de molt sainte vie si com seinz Gregoires nos raconte Cil hom estoit Benooiz apelez par non</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f219ra" to="f222rb">f219ra-f222rb</locus>
-                     <author>
-                        <forename>Wauchier</forename>
-                        <surname>de Denain</surname>
-                     </author>
-                     <title>Vie de saint Alexis</title>
-                     <incipit>En cel tens qe la loy nostre signor estoit creue et essaucie et qe les genz se penoient donques plus de bien faire</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f222rb" to="f225ra"></locus>
-                     <author>Anonyme</author>
-                     <title>Vie de sainte Irène</title>
-                     <incipit>Seinte yrine la martyre NSJC fu fille au roi Lichin et a la roine Licine et fu nee en la cite de magedon</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f225ra" to="f227va">f225ra-f227va</locus>
-                     <author>Anonyme</author>
-                     <title>Assomption de Notre Dame</title>
-                     <incipit>Quant Nostre Sires nostre Sauvieres Jhesucrist pour le sauvement de tout le monde pendoit en la crois fichiez de clos il vit sa mere estant jouste la crois et Jehan li evangelistres que il amoit devant les autres</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f227va" to="f235ra">f227va-f235ra</locus>
-                     <author>Anonyme</author>
-                     <title>Vie de sainte Catherine</title>
-                     <incipit>Les estoires annales nos enseignent que Costentius li fiulz qui reçut de Costentin son pere le governement de l'empire</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f235ra" to="f248rb">f235ra-f248rb</locus>
-                     <author>Anonyme</author>
-                     <title>	Vie et miracles de saint André</title>
-                     <incipit>Sachent tuit creant en Nostre Seingneur Jhesucrist que uns enfes qui Egiptius avoit non qui son pere amoit moult souverainnement</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f248rb" to="f254rb">f248rb-f254rb</locus>
-                     <author>Anonyme</author>
-                     <title>Purgatoire de saint Patrice</title>
-                     <incipit>En cel tens que seinz Patrices li grans preschoit en Yrlande la parole de Dieu Nostre Seigneur conferma son preschement par tres glorieux miracles</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f254rb" to="f257ra">f254rb-f254ra</locus>
-                     <author>Anonyme</author>
-                     <title>Vie de saint Paul ermite</title>
-                     <incipit>Assez de genz ont sovent doute qi fu li premiers hermites qui premierement habita es fores</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f257rb" to="f259vb">f257rb-f259vb</locus>
-                     <author>Anonyme</author>
-                     <title>	Translation des reliques de saint Benoît à Fleury</title>
-                     <incipit>Au tens que li longuebarz qui ne creoient pas nostre signor furent il estoient si cruel qu'il ocioient toz les crestiens</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f259vb" to="f264va">f259vb-f264va</locus>
-                     <author>Anonyme</author>
-                     <title>Vie de saint Maur</title>
-                     <incipit>Seinz Mor fu nez de Rome et fu molt gentiuz hom Ses peres ot nom Evecius et sa mere Julia il n'avoit encore que XI anz quant si parent le baillierent</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f264vb" to="f267ra">f264vb-f267ra</locus>
-                     <author>Anonyme</author>
-                     <title>Vie de saint Placide</title>
-                     <incipit>Au tens Justin et Justinien qui furent empereeur de Rome avoit un apostele a Rome qui avoit non Jehans</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f267ra" to="f269rb">f267ra-f269rb</locus>
-                     <author>Anonyme</author>
-                     <title>Vie de saint Eustache</title>
-                     <incipit>Au tens que Trajanus estoit empereres de Rome il avoit avec lui un sien baron qui avoit nom Placides</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f269va" to="f271rb">f269va-f271rb</locus>
-                     <author>Anonyme</author>
-                     <title>	Vie de saint Fursi</title>
-                     <incipit>Un preudome fu qi ot non Fursins de mout honorable vie molt nobles par lignage</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f271va" to="f272vb">f271va-f272vb</locus>
-                     <author>Anonyme</author>
-                     <title>Vie de sainte Marguerite</title>
-                     <incipit>Apres la glorieuse resurrection Nostre Seigneur Jhesucrist et puis que si apostre ourent tuit receu la celestial corone</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f273ra" to="f274rb">f273ra-f274rb</locus>
-                     <author>Anonyme</author>
-                     <title>Vie de sainte Pélagie</title>
-                     <incipit>Nous devons tous rendre grasses a Nostre Signeur qu'il ne veut pas que li peceour perissent</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f274rb" to="f276va">f274rb-f276va</locus>
-                     <author>Anonyme</author>
-                     <title>Vie de saint Siméon le stylite</title>
-                     <incipit>Seinz Simeons fu esleuz de nostre signor por lui servir et ses oevres li plorent des s'enfance</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f276vb" to="f278va">f276vb-f278va</locus>
-                     <author>Anonyme</author>
-                     <title>	Vie de saint Mamertin</title>
-                     <incipit>Nus crestiens ne conoist com la pitiez de la misericorde Jesucrist est granz ne com grant grace sa debonereté done a l'umein lignage</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f278va" to="f280vb">f278va-f280vb</locus>
-                     <author>Anonyme</author>
-                     <title>Vie de saint Julien du Mans</title>
-                     <incipit>Seinz Juliens qui fu evesque du Mans fu nez de Rome de molt gentils genz et fu molt bons clers</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f280vb" to="f285va">f280vb-f285va</locus>
-                     <author>Anonyme</author>
-                     <title>Vie de sainte Marie l'Egyptienne</title>
-                     <incipit>En la contree de Palestine ot un moine seint home et de bone vie qi de s'enfance fu norriz en moniage et ot non Zosimas</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f285va" to="f286va">f285va-f286va</locus>
-                     <author>Anonyme</author>
-                     <title>Vie de sainte Euphrasie</title>
-                     <incipit>A rome out un senat qui out non Antigonus et estoit molt boens hom et cremoit molt Nostre Seigneur</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
-                  </msItemStruct>
-                  <msItemStruct>
-                     <locus from="f286vb" to="f287vb">f86vb-f287vb</locus>
-                     <author>Anonyme</author>
-                     <title>De l'antéchrist</title>
-                     <incipit>Vous devez savoir premierement que Antecrist est apelez pour ce que il sera en toutes choses contraires a Jhesucrist</incipit>
-                     <textLang mainLang="oil">Français, langue d'oïl</textLang>
+                     <explicit>De nos ottrit cil qi vit et reigne par tot les siecles des siecles. Amen</explicit>
+                     <textLang mainLang="fro">Français, langue d'oïl</textLang>
                   </msItemStruct>
                </msContents>
                <physDesc>
-                  <objectDesc>
+                  <objectDesc form="codex">
                      <supportDesc>
                         <support>
                            <material>Parchemin</material>
                            <material>Vélin</material>
-                           <note>La règle de Carl Grégory est respectée</note>
+                           <note>La règle des faces du vélin de Carl Grégory est respectée</note>
                         </support>
                         <extent>
                            <width unit="mm">250</width>
@@ -563,17 +123,20 @@
                               <height unit="mm">230</height>
                               <width unit="mm">70</width>
                            </dimensions>
-                           <note>Les colonnes sont séparées par un entrecolonne de 23 mm</note>
+                           <note>Les colonnes sont séparées par un entrecolonne de 23 mm.</note>
                         </layout>
                      </layoutDesc>
                   </objectDesc>
-                  <handDesc>
-                     <handNote xml:id="A1"/>
+                  <handDesc hands="1">
+                     <handNote xml:id="mainHand">
+                        <locus from="f1" to="f287"/>
+                     </handNote>
                   </handDesc>
-                  <scriptDesc>
+                  <scriptDesc corresp="#mainHand">
                      <scriptNote>
-                        <p>Ecriture gothique du <date notBefore="1300" notAfter="1399">XIV</date>ème siècle.</p>
+                        <p>Ecriture gothique textualis du <date notBefore="1300" notAfter="1399">XIV</date>ème siècle.</p>
                         <p>Elle se distingue par des lignes droites, des angles aigus et des pointes, une mise en page et des lettres serrées, un ductus vertical, un développement réduit des hastes montantes et descendantes, un contraste entre traits épais et traits fins, et un usage abondant des abréviations.</p>
+                        <p>La main principale se distingue également par des initiales ornées en début de paragraphe, et des majuscules ornées d'une unité de réglure de haut.</p>
                      </scriptNote>
                   </scriptDesc>
                   <decoDesc>
@@ -791,8 +354,8 @@
    </facsimile>
    <text>
       <body>
-         <div type="book">
-            <div type="section">
+         <div type="book" facs="https://gallica.bnf.fr/ark:/12148/btv1b107209247">
+            <div type="section" n="39">
                <pb facs="#f174"/>
                <cb/>
                <fw type="catch">
@@ -816,11 +379,27 @@
                   <lb facs="#l9"/>il &u_to_v;ol&s_long;i&s_long;t &b_pointe;n qil &s_long;e m&e_tilde_ein;teni&s_long;t de dras &et_tironien; da-
                   <lb facs="#l10"/>utres cho&s_long;es plus belem&e_tilde_en;t &s_long;i com li pla
                   <lb facs="#l11"/>eu &s_long;ervi&e_tilde_en;t encore <hi rend="majuscule">q</hi>e &s_long;il &u_to_v;eoi&e_tilde_en;t les e&u_to_v;e&s_long;-
-                  <lb facs="#l12"/>-qes &et_tironien; les autres &p_barre;&s_long;ones deduire poure-
+                  <lb facs="#l12"/>-qes &et_tironien; les autres &p_barre_per;&s_long;ones deduire poure-
                   <lb facs="#l13"/>-m&e_tilde_en;t &et_tironien; en &u_to_v;ielz abiz &et_tironien; en gr&a_tilde;z ab&s_long;tin&e_tilde_en;ces
                   <lb facs="#l14"/> por la mor n&r_tilde_ostr;e &s_long;eig&u_to_n;or <hi rend="majuscule">i</hi>l les enbla&s_long;mero-
                   <lb facs="#l15"/>-ient &et_tironien;diroi&e_tilde_en;t &q_tilde; ce seroit ypocri&s_long;ie
                </p>
+               <lg type="octosyllabe">
+                  <l n="1" rhyme="re">
+                     <lb facs="#l16"/>
+                     <hi rend="petite_lettrine" facs="petite_lettrine">
+                        <hi rend="lettre_attente">p</hi>
+                     </hi><hi rend="majuscule">o</hi>rce ne &s_long;et le&u_to_n; mes &q_tilde; fere</l>
+                  <l n="2" rhyme="re"><lb facs="#l17"/><hi rend="majuscule">n</hi>us ne&s_long;e&s_long;et au&q_tilde;l chief trere</l>
+                  <l n="3" rhyme="ien"><lb facs="#l18"/><hi rend="majuscule">b</hi>enigus e&s_long;t qi &u_to_v;eu&s_long;t fere &b_pointe;n</l>
+                  <l n="4" rhyme="ien"><lb facs="#l19"/><hi rend="majuscule">n</hi>e nus nel tient 
+                   <choice>
+                     <orig>acre&s_long;tien</orig>
+                     <reg type="espace">a &c_to_C;re&s_long;tien</reg>
+                  </choice></l>
+                  <l n="5" rhyme="ent"><lb facs="#l20"/><hi rend="majuscule">q</hi>i le mal fet a&p_barre_par;tem&e_tilde_en;t</l>
+                  <l n="6" rhyme="ent"><lb facs="#l21"/><hi rend="majuscule">q</hi>i &s_long;e meintient moiennem&e_tilde_en;t</l>
+               </lg>
             </div>
          </div>
       </body>
