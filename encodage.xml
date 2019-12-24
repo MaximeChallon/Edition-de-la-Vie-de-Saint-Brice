@@ -240,7 +240,7 @@
          <particDesc>
             <listPerson>
                <person xml:id="saint_brice" sex="M">
-                  <persName from="0377" to="0444" ref="https://fr.wikipedia.org/wiki/Brice_de_Tours">
+                  <persName ref="https://fr.wikipedia.org/wiki/Brice_de_Tours">
                      <forename xml:lang="fre">Brice</forename>
                      <addName xml:lang="fre">de Tours</addName>
                      <roleName xml:lang="fre">saint</roleName>
@@ -276,6 +276,14 @@
                         <settlement type="city">Tours</settlement>
                      </placeName>
                   </residence>
+                  <residence type="primary" from="0377" notAfter="0397">
+                     <placeName>
+                        <country>France</country>
+                        <region>Touraine</region>
+                        <settlement type="city">Tours</settlement>
+                        <name>Monastère de Saint-Martin</name>
+                     </placeName>
+                  </residence>
                   <residence type="temporary" from="0430" to="0437">
                      <placeName>
                         <country>Italie</country>
@@ -289,6 +297,100 @@
                         <settlement type="city">Tours</settlement>
                      </placeName>
                   </residence>
+                  <note source="https://fr.wikipedia.org/wiki/Brice_de_Tours">Brice de Tours, devenu saint Brice (du latin Sanctus Brictius), est un saint chrétien qui a grandi au monastère de Saint-Martin. Quatrième évêque de Tours, il succède à saint Martin de Tours. Mort en 444, fêté le 13 novembre, il est le patron des juges. Moine puis prêtre, il est finalement choisi par Saint Martin, dont il se moque ouvertement, pour le remplacer à sa mort. Brice, à l'inverse de Saint Martin dont il méprisait la pauvreté voulue, préférait s'entourer de jolies servantes et esclaves, ainsi que de beaux chevaux. L'entourage de Saint Martin voit d'un mauvais œil ce futur évêque fastueux et beau parleur et lui déconseille vivement ce choix. Après 33 ans d'épiscopat depuis la mort de Saint Martin en 397, Brice scandalise ses ouailles lorsqu'il est accusé d'avoir mis enceinte une de ses servantes. Expulsé manu militari hors de Tours, il va plaider son innocence à Rome. Au bout de sept années, il revient à Tours et pendant sa halte, la nuit, à quelques lieues de la ville, son successeur meurt. Brice redevient évêque de Tours, assagi cette fois, jusqu’à sa mort en 444. Il est canonisé  à sa mort et enterré auprès de son bienfaiteur. Mais en 580, Grégoire de Tours fait transférer ses reliques à Clermont-Ferrand, en Auvergne.</note>
+               </person>
+               <person xml:id="saint-martin" sex="M">
+                  <persName ref="https://fr.wikipedia.org/wiki/Martin_de_Tours">
+                     <forename xml:lang="fre">Martin</forename>
+                     <addName xml:lang="fre">de Tours</addName>
+                     <addName xml:lang="fre">le Miséricordieux</addName>
+                     <roleName xml:lang="fre">saint</roleName>
+                     <!-- nom en latin -->
+                     <forename xml:lang="lat">Martinus</forename>
+                     <roleName xml:lang="lat">sanctus</roleName>
+                  </persName>
+                  <birth>
+                     <date when="0316"/>
+                     <placeName>
+                        <country>Hongrie</country>
+                        <settlement type="city">Sabaria de Pannonie</settlement>
+                     </placeName>
+                  </birth>
+                  <death>
+                     <date when="0397-11-08"/>
+                     <placeName>
+                        <country>France</country>
+                        <settlement type="city">Candes-Saint-Martin</settlement>
+                     </placeName>
+                  </death>
+                  <faith type="convert" when="0326">catholique</faith>
+                  <!-- Activités -->
+                  <occupation from="0331" to="0356">circitor (légionnaire romain)</occupation>
+                  <occupation from="0356">ermite</occupation>
+                  <occupation from="0371-07-04">évêque de Tours</occupation>
+                  <!-- Lieux de résidence -->
+                  <residence type="temporary" from="0316" notAfter="0331">
+                     <placeName>
+                        <country>Hongrie</country>
+                        <settlement type="city">Sabaria de Pannonie</settlement>
+                     </placeName>
+                  </residence>
+                  <residence type="temporary" notBefore="0316" notAfter="0334">
+                     <placeName>
+                        <country>Italie</country>
+                        <settlement type="city">Pavie</settlement>
+                     </placeName>
+                  </residence>
+                  <residence type="temporary" notBefore="0331" notAfter="0354">
+                     <placeName>
+                        <country>Gaule</country>
+                        <settlement type="city">Amiens</settlement>
+                     </placeName>
+                  </residence>
+                  <residence type="temporary" from="0354" notAfter="0356">
+                     <placeName>
+                        <region>Rhin</region>
+                     </placeName>
+                  </residence>
+                  <residence type="temporary" notBefore="0354" notAfter="0356">
+                     <placeName>
+                        <country>Gaule</country>
+                        <settlement type="city">Amiens</settlement>
+                     </placeName>
+                  </residence>
+                  <residence type="temporary" from="0356" to="0360">
+                     <placeName>
+                        <country>Gaule</country>
+                        <settlement type="city">Poitiers</settlement>
+                     </placeName>
+                  </residence>
+                  <residence type="primary" from="0361" to="0371">
+                     <placeName>
+                        <country>Gaule</country>
+                        <settlement type="city">Ligugé</settlement>
+                        <geogName>Abbaye de Ligugé</geogName>
+                     </placeName>
+                  </residence>
+                  <residence type="primary" from="0371-07-04" to="0397-11-08">
+                     <placeName>
+                        <country>Gaule</country>
+                        <settlement type="city">Tours</settlement>
+                     </placeName>
+                  </residence>
+                  <residence type="secondary" from="0371" to="0397-11-08">
+                     <placeName>
+                        <country>Gaule</country>
+                        <settlement type="city">Marmoutier</settlement>
+                        <geogName>Monastère de Marmoutier</geogName>
+                     </placeName>
+                  </residence>
+                  <residence type="temporary" when="0397">
+                     <placeName>
+                        <country>Gaule</country>
+                        <settlement type="city">Candes-sur-Loire</settlement>
+                     </placeName>
+                  </residence>
+                  <note source="https://fr.wikipedia.org/wiki/Martin_de_Tours">Saint Martin de Tours, aussi nommé Martin le Miséricordieux, ou encore saint Martin des Champs (qui a donné lieu à appellation de différents édifices religieux), né dans l'Empire romain, plus précisément à Savaria, dans la province romaine de Pannonie (actuelle Hongrie), en 316, et mort à Candes, en Gaule, le 8 novembre 397, est l'un des principaux saints de la chrétienté et le plus célèbre des évêques de Tours avec Grégoire de Tours. Sa vie est essentiellement connue par la Vita sancti Martini (Vie de saint Martin) écrite en 396-397 par Sulpice-Sévère, qui fut l'un de ses disciples. La dévotion à Martin se manifeste à travers une relique, le manteau ou la chape de Martin — qu'il partage avec un déshérité transi de froid. Dès le Ve siècle, le culte martinien donne lieu à un cycle hagiographique, c'est-à-dire à une série d'images successives relatant les faits et gestes du saint. Il introduit le monachisme en Gaule moyenne, le monachisme martinien s'ancrant autour de la Loire, tandis que les monachismes lérinien et cassianite se développent dans la Gaule méridionale. Son culte se répand partout en Europe occidentale, depuis l'Italie, puis surtout en Gaule où il devient le patron des dynasties mérovingiennes et carolingiennes.  Les très nombreuses églises portant un patronage martinien à travers toute l'Europe sont fondées à des dates très variées. Saint Martin compte parmi les patrons secondaires de la France. Il est le patron notamment de Tours, Buenos Aires, Rivière-au-Renard, Vevey, de la cathédrale de Mayence, de celle d'Utrecht, de celle de Lucques et de la basilique San Martino. Autrefois fêté le 4 juillet (consécration épiscopale en 371), saint Martin est aujourd'hui célébré le 11 novembre (funérailles en 397). En Allemagne, il est fêté lors du jour de la Saint-Martin, également appelée Saint Martin le bouillant ou Saint Martin d'été. </note>
                </person>
             </listPerson>
          </particDesc>
@@ -412,7 +514,7 @@
                <cb/>
                <fw type="catch">
                   <lb facs="#reclame1"/>Ci &neuf;mence la &u_to_v;ie
-                  <lb facs="#reclame2"/>de m&o_tilde;&s_long;eigneur &s_long;eint &b_to_B;rice
+                  <lb facs="#reclame2"/>de <persName ref="#saint_brice">m&o_tilde;&s_long;eigneur &s_long;eint &b_to_B;rice</persName>
                </fw>
                <figure type="miniature" facs="#miniature"/>
                <cb/>
