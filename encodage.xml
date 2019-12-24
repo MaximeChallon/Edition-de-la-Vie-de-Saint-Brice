@@ -239,8 +239,56 @@
          </settingDesc>
          <particDesc>
             <listPerson>
-               <person xml:id="">
-                  <persName></persName>
+               <person xml:id="saint_brice" sex="M">
+                  <persName from="0377" to="0444" ref="https://fr.wikipedia.org/wiki/Brice_de_Tours">
+                     <forename xml:lang="fre">Brice</forename>
+                     <addName xml:lang="fre">de Tours</addName>
+                     <roleName xml:lang="fre">saint</roleName>
+                     <!-- nom en latin -->
+                     <forename xml:lang="lat">Brictius</forename>
+                     <roleName xml:lang="lat">sanctus</roleName>
+                  </persName>
+                  <birth>
+                     <date when="0377"/>
+                     <placeName>
+                        <country>France</country>
+                        <region>Touraine</region>
+                     </placeName>
+                  </birth>
+                  <death>
+                     <date when="0444"/>
+                     <placeName>
+                        <country>France</country>
+                        <settlement type="city">Tours</settlement>
+                     </placeName>
+                  </death>
+                  <faith type="practicing">catholique</faith>
+                  <!--Activités -->
+                  <occupation notBefore="0377" notAfter="0397">moine</occupation>
+                  <occupation notBefore="0377" notAfter="0397">prêtre catholique</occupation>
+                  <occupation from="0397" to="0430">évêque de Tours</occupation>
+                  <occupation from="0437" to="0444">évêque de Tours</occupation>
+                  <!-- Lieux de résidence -->
+                  <residence type="primary" from="0377" to="0430">
+                     <placeName>
+                        <country>France</country>
+                        <region>Touraine</region>
+                        <settlement type="city">Tours</settlement>
+                     </placeName>
+                  </residence>
+                  <residence type="temporary" from="0430" to="0437">
+                     <placeName>
+                        <country>Italie</country>
+                        <settlement type="city">Rome</settlement>
+                     </placeName>
+                  </residence>
+                  <residence type="primary" from="0437" to="0444">
+                     <placeName>
+                        <country>France</country>
+                        <region>Touraine</region>
+                        <settlement type="city">Tours</settlement>
+                     </placeName>
+                  </residence>
                </person>
             </listPerson>
          </particDesc>
