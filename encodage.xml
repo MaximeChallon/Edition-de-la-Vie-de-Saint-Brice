@@ -248,7 +248,7 @@
       </revisionDesc>
    </teiHeader>
    <facsimile>
-      <surface xml:id="f174">
+      <surface xml:id="f169b">
          <graphic url='img/f174.jpg' width='8682.33334px' height='6181.33334px' />
          <zone xml:id="reclame1" ulx="5097" uly="3413" lrx="5621" lry="3519" />
          <zone xml:id="reclame2" ulx="4494" uly="3486" lrx="5264" lry="3603" />
@@ -297,7 +297,7 @@
          <zone xml:id="l39" ulx="5944" uly="4379" lrx="7087" lry="4459" />
          <zone xml:id="l40" ulx="5944" uly="4463" lrx="7097" lry="4559" />
       </surface>
-      <surface xml:id="f175">
+      <surface xml:id="f169c">
          <graphic url='img/f175.jpg' width='8697.33334px' height='6172.33334px' />
          <zone xml:id="l41" ulx="1471" uly="783" lrx="2694" lry="833" />
          <zone xml:id="l42" ulx="1474" uly="886" lrx="2674" lry="929" />
@@ -358,7 +358,7 @@
       <body>
          <div type="book" facs="https://gallica.bnf.fr/ark:/12148/btv1b107209247">
             <div type="section" n="39">
-               <pb facs="#f174"/>
+               <pb facs="#f169b"/>
                <cb/>
                <fw type="catch">
                   <lb facs="#reclame1"/>Ci &neuf;mence la &u_to_v;ie
@@ -425,7 +425,7 @@
                   <lb facs="#l38"/>fu gueres einz ala tant qer&a_tilde;t le &s_long;e&i_tilde;t ho-
                   <lb facs="#l39"/>-me qil lot tro&u_to_v;e &et_tironien; &s_long;i fu toz gueriz de &s_long;en-
                   <lb facs="#l40"/>fermete <hi rend="majuscule">e</hi>t &s_long;e&i_tilde;t &m_to_M;artins &u_to_v;int a &s_long;e&i_tilde;t
-                  <pb facs="#f175"/>
+                  <pb facs="#f169c"/>
                   <cb/>
                   <lb facs="#l41"/>&b_to_B;rice qi diacres e&s_long;toit &et_tironien; la parla en tel
                   <lb facs="#l42"/>maniere <hi rend="majuscule">b</hi>rices dont ne te &s_long;emble &i_to_j;e
