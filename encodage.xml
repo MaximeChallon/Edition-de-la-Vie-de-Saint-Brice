@@ -5,7 +5,9 @@
 
 <!DOCTYPE text [
 <!ENTITY neuf "<choice><abbr type='abreviation'>&#8329;</abbr><expan>con</expan></choice>" >
+<!ENTITY neuf_us "<choice><abbr type='abreviation'>&#8329;</abbr><expan>us</expan></choice>" >
 <!ENTITY o_tilde "<choice><abbr type='abreviation'>&#333;</abbr><expan>on</expan></choice>" >
+<!ENTITY o_tilde_om "<choice><abbr type='abreviation'>&#333;</abbr><expan>om</expan></choice>" >
 <!ENTITY o_tilde_io "<choice><abbr type='abreviation'>&#333;</abbr><expan>io</expan></choice>" >
 
 <!ENTITY i_tilde "<choice><abbr type='abreviation'>&#299;</abbr><expan>in</expan></choice>" >
@@ -379,7 +381,7 @@
                   <lb facs="#l7"/>&i_to_j;oeune &s_long;i ne li ple&s_long;i&e_tilde_en;t mie les oe&u_to_v;res
                   <lb facs="#l8"/>del &s_long;e&i_tilde;t home &q_pointe;i e&s_long;toit arce&u_to_v;e&s_long;qes <hi rend="majuscule">c</hi>ar
                   <lb facs="#l9"/>il &u_to_v;ol&s_long;i&s_long;t &b_pointe;n qil &s_long;e m&e_tilde_ein;teni&s_long;t de dras &et_tironien; da-
-                  <lb facs="#l10"/>utres cho&s_long;es plus belem&e_tilde_en;t &s_long;i com li pla
+                  <lb facs="#l10"/>utres cho&s_long;es plus belem&e_tilde_en;t &s_long;i com li pl&neuf_us;
                   <lb facs="#l11"/>eu &s_long;ervi&e_tilde_en;t encore <hi rend="majuscule">q</hi>e &s_long;il &u_to_v;eoi&e_tilde_en;t les e&u_to_v;e&s_long;-
                   <lb facs="#l12"/>-qes &et_tironien; les autres &p_barre_per;&s_long;ones deduire poure-
                   <lb facs="#l13"/>-m&e_tilde_en;t &et_tironien; en &u_to_v;ielz abiz &et_tironien; en gr&a_tilde;z ab&s_long;tin&e_tilde_en;ces
@@ -472,6 +474,19 @@
                   <lb facs="#l78"/>pitie del &s_long;e&i_tilde;t home qi clers tu fus a fer
                   <lb facs="#l79"/>a celer molt longuem&e_tilde_en;t tes males oe-
                   <lb facs="#l80"/>&u_to_v;res &et_tironien; ta gr&a_tilde;t luxure <hi rend="majuscule">e</hi>t dex ne nos
+                  <cb/>
+                  <lb facs="#l81"/>le&s_long;t mes be&s_long;ier tie&u_to_n;s meins car eles
+                  <lb facs="#l82"/>ne &s_long;ont mie dignes <hi rend="majuscule">s</hi>e&i_tilde;z &b_to_B;rices re&s_long;-
+                  <lb facs="#l83"/>-pondit qanqil pooit enc&o_tilde;tre &et_tironien; &s_long;i di&s_long;o-
+                  <lb facs="#l84"/>-it &q_tilde; on&q_tilde;s tel cho&s_long;e ne li e&s_long;toit a&u_to_v;enue
+                  <lb facs="#l85"/><hi rend="majuscule">m</hi>es c&o_tilde_om; pl&neuf_us; &s_long;en e&s_long;condi&s_long;oit &et_tironien; cil me&i_tilde;s
+                  <lb facs="#l86"/>len creoi&e_tilde_en;t <hi rend="majuscule">t</hi>&a_tilde;t &q_tilde; &s_long;e&i_tilde;t &b_to_B;rices di&s_long;t q&a_tilde;t
+                  <lb facs="#l87"/>il &u_to_v;it qil ni porroit a eus durer en nu-
+                  <lb facs="#l88"/>-le maniere &q_tilde; len li aport&s_long;t lenfant
+                  <lb facs="#l89"/>de&u_to_v;&a_tilde;t lui <hi rend="majuscule">l</hi>i enfez fu aportez qi na-
+                  <lb facs="l90"/>-&u_to_v;oit &q_tilde; xxx &i_to_j;orz <hi rend="majuscule">q</hi>ant il fu nus de-
+                  <lb facs="#l91"/>-&u_to_v;&a_tilde;t le pueple qi la e&s_long;toit a&s_long;&s_long;emblez &et_tironien;
+                  <lb facs="#l92"/>de&u_to_v;&a_tilde;t &s_long;e&i_tilde;t &b_to_B; <hi rend="majuscule">s</hi>a&i_tilde;z &b_to_B;rices &p_barre_par;la &et_tironien; &s_long;i di&s_long;t
                </p>
             </div>
          </div>
