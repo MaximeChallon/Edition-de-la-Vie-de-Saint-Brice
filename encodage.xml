@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
-	schematypens="http://purl.oclc.org/dsdl/schematron"?>
 
+<!-- Schéma RNG -->
+<?xml-model href="out/odd.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<!-- DTD pour les déclarations d'entités -->
 <!DOCTYPE text [
 <!ENTITY neuf "<choice><abbr type='abreviation'>&#8329;</abbr><expan>con</expan></choice>" >
 <!ENTITY neuf_us "<choice><abbr type='abreviation'>&#8329;</abbr><expan>us</expan></choice>" >
