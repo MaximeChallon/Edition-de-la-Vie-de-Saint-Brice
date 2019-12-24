@@ -6,6 +6,8 @@
 <!DOCTYPE text [
 <!ENTITY neuf "<choice><abbr type='abreviation'>&#8329;</abbr><expan>con</expan></choice>" >
 <!ENTITY o_tilde "<choice><abbr type='abreviation'>&#333;</abbr><expan>on</expan></choice>" >
+<!ENTITY o_tilde_io "<choice><abbr type='abreviation'>&#333;</abbr><expan>io</expan></choice>" >
+
 <!ENTITY i_tilde "<choice><abbr type='abreviation'>&#299;</abbr><expan>in</expan></choice>" >
 <!ENTITY a_tilde "<choice><abbr type='abreviation'>&#227;</abbr><expan>an</expan></choice>" >
 <!ENTITY e_tilde_en "<choice><abbr type='abreviation'>&#275;</abbr><expan>en</expan></choice>" >
@@ -19,7 +21,7 @@
 <!ENTITY p_barre_per "<choice><abbr type='abreviation'>&#42833;</abbr><expan>per</expan></choice>" >
 <!ENTITY p_barre_par "<choice><abbr type='abreviation'>&#42833;</abbr><expan>par</expan></choice>" >
 <!ENTITY r_tilde_ostr "<choice><abbr type='abreviation'>&#7769;</abbr><expan>ostr</expan></choice>" >
-
+<!ENTITY l_tilde_ol "<choice><abbr type='abreviation'>&#314;</abbr><expan>ol</expan></choice>" >
 <!ENTITY s_long "<choice><abbr type='graphie'>&#383;</abbr><expan>s</expan></choice>" >
 
 <!ENTITY u_to_v "<choice><orig>u</orig><reg type='ramiste'>v</reg></choice>" >
@@ -405,7 +407,7 @@
                   <l n="10" rhyme="enir"><lb facs="#l25"/><hi rend="majuscule">n</hi>e la quel &u_to_v;oie il pui&s_long;t tenir</l>
                </lg>
                <p>
-                  <hi rend="moyenne_lettrine" facs="#moyenne_lettrine">
+                  <hi rend="moyenne_lettrine" facs="#moyenne_lettrine1">
                      <hi rend="lettre_attente">u</hi>
                   </hi>
                   <lb facs="#l26"/><hi rend="majuscule">n</hi> &i_to_j;or a&u_to_v;int &q_tilde; uns hom e&s_long;toit
@@ -423,6 +425,53 @@
                   <lb facs="#l38"/>fu gueres einz ala tant qer&a_tilde;t le &s_long;e&i_tilde;t ho-
                   <lb facs="#l39"/>-me qil lot tro&u_to_v;e &et_tironien; &s_long;i fu toz gueriz de &s_long;en-
                   <lb facs="#l40"/>fermete <hi rend="majuscule">e</hi>t &s_long;e&i_tilde;t &m_to_M;artins &u_to_v;int a &s_long;e&i_tilde;t
+                  <pb facs="#f175"/>
+                  <cb/>
+                  <lb facs="#l41"/>&b_to_B;rice qi diacres e&s_long;toit &et_tironien; la parla en tel
+                  <lb facs="#l42"/>maniere <hi rend="majuscule">b</hi>rices dont ne te &s_long;emble &i_to_j;e
+                  <lb facs="#l43"/>borgnes &et_tironien; de&s_long;uez <hi rend="majuscule">q</hi>ant il loi &s_long;i en ot
+                  <lb facs="#l44"/>gr&a_tilde;t honte &s_long;i &neuf;menca a &s_long;on pooir a
+                  <lb facs="#l45"/>denoier ce&s_long;te parole con&q_tilde;s ne la&u_to_v;oit
+                  <lb facs="#l46"/>dite <hi rend="majuscule">d</hi>ont li di&s_long;t &s_long;e&i_tilde;t &m_to_M;artins mes
+                  <lb facs="#l47"/>oreilles e&s_long;toi&e_tilde_en;t &p_tilde;s de ta bouche dem&e_tilde_en;-
+                  <lb facs="#l48"/>-tieres &q_tilde; tu le deis <hi rend="majuscule">e</hi>t &b_pointe;n &s_long;aches qa-
+                  <lb facs="#l49"/>-peines ma otroie n&r_tilde_ostr;e &s_long;ires &q_tilde; tu aies
+                  <lb facs="#l50"/>a&p_tilde;s moi le&u_to_v;e&s_long;chie <hi rend="majuscule">m</hi>es neporq&a_tilde;t tu
+                  <lb facs="#l51"/>lauras &s_long;i en &s_long;offeras aincois molt
+                  <lb facs="#l52"/>da&u_tilde;sitez &et_tironien; molt de &p_barre_per;&s_long;ecut&o_tilde_io;ns <hi rend="majuscule">q</hi>ant
+                  <lb facs="#l53"/>&s_long;e&i_tilde;t &b_to_B;rices loi &s_long;i len &neuf;m&e_tilde_en;ca a degaber
+                  <lb facs="#l54"/>&et_tironien; a dire <hi rend="majuscule">d</hi>&o_tilde;t ne di&s_long;oie &i_to_j;e &b_pointe;n &q_tilde; ci&s_long;t di-
+                  <lb facs="#l55"/>-&s_long;oit &s_long;u&u_to_v;&e_tilde_en;tes foiz de&s_long;uces paroles <hi rend="majuscule">e</hi>n
+                  <lb facs="#l56"/>tel maniere les denia il &s_long;o&u_to_v;&e_tilde_en;t le &s_long;e&i_tilde;t
+                  <lb facs="#l57"/>home par paroles <hi rend="majuscule">t</hi>&a_tilde;t qil fu morz
+                  <lb facs="#l58"/>&s_long;i com &u_to_v;os a&u_to_v;es oi &neuf;ter arrieres
+               </p>
+               <p>
+                  <hi rend="moyenne_lettrine" facs="moyenne_lettrine2">
+                     <hi rend="lettre_attente">q</hi>
+                  </hi>
+                  <lb facs="#l59"/><hi rend="majuscule">u</hi>ant la citez fu &s_long;anz pa&s_long;-
+                  <lb facs="#l60"/>-tor qi la go&u_tilde;na&s_long;t <hi rend="majuscule">l</hi>i citoien
+                  <lb facs="#l61"/>e&s_long;lur&e_tilde_en;t &s_long;e&i_tilde;t &b_to_B;rice a arce&u_to_v;e&s_long;&q_tilde;
+                  <lb facs="#l62"/>car il e&s_long;toit de &s_long;e&i_tilde;te &u_to_v;ie encore fu&s_long;t il
+                  <lb facs="#l63"/>orgueilleus <hi rend="majuscule">a</hi>u tr&e_tilde_en;tie&s_long;me an a&p_tilde;s ce
+                  <lb facs="#l64"/>qil fu a ordenez a arce&u_to_v;e&s_long;qe &et_tironien; mis en
+                  <lb facs="#l65"/>la &s_long;eignorie li &u_to_v;int uns gr&a_tilde;z anuiz
+                  <lb facs="#l66"/>&et_tironien; uns gr&a_tilde;z bla&s_long;mes car une feme qi
+                  <lb facs="#l67"/>les dras la&u_to_v;oit de la ma&s_long;mee fu ence-
+                  <lb facs="#l68"/>-inte &et_tironien; &s_long;i acocha &et_tironien; ot un enf&a_tilde;t &et_tironien; &s_long;i&s_long;e me-
+                  <lb facs="#l69"/>-intenoit cele en gui&s_long;e religieu&s_long;e par
+                  <lb facs="#l70"/>le &s_long;embl&a_tilde;t de &s_long;es &u_to_v;e&s_long;tem&e_tilde_en;z <hi rend="majuscule">e</hi>t qant
+                  <lb facs="#l71"/>cil de la cite &s_long;or&e_tilde_en;t &q_tilde; cele e&s_long;toit acochie
+                  <lb facs="#l72"/>denf&a_tilde;t il fur&e_tilde_en;t m&l_tilde_ol;t ro&i_to_j;e &et_tironien; molt corre-
+                  <lb facs="#l73"/>-ciez parce qil loz &s_long;embloit &q_tilde; ele e&s_long;to-
+                  <lb facs="#l74"/>-it de molt bone &u_to_v;ie <hi rend="majuscule">s</hi>i mi&s_long;tr&e_tilde_en;t tot
+                  <lb facs="l75"/>le bla&s_long;me &et_tironien; tot la fere &s_long;eur &s_long;e&i_tilde;t &b_to_B;rice
+                  <lb facs="#l76"/>&et_tironien; la &u_to_v;oudr&e_tilde_en;t tuit en&s_long;emble corre &s_long;eure
+                  <lb facs="#l77"/>por lapider &et_tironien; por ocirre &et_tironien; &s_long;i di&s_long;oi&e_tilde_en;t <hi rend="majuscule">l</hi>a
+                  <lb facs="#l78"/>pitie del &s_long;e&i_tilde;t home qi clers tu fus a fer
+                  <lb facs="#l79"/>a celer molt longuem&e_tilde_en;t tes males oe-
+                  <lb facs="#l80"/>&u_to_v;res &et_tironien; ta gr&a_tilde;t luxure <hi rend="majuscule">e</hi>t dex ne nos
                </p>
             </div>
          </div>
