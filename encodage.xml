@@ -421,6 +421,27 @@
                   </residence>
                   <note source="https://fr.wikipedia.org/wiki/Martin_de_Tours">Saint Martin de Tours, aussi nommé Martin le Miséricordieux, ou encore saint Martin des Champs (qui a donné lieu à appellation de différents édifices religieux), né dans l'Empire romain, plus précisément à Savaria, dans la province romaine de Pannonie (actuelle Hongrie), en 316, et mort à Candes, en Gaule, le 8 novembre 397, est l'un des principaux saints de la chrétienté et le plus célèbre des évêques de Tours avec Grégoire de Tours. Sa vie est essentiellement connue par la Vita sancti Martini (Vie de saint Martin) écrite en 396-397 par Sulpice-Sévère, qui fut l'un de ses disciples. La dévotion à Martin se manifeste à travers une relique, le manteau ou la chape de Martin — qu'il partage avec un déshérité transi de froid. Dès le Ve siècle, le culte martinien donne lieu à un cycle hagiographique, c'est-à-dire à une série d'images successives relatant les faits et gestes du saint. Il introduit le monachisme en Gaule moyenne, le monachisme martinien s'ancrant autour de la Loire, tandis que les monachismes lérinien et cassianite se développent dans la Gaule méridionale. Son culte se répand partout en Europe occidentale, depuis l'Italie, puis surtout en Gaule où il devient le patron des dynasties mérovingiennes et carolingiennes.  Les très nombreuses églises portant un patronage martinien à travers toute l'Europe sont fondées à des dates très variées. Saint Martin compte parmi les patrons secondaires de la France. Il est le patron notamment de Tours, Buenos Aires, Rivière-au-Renard, Vevey, de la cathédrale de Mayence, de celle d'Utrecht, de celle de Lucques et de la basilique San Martino. Autrefois fêté le 4 juillet (consécration épiscopale en 371), saint Martin est aujourd'hui célébré le 11 novembre (funérailles en 397). En Allemagne, il est fêté lors du jour de la Saint-Martin, également appelée Saint Martin le bouillant ou Saint Martin d'été. </note>
                </person>
+               <person xml:id="enfant" sex="F">
+                  <birth>
+                     <date when="0430"/>
+                     <placeName>
+                        <country>Gaule</country>
+                        <settlement type="city" ref="#tours">Tours</settlement>
+                     </placeName>
+                  </birth>
+               </person>
+               <person xml:id="religieuse" sex="F">
+                  <occupation>religieuse de saint Brice</occupation>
+               </person>
+               <person xml:id="citoyens">
+                  <residence ref="#tours"/>
+                  <note>nommés citoyens, peuple, assemblée dans le texte</note>
+               </person>
+               <!-- Lien de parentée entre saint Brice, la religieuse et l'enfant -->
+               <listRelation>
+                  <relation name="epoux" mutual="#saint_brice #religieuse"/>
+                  <relation name="enfant" active="#enfant" passive="#saint_brice #religieuse"/>
+               </listRelation>
             </listPerson>
          </particDesc>
       </profileDesc>
@@ -634,19 +655,19 @@
                      <hi rend="lettre_attente">q</hi>
                   </hi>
                   <lb facs="#l59"/><choice><orig><hi rend="majuscule">U</hi></orig><reg>u</reg></choice>ant la <placeName ref="#tours">citez</placeName> fu&espace;&s_long;anz pa&s_long;-
-                  <lb facs="#l60"/>-tor qi la go&u_tilde;na&s_long;t <choice><orig><hi rend="majuscule">L</hi></orig><reg>l</reg></choice>i&espace;citoien
+                  <lb facs="#l60"/>-tor qi la go&u_tilde;na&s_long;t <choice><orig><hi rend="majuscule">L</hi></orig><reg>l</reg></choice>i&espace;<persName ref="#citoyens">citoien</persName>
                   <lb facs="#l61"/>e&s_long;lur&e_tilde_en;t <persName ref="#saint_brice">&s_long;e&i_tilde;t&espace;&b_to_B;rice</persName> a&espace;arce&u_to_v;e&s_long;&q_tilde;
                   <lb facs="#l62"/>car il e&s_long;toit de &s_long;e&i_tilde;te&espace;&u_to_v;ie encore&espace;fu&s_long;t il
                   <lb facs="#l63"/>orgueilleus&espace;<choice><orig><hi rend="majuscule">A</hi></orig><reg>a</reg></choice>u tr&e_tilde_en;tie&s_long;me an a&p_tilde;s ce
                   <lb facs="#l64"/>q&apostrophe;il fu a&espace;ordenez a&espace;arce&u_to_v;e&s_long;qe &et_tironien;&espace;mis en
                   <lb facs="#l65"/>la &s_long;eignorie li &u_to_v;int uns gr&a_tilde;z anuiz
-                  <lb facs="#l66"/>&et_tironien; uns gr&a_tilde;z bla&s_long;mes car une feme&espace;qi
+                  <lb facs="#l66"/>&et_tironien; uns gr&a_tilde;z bla&s_long;mes car une <persName ref="#religieuse">feme</persName>&espace;qi
                   <lb facs="#l67"/>les dras l&apostrophe;a&u_to_v;oit de la ma&s_long;mee fu ence-
-                  <lb facs="#l68"/>-inte &et_tironien;&espace;&s_long;i acocha &et_tironien;&espace;ot un enf&a_tilde;t &et_tironien;&espace;&s_long;i&s_long;e me-
+                  <lb facs="#l68"/>-inte &et_tironien;&espace;&s_long;i acocha &et_tironien;&espace;ot un <persName ref="#enfant">enf&a_tilde;t</persName> &et_tironien;&espace;&s_long;i&s_long;e me-
                   <lb facs="#l69"/>-intenoit cele en gui&s_long;e religieu&s_long;e par
                   <lb facs="#l70"/>le &s_long;embl&a_tilde;t de &s_long;es &u_to_v;e&s_long;tem&e_tilde_en;z <choice><orig><hi rend="majuscule">E</hi></orig><reg>e</reg></choice>t qant
                   <lb facs="#l71"/>cil de&espace;la <placeName ref="#tours">cite</placeName> &s_long;or&e_tilde_en;t &q_tilde; cele e&s_long;toit acochie
-                  <lb facs="#l72"/>d&apostrophe;enf&a_tilde;t il fur&e_tilde_en;t m&l_tilde_ol;t ro&i_to_j;e &et_tironien; molt corre-
+                  <lb facs="#l72"/>d&apostrophe;<persName ref="#enfant">enf&a_tilde;t</persName> il fur&e_tilde_en;t m&l_tilde_ol;t ro&i_to_j;e &et_tironien; molt corre-
                   <lb facs="#l73"/>-ciez parce qil loz &s_long;embloit &q_tilde; ele e&s_long;to-
                   <lb facs="#l74"/>-it de molt bone &u_to_v;ie <choice><orig><hi rend="majuscule">S</hi></orig><reg>s</reg></choice>i mi&s_long;tr&e_tilde_en;t tot
                   <lb facs="l75"/>le bla&s_long;me &et_tironien;&espace;tot la fere <persName ref="#saint_brice">&s_long;eur &s_long;e&i_tilde;t &b_to_B;rice</persName>
@@ -663,10 +684,10 @@
                   <lb facs="#l85"/><choice><orig><hi rend="majuscule">M</hi></orig><reg>m</reg></choice>es c&o_tilde_om; pl&neuf_us; &s_long;en e&s_long;condi&s_long;oit &et_tironien; cil me&i_tilde;s
                   <lb facs="#l86"/>l&apostrophe;en&espace;creoi&e_tilde_en;t <choice><orig><hi rend="majuscule">T</hi></orig><reg>t</reg></choice>&a_tilde;t &q_tilde; <persName ref="#saint_brice">&s_long;e&i_tilde;t &b_to_B;rices</persName> di&s_long;t q&a_tilde;t
                   <lb facs="#l87"/>il &u_to_v;it qil ni porroit a&espace;eus durer en nu-
-                  <lb facs="#l88"/>-le maniere &q_tilde;&espace;l&apostrophe;en li aport&s_long;t l&apostrophe;enfant
+                  <lb facs="#l88"/>-le maniere &q_tilde;&espace;l&apostrophe;en li aport&s_long;t l&apostrophe;<persName ref="#enfant">enfant</persName>
                   <lb facs="#l89"/>de&u_to_v;&a_tilde;t lui <choice><orig><hi rend="majuscule">L</hi></orig><reg>l</reg></choice>i enfez fu aportez qi na-
                   <lb facs="l90"/>-&u_to_v;oit &q_tilde; xxx &i_to_j;orz <choice><orig><hi rend="majuscule">Q</hi></orig><reg>q</reg></choice>ant il fu nus de-
-                  <lb facs="#l91"/>-&u_to_v;&a_tilde;t le pueple qi la e&s_long;toit a&s_long;&s_long;emblez &et_tironien;
+                  <lb facs="#l91"/>-&u_to_v;&a_tilde;t le <persName ref="#citoyens">pueple</persName> qi la e&s_long;toit <persName ref="#citoyens">a&s_long;&s_long;emblez</persName> &et_tironien;
                   <lb facs="#l92"/>de&u_to_v;&a_tilde;t <persName ref="#saint_brice">&s_long;e&i_tilde;t &b_to_B;rice</persName> <persName ref="#saint_brice"><choice><orig><hi rend="majuscule">S</hi></orig><reg>s</reg></choice>e&i_tilde;z &b_to_B;rices</persName> &p_barre_par;la &et_tironien;&espace;&s_long;i&espace;di&s_long;t
                </p>
             </div>
