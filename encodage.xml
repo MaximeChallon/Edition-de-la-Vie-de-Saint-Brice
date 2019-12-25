@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- Schéma RNG -->
-<?xml-model href="out/odd.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!--<?xml-model href="out/odd.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>-->
+
+<!-- TEI all à supprimer -->
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
 
 <!-- DTD pour les déclarations d'entités -->
 <!DOCTYPE text [
@@ -10,7 +15,6 @@
 <!ENTITY o_tilde "<choice><abbr type='abreviation'>&#333;</abbr><expan>on</expan></choice>" >
 <!ENTITY o_tilde_om "<choice><abbr type='abreviation'>&#333;</abbr><expan>om</expan></choice>" >
 <!ENTITY o_tilde_io "<choice><abbr type='abreviation'>&#333;</abbr><expan>io</expan></choice>" >
-
 <!ENTITY i_tilde "<choice><abbr type='abreviation'>&#299;</abbr><expan>in</expan></choice>" >
 <!ENTITY a_tilde "<choice><abbr type='abreviation'>&#227;</abbr><expan>an</expan></choice>" >
 <!ENTITY e_tilde_en "<choice><abbr type='abreviation'>&#275;</abbr><expan>en</expan></choice>" >
@@ -49,7 +53,23 @@
          </titleStmt>
          <publicationStmt><p>Texte encodé pour l'évaluation de XML/TEI du master 2 TNAH de l'Ecole nationale des Chartes</p>
          </publicationStmt>
+         <!-- Ajout des notes utilisées dans l'encodage: elles seront appelées par la balise <ref> -->
+         <notesStmt>
+            <note n="1" xml:id="bdl_rubrique_note" target="#bdl_rubrique">Présence d'un bout de ligne simple sous la forme d'un trait à deux jamabages, de la même couleur que la rubrique.</note>
+            <note n="2" xml:id="bdl1_note" target="#bdl1">Bout de ligne sous la forme d'un trait à deux jambages de même couleur que le corps du texte, et des lettres "a" et "r" de la même couleur que la rubrique.</note>
+            <note n="3" xml:id="bdl2_note" target="#bdl2">Bout de ligne de même couleur que la rubrique sous la forme des lettres "a" et "r", suivies de trois points, et de ces mêmes lettres "a" et "r".</note>
+            <note n="4" xml:id="bdl3_note" target="#bdl3">Bout de ligne de même couleur que la rubrique sous la forme des lettres "a" et "r" entrecoupées de deux jambages.</note>
+            <note n="5" xml:id="bdl4_note" target="#bdl4">Bout de ligne de même couleur que la rubrique sous la forme des lettres "a" et "r" suivies de trois points, puis des lettres "a" et "r" entrecoupées de deux jambages.</note>
+            <note n="6" xml:id="bdl5_note" target="#bdl5">Bout de ligne de même couleur que la rubrique sous la forme des lettres "a" et "r" suivies de quatre points, puis des lettres "a" et "r" entrecoupées de quatre jambages.</note>
+            <note n="7" xml:id="bdl6_note" target="#bdl6">Bout de ligne de même couleur que la rubrique sous la forme des lettres "a" et "r" suivies de quatre points, puis des lettres "a" et "r" entrecoupées d'un jambage. Suivent trois autres points puis les lettres "a" et "r" entrecoupées de quatre jambages.</note>
+            <note n="8" xml:id="bdl7_note" target="#bdl7">Bout de ligne de même couleur que la rubrique sous la forme des lettres "a" et "r" entrecoupées d'un jambage, suivies de trois points, puis des lettres "a" et "r" entrecoupées d'un jambage.</note>
+            <note n="9" xml:id="bdl8_note" target="#bdl8">Bout de ligne de même couleur que la rubrique sous la forme des lettres "a" et "r" entrecoupées d'un jambage, suivies de trois points, puis des lettres "a" et "r" entrecoupées de deux jambages.</note>
+            <note n="10" xml:id="bdl9_note" target="#bdl9">Bout de ligne de même couleur que la rubrique sous la forme des lettres "a" et "r" entrecoupées d'un jambage, suivies de trois points, puis des lettres "a" et "r".</note>
+            <note n="11" xml:id="bdl10_note" target="#bdl10">Bout de ligne de même couleur que la rubrique sous la forme des lettres "a" et "r" entrecoupées d'un jambage, suivies de trois points, puis des lettres "a" et "r" entrecoupées d'un jambage, suivies de trois points, puis des lettres "a" et "r".</note>
+            <note n="12" xml:id="bdl11_note" target="#bdl11">Bout de ligne de même couleur que la rubrique sous la forme des lettres "a" et "r", suivies de trois points, puis des lettres "a" et "r" entrecoupées d'un jambage.</note>
+         </notesStmt>
          <sourceDesc>
+            <!-- description codicologique -->
             <msDesc>
                <msIdentifier>
                   <country>France</country>
@@ -400,14 +420,14 @@
          </particDesc>
       </profileDesc>
       <revisionDesc>
-         <change when="2019-12-20">Création du teiHeader et du msDesc</change>
+         <change when="2019-12-20">Création de l'encodage par Maxime Challon.</change>
       </revisionDesc>
    </teiHeader>
    <facsimile>
       <surface xml:id="f169b">
          <graphic url='img/f174.jpg' width='8682.33334px' height='6181.33334px' />
-         <zone xml:id="reclame1" ulx="5097" uly="3413" lrx="5621" lry="3519" />
-         <zone xml:id="reclame2" ulx="4494" uly="3486" lrx="5264" lry="3603" />
+         <zone xml:id="rubrique1" ulx="5097" uly="3413" lrx="5621" lry="3519" />
+         <zone xml:id="rubrique2" ulx="4494" uly="3486" lrx="5264" lry="3603" />
          <zone xml:id="miniature" ulx="4491" uly="3636" lrx="5604" lry="4539" />
          <zone xml:id="grande_lettrine" ulx="6034" uly="813" lrx="6477" lry="1256" />
          <zone xml:id="l1" ulx="6494" uly="789" lrx="7221" lry="916" />
@@ -514,14 +534,16 @@
       <body>
          <div type="book" facs="https://gallica.bnf.fr/ark:/12148/btv1b107209247">
             <div type="section" n="39">
-               <pb facs="#f169b"/>
-               <cb/>
-               <fw type="catch">
-                  <lb facs="#reclame1"/>Ci &neuf;mence la &u_to_v;ie
-                  <lb facs="#reclame2"/>de <persName ref="#saint_brice">m&o_tilde;&s_long;eigneur &s_long;eint &b_to_B;rice</persName>
-               </fw>
+               <pb n="169r" facs="#f169b"/>
+               <cb n="169a"/>
+               <p>
+               <hi rend="rubrique">
+                  <lb facs="#rubrique1"/><hi rend="majuscule">c</hi>i &neuf;mence la &u_to_v;ie
+                  <lb facs="#rubrique2"/>de <persName ref="#saint_brice">m&o_tilde;&s_long;eigneur &s_long;eint &b_to_B;rice</persName><ref type="note" n="1" xml:id="bdl_rubrique" target="#bdl_rubrique_note"/>
+               </hi>
+               </p>
                <figure type="miniature" facs="#miniature"/>
-               <cb/>
+               <cb n="169b"/>
                <p>
                   <hi rend="grande_lettrine" facs="#grande_lettrine">
                      <hi rend="lettre_attente">q</hi>
@@ -530,59 +552,59 @@
                   <lb facs="#l2"/>&i_to_j;ou&u_to_v;enciaus il guetoit
                   <lb facs="#l3"/>molt <persName ref="#saint_martin">&s_long;e&i_tilde;t &m_to_M;artin</persName> <hi rend="majuscule">p</hi>or
                   <lb facs="#l4"/>ce qil le &u_to_v;eoit &u_to_v;iell home
-                  <lb facs="#l5"/>&et_tironien; de gr&a_tilde;t ab&s_long;tin&e_tilde_en;ce &et_tironien; de
+                  <lb facs="#l5"/>&et_tironien; de gr&a_tilde;t ab&s_long;tin&e_tilde_en;ce &et_tironien;<reg type="espace"> </reg>de
                   <lb facs="#l6"/>&s_long;einte &u_to_v;ie <hi rend="majuscule">e</hi>t li &i_to_j;ou&u_to_v;&e_tilde_en;ciaus avoit le cuer
-                  <lb facs="#l7"/>&i_to_j;oeune &s_long;i ne li ple&s_long;i&e_tilde_en;t mie les oe&u_to_v;res
+                  <lb facs="#l7"/>&i_to_j;oenne &s_long;i ne li ple&s_long;i&e_tilde_en;t mie les oe&u_to_v;res
                   <lb facs="#l8"/>del &s_long;e&i_tilde;t home &q_pointe;i e&s_long;toit arce&u_to_v;e&s_long;qes <hi rend="majuscule">c</hi>ar
-                  <lb facs="#l9"/>il &u_to_v;ol&s_long;i&s_long;t &b_pointe;n qil &s_long;e m&e_tilde_ein;teni&s_long;t de dras &et_tironien; da-
-                  <lb facs="#l10"/>utres cho&s_long;es plus belem&e_tilde_en;t &s_long;i com li pl&neuf_us;
-                  <lb facs="#l11"/>eu &s_long;ervi&e_tilde_en;t encore <hi rend="majuscule">q</hi>e &s_long;il &u_to_v;eoi&e_tilde_en;t les e&u_to_v;e&s_long;-
+                  <lb facs="#l9"/>il &u_to_v;ol&s_long;i&s_long;t &b_pointe;n qil &s_long;e<reg type="espace"> </reg>m&e_tilde_ein;teni&s_long;t de dras &et_tironien; da-
+                  <lb facs="#l10"/>utres cho&s_long;es plus belem&e_tilde_en;t &s_long;i com<reg type="espace"> </reg>li pl&neuf_us;
+                  <lb facs="#l11"/>eu &s_long;ervi&e_tilde_en;t encore <hi rend="majuscule">q</hi>e &s_long;il &u_to_v;eoi&e_tilde_en;t<reg type="espace"> </reg>les e&u_to_v;e&s_long;-
                   <lb facs="#l12"/>-qes &et_tironien; les autres &p_barre_per;&s_long;ones deduire poure-
-                  <lb facs="#l13"/>-m&e_tilde_en;t &et_tironien; en &u_to_v;ielz abiz &et_tironien; en gr&a_tilde;z ab&s_long;tin&e_tilde_en;ces
-                  <lb facs="#l14"/> por la mor n&r_tilde_ostr;e &s_long;eig&u_to_n;or <hi rend="majuscule">i</hi>l les enbla&s_long;mero-
-                  <lb facs="#l15"/>-ient &et_tironien;diroi&e_tilde_en;t &q_tilde; ce seroit ypocri&s_long;ie
+                  <lb facs="#l13"/>-m&e_tilde_en;t &et_tironien;<reg type="espace"> </reg>en &u_to_v;ielz abiz &et_tironien;<reg type="espace"> </reg>en gr&a_tilde;z ab&s_long;tin&e_tilde_en;ces
+                  <lb facs="#l14"/> por lamor n&r_tilde_ostr;e &s_long;eig&u_to_n;or <hi rend="majuscule">i</hi>l les enbla&s_long;mero-
+                  <lb facs="#l15"/>-ient &et_tironien;diroi&e_tilde_en;t &q_tilde; ce seroit ypocri&s_long;ie<ref type="note" n="2" xml:id="bdl1" target="#bdl1_note"/>
                </p>
                <lg type="octosyllabe">
                   <l n="1" rhyme="re">
                      <lb facs="#l16"/>
                      <hi rend="petite_lettrine" facs="petite_lettrine">
                         <hi rend="lettre_attente">p</hi>
-                     </hi><hi rend="majuscule">o</hi>rce ne &s_long;et le&u_to_n; mes &q_tilde; fere</l>
-                  <l n="2" rhyme="re"><lb facs="#l17"/><hi rend="majuscule">n</hi>us ne&s_long;e&s_long;et au&q_tilde;l chief trere</l>
-                  <l n="3" rhyme="ien"><lb facs="#l18"/><hi rend="majuscule">b</hi>enigus e&s_long;t qi &u_to_v;eu&s_long;t fere &b_pointe;n</l>
+                     </hi><hi rend="majuscule">o</hi>r<reg type="espace"> </reg>ce ne &s_long;et le&u_to_n; mes &q_tilde; fere<ref type="note" n="3" xml:id="bdl2" target="#bdl2_note"/></l>
+                  <l n="2" rhyme="re"><lb facs="#l17"/><hi rend="majuscule">n</hi>us ne&s_long;e&s_long;et au&q_tilde;l chief trere<ref type="note" n="4" xml:id="bdl3" target="#bdl3_note"/></l>
+                  <l n="3" rhyme="ien"><lb facs="#l18"/><hi rend="majuscule">b</hi>enigus e&s_long;t qi &u_to_v;eu&s_long;t fere &b_pointe;n<ref type="note" n="5" xml:id="bdl4" target="#bdl4_note"/></l>
                   <l n="4" rhyme="ien"><lb facs="#l19"/><hi rend="majuscule">n</hi>e nus nel tient 
                    <choice>
                      <orig>acre&s_long;tien</orig>
                      <reg type="espace">a &c_to_C;re&s_long;tien</reg>
-                  </choice></l>
-                  <l n="5" rhyme="ent"><lb facs="#l20"/><hi rend="majuscule">q</hi>i le mal fet a&p_barre_par;tem&e_tilde_en;t</l>
-                  <l n="6" rhyme="ent"><lb facs="#l21"/><hi rend="majuscule">q</hi>i &s_long;e meintient moiennem&e_tilde_en;t</l>
-                  <l n="7" rhyme="ars"><lb facs="#l22"/><hi rend="majuscule">l</hi>on li met &s_long;us qil es e&s_long;chars</l>
-                  <l n="8" rhyme="ars"><lb facs="#l23"/><hi rend="majuscule">s</hi>i e&s_long;t li maus par tot e&s_long;pars</l>
-                  <l n="9" rhyme="enir"><lb facs="#l24"/><hi rend="majuscule">q</hi>e nus ne &s_long;et &q_tilde; de&u_to_v;e&u_to_n;ir</l>
-                  <l n="10" rhyme="enir"><lb facs="#l25"/><hi rend="majuscule">n</hi>e la quel &u_to_v;oie il pui&s_long;t tenir</l>
+                  </choice><ref type="note" n="6" xml:id="bdl5" target="#bdl5_note"/></l>
+                  <l n="5" rhyme="ent"><lb facs="#l20"/><hi rend="majuscule">q</hi>i le mal fet a&p_barre_par;tem&e_tilde_en;t<ref type="note" n="7" xml:id="bdl6" target="#bdl6_note"/></l>
+                  <l n="6" rhyme="ent"><lb facs="#l21"/><hi rend="majuscule">q</hi>i<reg type="espace"> </reg>&s_long;e<reg type="espace"> </reg>meintient moiennem&e_tilde_en;t <ref type="note" n="8" xml:id="bdl7" target="#bdl7_note"/></l>
+                  <l n="7" rhyme="ars"><lb facs="#l22"/><hi rend="majuscule">l</hi>on<reg type="espace"> </reg>li<reg type="espace"> </reg>met &s_long;us qil es e&s_long;chars<ref type="note" n="9" xml:id="bdl8" target="#bdl8_note"/></l>
+                  <l n="8" rhyme="ars"><lb facs="#l23"/><hi rend="majuscule">s</hi>i e&s_long;t li maus par tot e&s_long;pars<ref type="note" n="10" xml:id="bdl9" target="#bdl9_note"/></l>
+                  <l n="9" rhyme="enir"><lb facs="#l24"/><hi rend="majuscule">q</hi>e<reg type="espace"> </reg>nus ne &s_long;et &q_tilde;<reg type="espace"> </reg>de&u_to_v;e&u_to_n;ir<ref type="note" n="11" xml:id="bdl10" target="#bdl10_note"/></l>
+                  <l n="10" rhyme="enir"><lb facs="#l25"/><hi rend="majuscule">n</hi>e la quel &u_to_v;oie il pui&s_long;t tenir<ref type="note" n="12" xml:id="bdl11" target="#bdl11_note"/></l>
                </lg>
                <p>
                   <hi rend="moyenne_lettrine" facs="#moyenne_lettrine1">
                      <hi rend="lettre_attente">u</hi>
                   </hi>
-                  <lb facs="#l26"/><hi rend="majuscule">n</hi> &i_to_j;or a&u_to_v;int &q_tilde; uns hom e&s_long;toit
-                  <lb facs="#l27"/>entrepris de gr&a_tilde;t enfermere &s_long;i a-
+                  <lb facs="#l26"/><hi rend="majuscule">n</hi><reg type="espace"> </reg>&i_to_j;or a&u_to_v;int &q_tilde; uns hom e&s_long;toit
+                  <lb facs="#l27"/>entrepris de gr&a_tilde;t enfermere &s_long;i<reg type="espace"> </reg>a-
                   <lb facs="#l28"/>-loit querant <persName ref="#saint_martin">&s_long;e&i_tilde;t &m_to_M;artin</persName> por a-
-                  <lb facs="#l29"/>-&u_to_v;oir &s_long;ante &et_tironien; aide car li <persName ref="#saint_martin">&s_long;e&i_tilde;t home</persName> &i_to_j;u&u_to_v;oit
-                  <lb facs="30"/>encore a donc <persName ref="#saint_brice"><hi rend="majuscule">s</hi>ei&i_tilde;z &b_to_B;rices</persName> e&s_long;toit lors di-
-                  <lb facs="#l31"/>-acres &et_tironien; &s_long;i e&s_long;toit en la place ou cil deman-
+                  <lb facs="#l29"/>-&u_to_v;oir &s_long;ante &et_tironien;<reg type="espace"> </reg>aide car li <persName ref="#saint_martin">&s_long;e&i_tilde;t home</persName> &i_to_j;u&u_to_v;oit
+                  <lb facs="30"/>encore adonc <persName ref="#saint_brice"><hi rend="majuscule">s</hi>ei&i_tilde;z &b_to_B;rices</persName> e&s_long;toit lors di-
+                  <lb facs="#l31"/>-acres &et_tironien; &s_long;i e&s_long;toit en<reg type="espace"> </reg>la place ou<reg type="espace"> </reg>cil deman-
                   <lb facs="#l32"/>-doit le <persName ref="#saint_martin">&s_long;eint e&u_to_v;e&s_long;qe</persName> <hi rend="majuscule">q</hi>ant <persName ref="#saint_brice">&s_long;e&i_tilde;t &b_to_B;rice</persName> loi
-                  <lb facs="#l33"/>il li di&s_long;t <hi rend="majuscule">s</hi>e tu le &u_to_v;euz c&o_tilde;noi&s_long;tre regarde
+                  <lb facs="#l33"/>il li di&s_long;t <hi rend="majuscule">s</hi>e<reg type="espace"> </reg>tu<reg type="espace"> </reg>le<reg type="espace"> </reg>&u_to_v;euz c&o_tilde;noi&s_long;tre regarde
                   <lb facs="#l34"/>le de<reg type="espace"> </reg>loing car il e&s_long;t de&s_long;uez &s_long;i le porras &b_pointe;n
-                  <lb facs="#l35"/>re&q_tilde;noi&s_long;tre car il e&s_long;t be&s_long;oignes &et_tironien; au&s_long;int
-                  <lb facs="#l36"/>regarde il &u_to_v;ers le ciel com &s_long;il fu&s_long;t de&s_long;uez
-                  <lb facs="#l37"/><hi rend="majuscule">q</hi>uant li po&u_to_v;res hom entendi ce il ne l&e_tilde_en;
-                  <lb facs="#l38"/>fu gueres einz ala tant qer&a_tilde;t le <persName ref="#saint_martin">&s_long;e&i_tilde;t ho-
+                  <lb facs="#l35"/>re&q_tilde;noi&s_long;tre car il e&s_long;t be&s_long;oignes &et_tironien;<reg type="espace"> </reg>au&s_long;int
+                  <lb facs="#l36"/>regarde il &u_to_v;ers le ciel com<reg type="espace"> </reg>&s_long;il fu&s_long;t de&s_long;uez
+                  <lb facs="#l37"/><hi rend="majuscule">q</hi>uant li po&u_to_v;res hom entendi ce il ne<reg type="espace"> </reg>l&e_tilde_en;
+                  <lb facs="#l38"/>fu gueres einz<reg type="espace"> </reg>ala tant qer&a_tilde;t le <persName ref="#saint_martin">&s_long;e&i_tilde;t ho-
                   <lb facs="#l39"/>-me</persName> qil lot tro&u_to_v;e &et_tironien; &s_long;i fu toz gueriz de &s_long;en-
-                  <lb facs="#l40"/>fermete <hi rend="majuscule">e</hi>t <persName ref="#saint_martin">&s_long;e&i_tilde;t &m_to_M;artins</persName> &u_to_v;int a <persName ref="#saint_brice">&s_long;e&i_tilde;t
-                  <pb facs="#f169c"/>
-                  <cb/>
+                  <lb facs="#l40"/>fermete <hi rend="majuscule">e</hi>t <persName ref="#saint_martin">&s_long;e&i_tilde;t &m_to_M;artins</persName> &u_to_v;int a<reg type="espace"> </reg><persName ref="#saint_brice">&s_long;e&i_tilde;t
+                  <pb n="169v" facs="#f169c"/>
+                  <cb n="169c"/>
                   <lb facs="#l41"/>&b_to_B;rice</persName> qi diacres e&s_long;toit &et_tironien; la parla en tel
                   <lb facs="#l42"/>maniere <persName ref="#saint_brice"><hi rend="majuscule">b</hi>rices</persName> dont ne te &s_long;emble &i_to_j;e
                   <lb facs="#l43"/>borgnes &et_tironien; de&s_long;uez <hi rend="majuscule">q</hi>ant il loi &s_long;i en ot
@@ -628,7 +650,7 @@
                   <lb facs="#l78"/>pitie del <persName ref="#saint_brice">&s_long;e&i_tilde;t home</persName> qi clers tu fus a fer
                   <lb facs="#l79"/>a celer molt longuem&e_tilde_en;t tes males oe-
                   <lb facs="#l80"/>&u_to_v;res &et_tironien; ta gr&a_tilde;t luxure <hi rend="majuscule">e</hi>t dex ne nos
-                  <cb/>
+                  <cb n="169d"/>
                   <lb facs="#l81"/>le&s_long;t mes be&s_long;ier tie&u_to_n;s meins car eles
                   <lb facs="#l82"/>ne &s_long;ont mie dignes <persName ref="#saint_brice"><hi rend="majuscule">s</hi>e&i_tilde;z &b_to_B;rices</persName> re&s_long;-
                   <lb facs="#l83"/>-pondit qanqil pooit enc&o_tilde;tre &et_tironien; &s_long;i di&s_long;o-
