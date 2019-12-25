@@ -75,6 +75,7 @@
                   <attDef ident="corresp" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
                   <attDef ident="source" mode="delete"/>
+                  <attDef ident="target" mode="delete"/>
                   <attDef ident="type" mode="delete"/>
                </attList>
             </elementSpec>
@@ -656,6 +657,12 @@
                   <attDef ident="subtype" mode="delete"/>
                </attList>
             </classSpec>
+            <classSpec ident="att.pointing" type="atts" mode="change">
+               <attList>
+                  <attDef ident="targetLang" mode="delete"/>
+                  <attDef ident="evaluate" mode="delete"/>
+               </attList>
+            </classSpec>
             <classSpec ident="att.pointing.group" type="atts" mode="change">
                <attList>
                   <attDef ident="domains" mode="delete"/>
@@ -687,7 +694,7 @@
             </classSpec>
             <!--Checking module core-->
             <moduleRef key="core"
-                       include="p hi choice reg orig name date abbr expan head note graphic pb lb cb author title publisher pubPlace bibl listBibl l lg textLang"/>
+                       include="p hi choice reg orig name date abbr expan ref head note graphic pb lb cb author title publisher pubPlace bibl listBibl l lg textLang"/>
             <elementSpec ident="p" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
@@ -720,6 +727,7 @@
                   <attDef ident="source" mode="delete"/>
                   <attDef ident="type" mode="change">
                      <valList mode="add" type="closed">
+                        <valItem ident="apostrophe"/>
                         <valItem ident="espace"/>
                         <valItem ident="majuscule"/>
                         <valItem ident="ramiste"/>
@@ -789,6 +797,18 @@
                   <attDef ident="corresp" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
                   <attDef ident="source" mode="delete"/>
+               </attList>
+            </elementSpec>
+            <elementSpec ident="ref" mode="change">
+               <attList>
+                  <attDef ident="corresp" mode="delete"/>
+                  <attDef ident="facs" mode="delete"/>
+                  <attDef ident="source" mode="delete"/>
+                  <attDef ident="type" mode="change">
+                     <valList mode="add" type="closed">
+                        <valItem ident="note"/>
+                     </valList>
+                  </attDef>
                </attList>
             </elementSpec>
             <elementSpec ident="head" mode="change">
@@ -976,7 +996,7 @@
             </elementSpec>
             <!--Checking module header-->
             <moduleRef key="header"
-                       include="teiHeader fileDesc titleStmt extent publicationStmt idno sourceDesc encodingDesc projectDesc profileDesc handNote creation langUsage language revisionDesc change scriptNote"/>
+                       include="teiHeader fileDesc titleStmt extent publicationStmt idno notesStmt sourceDesc encodingDesc projectDesc profileDesc handNote creation langUsage language revisionDesc change scriptNote"/>
             <elementSpec ident="teiHeader" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
@@ -1024,6 +1044,13 @@
                   <attDef ident="from" mode="delete"/>
                   <attDef ident="to" mode="delete"/>
                   <attDef ident="type" mode="delete"/>
+               </attList>
+            </elementSpec>
+            <elementSpec ident="notesStmt" mode="change">
+               <attList>
+                  <attDef ident="corresp" mode="delete"/>
+                  <attDef ident="facs" mode="delete"/>
+                  <attDef ident="source" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="sourceDesc" mode="change">
@@ -1139,7 +1166,7 @@
             <!--Checking module transcr-->
             <classRef key="att.coordinated"/>
             <classRef key="att.global.facs"/>
-            <moduleRef key="transcr" include="facsimile surface zone fw"/>
+            <moduleRef key="transcr" include="facsimile surface zone"/>
             <elementSpec ident="facsimile" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
@@ -1167,18 +1194,6 @@
                   <attDef ident="facs" mode="delete"/>
                   <attDef ident="source" mode="delete"/>
                   <attDef ident="type" mode="delete"/>
-               </attList>
-            </elementSpec>
-            <elementSpec ident="fw" mode="change">
-               <attList>
-                  <attDef ident="type" mode="change">
-                     <valList mode="add" type="closed">
-                        <valItem ident="catch"/>
-                     </valList>
-                  </attDef>
-                  <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="facs" mode="delete"/>
-                  <attDef ident="source" mode="delete"/>
                </attList>
             </elementSpec>
             <classSpec ident="att.coordinated" type="atts" mode="change">
