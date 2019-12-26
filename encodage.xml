@@ -8,36 +8,37 @@
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
    schematypens="http://purl.oclc.org/dsdl/schematron"?>
 
-<!-- DTD pour les déclarations d'entités, dans l'ordre: abréviations, lettres ramistes, majuscules, ponctaution -->
+<!-- DTD pour les déclarations d'entités, dans l'ordre: abréviations, graphie, lettres ramistes, majuscules, ponctaution -->
 <!DOCTYPE text [
-<!ENTITY neuf "<choice><abbr type='abreviation'>&#8329;</abbr><expan>con</expan></choice>" >
-<!ENTITY neuf_us "<choice><abbr type='abreviation'>&#8329;</abbr><expan>us</expan></choice>" >
-<!ENTITY o_tilde "<choice><abbr type='abreviation'>&#333;</abbr><expan>on</expan></choice>" >
-<!ENTITY o_tilde_om "<choice><abbr type='abreviation'>&#333;</abbr><expan>om</expan></choice>" >
-<!ENTITY o_tilde_io "<choice><abbr type='abreviation'>&#333;</abbr><expan>io</expan></choice>" >
-<!ENTITY i_tilde "<choice><abbr type='abreviation'>&#299;</abbr><expan>in</expan></choice>" >
-<!ENTITY a_tilde "<choice><abbr type='abreviation'>&#227;</abbr><expan>an</expan></choice>" >
-<!ENTITY e_tilde_en "<choice><abbr type='abreviation'>&#275;</abbr><expan>en</expan></choice>" >
-<!ENTITY e_tilde_ein "<choice><abbr type='abreviation'>&#275;</abbr><expan>ein</expan></choice>" >
-<!ENTITY q_pointe "<choice><abbr type='abreviation'>&#59010;</abbr><expan>qu</expan></choice>" >
-<!ENTITY b_pointe "<choice><abbr type='abreviation'>&#7683;</abbr><expan>bie</expan></choice>" >
-<!ENTITY q_tilde "<choice><abbr type='abreviation'>&#59009;</abbr><expan>que</expan></choice>" >
-<!ENTITY p_tilde "<choice><abbr type='abreviation'>&#58981;</abbr><expan>pre</expan></choice>" >
-<!ENTITY u_tilde "<choice><abbr type='abreviation'>&#363;</abbr><expan>ver</expan></choice>" >
-<!ENTITY et_tironien "<choice><abbr type='abreviation'>&#8266;</abbr><expan>et</expan></choice>" >
-<!ENTITY p_barre_per "<choice><abbr type='abreviation'>&#42833;</abbr><expan>per</expan></choice>" >
-<!ENTITY p_barre_par "<choice><abbr type='abreviation'>&#42833;</abbr><expan>par</expan></choice>" >
-<!ENTITY r_tilde_ostr "<choice><abbr type='abreviation'>&#7769;</abbr><expan>ostr</expan></choice>" >
-<!ENTITY l_tilde_ol "<choice><abbr type='abreviation'>&#314;</abbr><expan>ol</expan></choice>" >
-<!ENTITY s_long "<choice><abbr type='graphie'>&#383;</abbr><expan>s</expan></choice>" >
+<!ENTITY et_tironien "<choice><abbr type='breviographe'>&#8266;</abbr><expan>et</expan></choice>" >
+<!ENTITY neuf "<choice><abbr type='breviographe'>&#8329;</abbr><expan>con</expan></choice>" >
+<!ENTITY neuf_us "<choice><abbr type='breviographe'>&#8329;</abbr><expan>us</expan></choice>" >
+<!ENTITY a_tilde "<choice><abbr type='contraction'>&#227;</abbr><expan>an</expan></choice>" >
+<!ENTITY b_pointe "<choice><abbr type='contraction'>&#7683;</abbr><expan>bie</expan></choice>" >
+<!ENTITY e_tilde_en "<choice><abbr type='contraction'>&#275;</abbr><expan>en</expan></choice>" >
+<!ENTITY e_tilde_ein "<choice><abbr type='contraction'>&#275;</abbr><expan>ein</expan></choice>" >
+<!ENTITY i_tilde "<choice><abbr type='contraction'>&#299;</abbr><expan>in</expan></choice>" >
+<!ENTITY l_tilde_ol "<choice><abbr type='contraction'>&#314;</abbr><expan>ol</expan></choice>" >
+<!ENTITY o_tilde "<choice><abbr type='contraction'>&#333;</abbr><expan>on</expan></choice>" >
+<!ENTITY o_tilde_om "<choice><abbr type='contraction'>&#333;</abbr><expan>om</expan></choice>" >
+<!ENTITY o_tilde_io "<choice><abbr type='contraction'>&#333;</abbr><expan>io</expan></choice>" >
+<!ENTITY p_tilde "<choice><abbr type='contraction'>&#58981;</abbr><expan>pre</expan></choice>" >
+<!ENTITY p_barre_per "<choice><abbr type='breviographe'>&#42833;</abbr><expan>per</expan></choice>" >
+<!ENTITY p_barre_par "<choice><abbr type='breviographe'>&#42833;</abbr><expan>par</expan></choice>" >
+<!ENTITY q_pointe "<choice><abbr type='contraction'>&#59010;</abbr><expan>qu</expan></choice>" >
+<!ENTITY q_tilde "<choice><abbr type='contraction'>&#59009;</abbr><expan>que</expan></choice>" >
+<!ENTITY r_tilde_ostr "<choice><abbr type='contraction'>&#7769;</abbr><expan>ostr</expan></choice>" >
+<!ENTITY u_tilde "<choice><abbr type='contraction'>&#363;</abbr><expan>ver</expan></choice>" >
 
+<!ENTITY s_long "<choice><orig>&#383;</orig><reg type='graphie'>s</reg></choice>" >
+
+<!ENTITY i_to_j "<choice><orig>i</orig><reg type='ramiste'>j</reg></choice>" >
 <!ENTITY u_to_v "<choice><orig>u</orig><reg type='ramiste'>v</reg></choice>" >
 <!ENTITY u_to_n "<choice><orig>u</orig><reg type='ramiste'>n</reg></choice>" >
-<!ENTITY i_to_j "<choice><orig>i</orig><reg type='ramiste'>j</reg></choice>" >
 
 <!ENTITY b_to_B "<choice><orig>b</orig><reg type='majuscule'>B</reg></choice>" >
-<!ENTITY m_to_M "<choice><orig>m</orig><reg type='majuscule'>M</reg></choice>" >
 <!ENTITY c_to_C "<choice><orig>c</orig><reg type='majuscule'>C</reg></choice>" >
+<!ENTITY m_to_M "<choice><orig>m</orig><reg type='majuscule'>M</reg></choice>" >
 
 <!ENTITY espace "<reg type='espace'> </reg>" >
 <!ENTITY apostrophe "<reg type='ponctuation'><pc type='apostrophe'>'</pc></reg>" >
