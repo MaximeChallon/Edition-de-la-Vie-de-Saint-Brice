@@ -1,23 +1,131 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
-   <teiHeader>
+   <teiHeader xml:lang="fr">
       <fileDesc>
          <titleStmt>
-            <title type="short">oddbyexample</title>
-            <title>ODD by Example customization</title>
+            <title>Guide d'encodage XML/TEI pour l'édition de la vie de Saint-Brice du manuscrit Fr. 411 conservé à la Bibliothèque nationale de France.</title>
+            <author>Maxime Challon, Master 2 Technologies Numériques Appliquées à l'Histoire, Ecole nationale des Chartes, Paris.</author>
          </titleStmt>
          <publicationStmt>
-            <p>Unpublished first draft </p>
+            <publisher>Ecole nationale des Chartes</publisher>
+            <availability>
+               <p>Cet encodage est réalisé pour l'exercice noté d'XML/TEI du M2.</p>
+            </availability>
          </publicationStmt>
          <sourceDesc>
-            <p>Derived from <ref
+            <p xml:lang="en">Derived from <ref
                   target="https://www.tei-c.org/Vault/P5/current/xml/tei/odd/p5subset.xml">base
-                  odd</ref> after an analysis of 1 files in file:/home/maxime/dev/devoir_TEI/</p>
+                  odd</ref> after an analysis of 1 files in file:/home/maxime/dev/devoir_TEI/ by oddbyexample.</p>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
    <text>
       <body>
+         <div1>
+            <head>Guide d'encodage pour l'édition de la <hi>Vie de Saint_Brice</hi> présente dans le manuscrit Français 411 de la Bibliothèque nationale de France.</head>
+            <p>Ce document permet d'expliquer les choix d'encodage faits dans le cadre de cette édition, tout en <hi>se conformant au schéma de la TEI</hi> afin d'offrir des transformations et une interopérabilité à l'édition.</p>
+            
+            <div2>
+               <head>Projet d'édition et exploitations possibles</head>
+               
+               <div3>
+                  <head>Objectifs de l'édition de la <hi>Vie de Saint-Brice</hi></head>
+                  <p>L'édition de la <hi>Vie de Saint-Brice</hi> est une édition à visée paléographique d'une partie du manuscrit Français 411 conservé à la Bibliothèque nationale de France. C'est par conséquent une édition fidèle au texte, qui présente en plus du texte original les corrections, développements d'abréviations et normalisations graphiques nécessaires pour permettre au lecteur de comprendre le texte.</p>
+                  <p>Le format de l'édition numérique permet d'établir des index, de lieux et de personnes, mais également d'enrichir l'édition par:
+                  <list>
+                     <item>la position du texte sur une image</item>
+                     <item>la description de la mise en page</item>
+                     <item>l'indication de la décoration du manuscrit</item>
+                  </list>
+                  </p>
+               </div3>
+               
+               <div3>
+                  <head>Exploitations possibles de l'encodage</head>
+                  <p>Le présent encodage permettra une édition numérique du texte basée sur l'image de manière à apprendre la paléographie. Il permettra également à partir des index établis de créer des infobox au survol de la souris pour les lieux et les personnages, un index général, et une carte à partir des lieux. Enfin, l'édition permettra de présenter deux textes: le texte original du manuscrit, et celui modernisé (graphie et abréviations).</p>
+               </div3>  
+            </div2>
+            
+            <div2>
+               <head>Structure de l'encodage XML/TEI</head>
+               <p>L'encodage n'a été réalisé que sur l'échantillon de la Vie de Saint-Brice, mais il pourrait être transposé à toutes les Vies du manuscrit qui lui sont similaires.</p>
+               
+               <div3>
+                  <head>Structure du <gi>teiHeader</gi></head>
+                  <p>Le <gi>teiHeader</gi>, enfant de la balise globale <gi>TEI</gi>, se compose de trois grandes parties:
+                  <specList>
+                     <specDesc key="fileDesc"/>
+                     <specDesc key="encodingDesc"/>
+                     <specDesc key="profileDesc"/>
+                  </specList>
+                  </p>
+                  
+                  <div4>
+                     <head>Le <gi>fileDesc</gi></head>
+                  
+                     <div5>
+                        <head>Le <gi>notesStmt</gi></head>
+                     </div5>
+                  
+                     <div5>
+                        <head>le <gi>msDesc</gi></head>
+                     </div5>
+                  </div4>
+                  
+                  <div4>
+                     <head>L'<gi>encodingDesc</gi></head>
+                  </div4>
+                  
+                  <div4>
+                     <head>Le <gi>profileDesc</gi></head>
+                  </div4>
+                  
+               </div3>
+               
+               <div3>
+                  <head>Une édition facsimilaire</head>
+               </div3>
+               
+               <div3>
+                  <head>La structure de <gi>text</gi></head>
+                  
+                  <div4>
+                     <head>Structure globale</head>
+                  </div4>
+                  
+                  <div4>
+                     <head>Le cas de la versification</head>
+                  </div4>
+                  
+               </div3>
+               
+            </div2>
+            
+            <div2>
+               <head>Normalisation du texte</head>
+               
+               <div3>
+                  <head>Mise en page du manuscrit</head>
+               </div3>
+               
+               <div3>
+                  <head>Edition à visée paléographique</head>
+                  
+                  <div4>
+                     <head>Les résolutions d'abréviations</head>
+                  </div4>
+                  
+                  <div4>
+                     <head>La normalisation graphique</head>
+                  </div4>
+                  
+               </div3>
+               
+            </div2>
+            
+         </div1>
+         <div1>
+            <head>Tableau des éléments utilisés dans l'édition</head>
          <schemaSpec ident="oddbyexample" start="TEI ">
             <moduleRef key="tei"/>
             <!--Checking module textcrit-->
@@ -1368,6 +1476,7 @@
                </attList>
             </elementSpec>
          </schemaSpec>
+         </div1>
       </body>
    </text>
 </TEI>
