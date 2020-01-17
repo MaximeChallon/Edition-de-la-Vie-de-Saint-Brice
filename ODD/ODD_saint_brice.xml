@@ -62,18 +62,68 @@
                   
                   <div4>
                      <head>Le <gi>fileDesc</gi></head>
+                     <p>Le <gi>fileDesc</gi> comprend lui-même de nombreux éléments essentiels: 
+                     <specList>
+                        <specDesc key="titleStmt"/>
+                        <specDesc key="publicationStmt"/>
+                        <specDesc key="notesStmt"/>
+                        <specDesc key="sourceDesc"/>
+                     </specList></p>
                   
                      <div5>
                         <head>Le <gi>notesStmt</gi></head>
+                        <p>Le choix a été fait d'ajouter des notes d'édition quand celles-ci étaient jugées nécessaires dans l'encodage, pour préciser la mise en page du manuscrit, notamment les bouts de ligne. Cela a permis d'éviter de créer un élément spécial pour ces bouts de lignes. Ces notes se trouvent dans le <gi>fileDesc</gi> dans des balises <gi>note</gi> comprises dans <gi>notesStmt</gi>. De manière à pouvoir les lier avec l'endroit du texte qui les nécessite, elles possèdent un attribut <att>xml:id</att> et un autre <att>target</att>.</p>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <fileDesc>
+                              <notesStmt>
+                                 <note n="1" xml:id="bdl_rubrique_note" target="#bdl_rubrique">Présence d'un bout de ligne simple sous la forme d'un trait à deux jambages, de la même couleur que la rubrique.</note>
+                              </notesStmt>
+                           </fileDesc>
+                        </egXML>
                      </div5>
                   
                      <div5>
-                        <head>le <gi>msDesc</gi></head>
+                        <head>Le <gi>sourceDesc</gi></head>
+                        <p>La description codicologique se trouve entièrement dans cette balise, dans l'élément <gi>msDesc</gi>. Le manuscrit est d'abord identifié et localisé. La cote actuelle du manuscrit se trouve dans <gi>idno</gi>, tandis que toutes ses autres cotes sont dans les <gi>altIdentifier</gi>.</p>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <msIdentifier>
+                              <country>France</country>
+                              <settlement>Paris</settlement>
+                              <repository>Bibliothèque Nationale de France</repository>
+                              <collection>département ddes manuscrits</collection>
+                              <idno>Français 411</idno>
+                              <altIdentifier>
+                                 <idno>Anc. 7019</idno>
+                                 <note>ancienne cote de la Bibliothèque nationale de France</note>
+                              </altIdentifier>
+                           </msIdentifier>
+                        </egXML>
+                        <p>Le texte encodé est ensuite extrait du manuscrit grâce à <gi>msContents</gi>. La <hi>Vie de Saint-Brice</hi> étant la 39<hi rend="exp">ème</hi> vie du manuscrit, elle se trouve dans l'<gi>msItemStruct</gi> portant l'<att>n</att> <val>39</val>. Le <gi>msItemStruct</gi> porte la mention de la langue plutôt que le manuscrit pour éviter de typer une vie en ancien français au lieu de l'être en latin. l'<gi>incipit</gi> et l'<gi>explicit</gi> sont un moyen courant d'identifier des textes anciens, c'est pourquoi ils sont présents dans l'encodage.</p>
+                        <note>Le choix a été fait de mettre un autre <gi>msItemStruct</gi>, le premier du manuscrit.</note>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <msItemStruct n="39" xml:lang="fro">
+                              <locus from="f169rb" to="f170rb">f169rb-f170rb</locus>
+                              <author>
+                                 <forename>Wauchier</forename>
+                                 <surname>de Denain</surname>
+                              </author>
+                              <title>	Vie de saint Brice</title>
+                              <incipit>Quant seinz Brices estoit jouvenciaus il guetoit molt seint Martin por ce qu'il le veoit viell home et de grant abstinence et de seinte vie</incipit>
+                              <explicit>De nos ottrit cil qi vit et reigne par tot les siecles des siecles. Amen</explicit>
+                              <textLang mainLang="fro">Français, langue d'oïl</textLang>
+                           </msItemStruct>
+                        </egXML>
+                        <p>Le <gi>physDesc</gi> permet de décrire la matérialité du manuscrit(support, dimensions, foliotation, conservation, mise en page, mains, écriture, décoration). Le <gi>decoDesc</gi> permet d'indiquer la décoration du manuscrit et de créer des <att>id</att> insérables dans l'encodage. Les <att>type</att> et <att>rend</att> de <gi>decoNote</gi> permettent de décrire la décoration, qui nécessite des dimensions.</p>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <decoDesc>
+                              <decoNote type="miniature" rend="empty">
+                                 <dimensions>
+                                    <height unit="lines">10</height>
+                                 </dimensions>
+                              </decoNote>
+                           </decoDesc>
+                        </egXML>
                      </div5>
-                  </div4>
-                  
-                  <div4>
-                     <head>L'<gi>encodingDesc</gi></head>
                   </div4>
                   
                   <div4>
