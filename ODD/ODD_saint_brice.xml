@@ -179,10 +179,34 @@
                   
                   <div4>
                      <head>Structure globale</head>
+                     <p>Le texte ets structuré dans un <gi>body</gi> présent dans <gi>text</gi>, enfant de <gi>TEI</gi>.Ce <gi>body</gi> comprend tout l'encodage du texte suivant le modèle:<specList>
+                        <specDesc key="div" atts="type facs"/>
+                        <specDesc key="div" atts="type n"/>
+                        <specDesc key="head"/>
+                        <specDesc key="p"/>
+                     </specList>. La première <gi>div</gi> porte les attributs <att>type</att> <val>book</val> et <att>facs</att> <val>numéro_ark</val>, étant au niveau du manuscrit. C'est la seconde <gi>div</gi> de <att>type</att> <val>section</val> et numérotée <att>n</att> selon <gi>msItemStruct</gi><att>n</att> qui permet d'encoder la Vie de Saint-Brice. Le texte est ensuite réparti entre <gi>head</gi> qui accepte la rubrication, et <gi>p</gi> pour le reste du texte.</p>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <TEI>
+                           <text>
+                              <body>
+                                 <div type="book" facs="https://gallica.bnf.fr/ark:/12148/btv1b107209247">
+                                    <div type="section" n="39">
+                                       <head>Titre rubriqué</head>
+                                       <p>Texte</p>
+                                    </div>
+                                 </div>
+                              </body>
+                           </text>
+                        </TEI>
+                     </egXML>
                   </div4>
                   
                   <div4>
                      <head>Le cas de la versification</head>
+                     <p>La <hi>Vie de Saint-Brice</hi> comporte dix octosyllabes qu'il a fallu encoder selon le modèle suivant:<specList>
+                        <specDesc key="lg" atts="type"/>
+                        <specDesc key="l" atts="n rhyme"/>
+                     </specList><gi>lg</gi> est de <att>type</att> <val>octosyllabe</val> de manière à typer tous les <gi>l</gi>. Chaque vers est encodé dans une balise <gi>l</gi> numérotée par <att>n</att> et portant la mention de la rhyme <att>rhyme</att>.</p>
                   </div4>
                   
                </div3>
