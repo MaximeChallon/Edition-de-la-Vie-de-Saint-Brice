@@ -163,6 +163,15 @@
                
                <div3>
                   <head>Une édition facsimilaire</head>
+                  <p>Le choix a été fait de lier les lignes de l'encodage aux lignes du manuscrit, grâce à l'extraction de zones des images avec l'outil <ref target="http://teicat.huma-num.fr/zoner.php">TEI Zoner</ref>. Ces lignes sont ensuite identifiées par un identifiant reporté dans les <gi>lb</gi> avec l'attribut <att>facs</att>.</p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <facsimile>
+                        <surface xml:id="f169b">
+                           <graphic url='img/f174.jpg' width='8682.33334px' height='6181.33334px' />
+                           <zone xml:id="rubrique1" ulx="5097" uly="3413" lrx="5621" lry="3519" />
+                        </surface>
+                     </facsimile>
+                  </egXML>
                </div3>
                
                <div3>
