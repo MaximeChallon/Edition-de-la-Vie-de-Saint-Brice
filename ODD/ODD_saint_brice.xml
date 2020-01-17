@@ -128,6 +128,35 @@
                   
                   <div4>
                      <head>Le <gi>profileDesc</gi></head>
+                     <p>Le <gi>profileDesc</gi> est l'élément de création des <gi>listPerson</gi> et <gi>listPlace</gi> permettant de créer les index, selon la structure suivante:</p>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <profileDesc>
+                           <settingDesc>
+                              <listPlace>
+                                 <place xml:id="tours">
+                                    <placeName ref="https://fr.wikipedia.org/wiki/Tours">
+                                       <country>France</country>
+                                       <settlement type="city">Tours</settlement>
+                                    </placeName>
+                                 </place>
+                              </listPlace>
+                           </settingDesc>
+                           <particDesc>
+                              <listPerson>
+                                 <person xml:id="enfant" sex="F">
+                                    <birth>
+                                       <date when="0430"/>
+                                       <placeName>
+                                          <country>Gaule</country>
+                                          <settlement type="city" ref="#tours">Tours</settlement>
+                                       </placeName>
+                                    </birth>
+                                 </person>
+                              </listPerson>
+                           </particDesc>
+                        </profileDesc>
+                     </egXML>
+                     <p>Les descriptions de Saint-Martin et Saint-Brice sont volontairement enrichies car ce sont les personnages centraux du texte et que nous éditons ici la Vie de Saint-Brice. Chaque élément de liste possède un identifiant permettant de pointer dans le corps du corps chacune de ses occurences.</p>
                   </div4>
                   
                </div3>
