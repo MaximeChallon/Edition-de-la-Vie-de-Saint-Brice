@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- Schéma RNG -->
-<!--<?xml-model href="out/odd.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>-->
+<?xml-model href="ODD/out/ODD_saint_brice.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 
-<!-- TEI all à supprimer -->
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
-   schematypens="http://purl.oclc.org/dsdl/schematron"?>
-
-<!-- DTD pour les déclarations d'entités, dans l'ordre: abréviations, graphie, lettres ramistes, majuscules, ponctaution -->
+<!-- DTD pour les déclarations d'entités, dans l'ordre: abréviations, graphie, lettres ramistes, majuscules, ponctuation -->
 <!DOCTYPE text [
 <!ENTITY et_tironien "<choice><abbr type='breviographe'>&#8266;</abbr><expan>et</expan></choice>" >
 <!ENTITY neuf "<choice><abbr type='breviographe'>&#8329;</abbr><expan>con</expan></choice>" >
@@ -47,7 +42,6 @@
 <!ENTITY point_virgule "<reg type='ponctuation'><pc type='point_virgule'>;</pc></reg>" >
 <!ENTITY deux_points "<reg type='ponctuation'><pc type='deux_points'>:</pc></reg>" >
 ]>
-
 
 
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
@@ -116,6 +110,7 @@
                      <incipit>Quant saint Pous fu venus a Rome li juif vindrent a lui et li distrent</incipit>
                      <textLang mainLang="fro">Français, langue d'oïl</textLang>
                   </msItemStruct>
+                  <!-- Le choix a été fait de ne pas indiquer le contenu complet du manuscrit, seulement le premier texte et le texte qui nous intéresse -->
                   <msItemStruct n="39" xml:lang="fro">
                      <locus from="f169rb" to="f170rb">f169rb-f170rb</locus>
                      <author>
