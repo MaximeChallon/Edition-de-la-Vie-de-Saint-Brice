@@ -610,16 +610,14 @@
                   </choice>or
                   <lb facs="#l4"/>ce q&apostrophe;il le &u_to_v;eoit &u_to_v;iell home
                   <lb facs="#l5"/>&et_tironien; de gr&a_tilde;t ab&s_long;tin&e_tilde_en;ce &et_tironien;&espace;de
-                  <lb facs="#l6"/>&s_long;einte &u_to_v;ie&point; 
-                  <choice>
+                  <lb facs="#l6"/>&s_long;einte &u_to_v;ie&point; <choice>
                      <orig>
                         <hi rend="majuscule">E</hi>
                      </orig>
                      <reg>e</reg>
                   </choice>t li &i_to_j;ou&u_to_v;&e_tilde_en;ciaus avoit le cuer
                   <lb facs="#l7"/>&i_to_j;oenne &s_long;i ne li ple&s_long;i&e_tilde_en;t mie les oe&u_to_v;res
-                  <lb facs="#l8"/>del &s_long;e&i_tilde;t home &q_pointe;i e&s_long;toit arce&u_to_v;e&s_long;qes 
-                  <choice>
+                  <lb facs="#l8"/>del &s_long;e&i_tilde;t home &q_pointe;i e&s_long;toit arce&u_to_v;e&s_long;qes <choice>
                      <orig>
                         <hi rend="majuscule">C</hi>
                      </orig>
@@ -627,8 +625,7 @@
                   </choice>ar
                   <lb facs="#l9"/>il &u_to_v;ol&s_long;i&s_long;t &b_pointe;n q&apostrophe;il &s_long;e&espace;m&e_tilde_ein;teni&s_long;t de dras&virgule; &et_tironien; da-
                   <lb facs="#l10"/>utres cho&s_long;es plus belem&e_tilde_en;t &s_long;i com&espace;li pl&neuf_us;
-                  <lb facs="#l11"/>eu &s_long;ervi&e_tilde_en;t encore 
-                  <choice>
+                  <lb facs="#l11"/>eu &s_long;ervi&e_tilde_en;t encore <choice>
                      <orig>
                         <hi rend="majuscule">Q</hi>
                      </orig>
@@ -636,8 +633,7 @@
                   </choice>e &s_long;&apostrophe;il &u_to_v;eoi&e_tilde_en;t&espace;les e&u_to_v;e&s_long;-
                   <lb facs="#l12"/>-qes &et_tironien; les autres &p_barre_per;&s_long;ones deduire poure-
                   <lb facs="#l13"/>-m&e_tilde_en;t&virgule; &et_tironien;&espace;en &u_to_v;ielz abiz&virgule; &et_tironien;&espace;en gr&a_tilde;z ab&s_long;tin&e_tilde_en;ces
-                  <lb facs="#l14"/> por lamor n&r_tilde_ostr;e &s_long;eig&u_to_n;or&point; 
-                  <choice>
+                  <lb facs="#l14"/> por lamor n&r_tilde_ostr;e &s_long;eig&u_to_n;or&point; <choice>
                      <orig>
                         <hi rend="majuscule">I</hi>
                      </orig>
@@ -687,8 +683,7 @@
                            <hi rend="majuscule">N</hi>
                         </orig>
                         <reg>n</reg>
-                     </choice>e nus nel tient 
-                     <choice>
+                     </choice>e nus nel tient <choice>
                         <orig>acre&s_long;tien</orig>
                         <reg type="espace">a &c_to_C;re&s_long;tien</reg>
                      </choice>
@@ -714,7 +709,8 @@
                      </choice>i&espace;&s_long;e&espace;meintient moiennem&e_tilde_en;t
                      <ref type="note" n="8" xml:id="bdl7" target="#bdl7_note"/>
                   </l>
-                  <l n="7" rhyme="ars"><lb facs="#l22"/>
+                  <l n="7" rhyme="ars">
+                     <lb facs="#l22"/>
                      <choice>
                         <orig>
                            <hi rend="majuscule">L</hi>
@@ -776,15 +772,13 @@
                         <reg>s</reg>
                      </choice>ei&i_tilde;z &b_to_B;rices</persName> e&s_long;toit lors di-
                   <lb facs="#l31"/>-acres &et_tironien; &s_long;i e&s_long;toit en&espace;la place ou&espace;cil deman-
-                  <lb facs="#l32"/>-doit le <persName ref="#saint_martin">&s_long;eint e&u_to_v;e&s_long;qe</persName>&point; 
-                  <choice>
+                  <lb facs="#l32"/>-doit le <persName ref="#saint_martin">&s_long;eint e&u_to_v;e&s_long;qe</persName>&point; <choice>
                      <orig>
                         <hi rend="majuscule">Q</hi>
                      </orig>
                      <reg>q</reg>
                   </choice>ant <persName ref="#saint_brice">&s_long;e&i_tilde;t &b_to_B;rice</persName> loi
-                  <lb facs="#l33"/>il li di&s_long;t 
-                  <said who="#saint_martin">
+                  <lb facs="#l33"/>il li di&s_long;t <said who="#saint_martin">
                   <choice>
                      <orig>
                         <hi rend="majuscule">S</hi>
@@ -803,8 +797,7 @@
                   </choice>uant li po&u_to_v;res hom entendi ce&virgule; il ne&espace;l&e_tilde_en;
                   <lb facs="#l38"/>fu gueres einz&espace;ala tant qer&a_tilde;t le <persName ref="#saint_martin">&s_long;e&i_tilde;t ho-
                   <lb facs="#l39"/>-me</persName> q&apostrophe;il lot tro&u_to_v;e &et_tironien; &s_long;i fu toz gueriz de &s_long;en-
-                  <lb facs="#l40"/>fermete&point_virgule; 
-                  <choice>
+                  <lb facs="#l40"/>fermete&point_virgule; <choice>
                      <orig>
                         <hi rend="majuscule">E</hi>
                      </orig>
@@ -833,8 +826,7 @@
                   </choice>ant il&espace;loi &s_long;i en&espace;ot
                   <lb facs="#l44"/>gr&a_tilde;t honte &s_long;i &neuf;menca a&espace;&s_long;on pooir a
                   <lb facs="#l45"/>denoier ce&s_long;te parole con&q_tilde;s ne l&apostrophe;a&u_to_v;oit
-                  <lb facs="#l46"/>dite 
-                  <choice>
+                  <lb facs="#l46"/>dite <choice>
                      <orig>
                         <hi rend="majuscule">D</hi>
                      </orig>
@@ -846,16 +838,14 @@
                   </choice> 
                   <said who="#saint_martin">mes
                   <lb facs="#l47"/>oreilles e&s_long;toi&e_tilde_en;t &p_tilde;s de&espace;ta bouche dem&e_tilde_en;-
-                  <lb facs="#l48"/>-tieres &q_tilde; tu le deis&point_virgule; 
-                  <choice>
+                  <lb facs="#l48"/>-tieres &q_tilde; tu le deis&point_virgule; <choice>
                      <orig>
                         <hi rend="majuscule">E</hi>
                      </orig>
                      <reg>e</reg>
                   </choice>t &b_pointe;n &s_long;aches qa-
                   <lb facs="#l49"/>-peines ma&espace;otroie n&r_tilde_ostr;e &s_long;ires &q_tilde; tu aies
-                  <lb facs="#l50"/>a&p_tilde;s moi l&apostrophe;<placeName ref="#eveche">e&u_to_v;e&s_long;chie</placeName>&point_virgule; 
-                  <choice>
+                  <lb facs="#l50"/>a&p_tilde;s moi l&apostrophe;<placeName ref="#eveche">e&u_to_v;e&s_long;chie</placeName>&point_virgule; <choice>
                      <orig>
                         <hi rend="majuscule">M</hi>
                      </orig>
@@ -888,8 +878,7 @@
                      <reg>e</reg>
                   </choice>n
                   <lb facs="#l56"/>tel maniere les denia il &s_long;o&u_to_v;&e_tilde_en;t le <persName ref="#saint_martin">&s_long;e&i_tilde;t
-                  <lb facs="#l57"/>home</persName> par paroles 
-                  <choice>
+                  <lb facs="#l57"/>home</persName> par paroles <choice>
                      <orig>
                         <hi rend="majuscule">T</hi>
                      </orig>
@@ -908,8 +897,7 @@
                      </orig>
                      <reg>u</reg>
                   </choice>ant la <placeName ref="#tours">citez</placeName> fu&espace;&s_long;anz pa&s_long;-
-                  <lb facs="#l60"/>-tor qi la go&u_tilde;na&s_long;t&virgule; 
-                  <choice>
+                  <lb facs="#l60"/>-tor qi la go&u_tilde;na&s_long;t&virgule; <choice>
                      <orig>
                         <hi rend="majuscule">L</hi>
                      </orig>
@@ -917,16 +905,14 @@
                   </choice>i&espace;<persName ref="#citoyens">citoien</persName>
                   <lb facs="#l61"/>e&s_long;lur&e_tilde_en;t <persName ref="#saint_brice">&s_long;e&i_tilde;t&espace;&b_to_B;rice</persName> a&espace;arce&u_to_v;e&s_long;&q_tilde;
                   <lb facs="#l62"/>car il e&s_long;toit de &s_long;e&i_tilde;te&espace;&u_to_v;ie encore&espace;fu&s_long;t il
-                  <lb facs="#l63"/>orgueilleus&point;&espace;
-                  <choice>
+                  <lb facs="#l63"/>orgueilleus&point;&espace;<choice>
                      <orig>
                         <hi rend="majuscule">A</hi>
                      </orig>
                      <reg>a</reg>
                   </choice>u tr&e_tilde_en;tie&s_long;me an a&p_tilde;s ce
                   <lb facs="#l64"/>q&apostrophe;il fu a&espace;ordenez a&espace;arce&u_to_v;e&s_long;qe &et_tironien;&espace;mis en
-                  <lb facs="#l65"/>la &s_long;eignorie
-                  <choice>
+                  <lb facs="#l65"/>la &s_long;eignorie<choice>
                      <orig>.</orig>
                      &virgule;
                   </choice> li &u_to_v;int uns gr&a_tilde;z anuiz
@@ -948,8 +934,7 @@
                   <lb facs="#l71"/>cil de&espace;la <placeName ref="#tours">cite</placeName> &s_long;or&e_tilde_en;t &q_tilde; cele e&s_long;toit acochie
                   <lb facs="#l72"/>d&apostrophe;<persName ref="#enfant">enf&a_tilde;t</persName>&virgule; il fur&e_tilde_en;t m&l_tilde_ol;t ro&i_to_j;e &et_tironien; molt corre-
                   <lb facs="#l73"/>-ciez parce qil loz &s_long;embloit &q_tilde; ele e&s_long;to-
-                  <lb facs="#l74"/>-it de molt bone &u_to_v;ie&point_virgule; 
-                  <choice>
+                  <lb facs="#l74"/>-it de molt bone &u_to_v;ie&point_virgule; <choice>
                      <orig>
                         <hi rend="majuscule">S</hi>
                      </orig>
@@ -967,8 +952,7 @@
                   </choice>a
                   <lb facs="#l78"/>pitie del <persName ref="#saint_brice">&s_long;e&i_tilde;t home</persName> qi clers tu fus a fer
                   <lb facs="#l79"/>a celer molt longuem&e_tilde_en;t tes males oe-
-                  <lb facs="#l80"/>&u_to_v;res &et_tironien;&espace;ta gr&a_tilde;t luxure&point_virgule; 
-                  <choice>
+                  <lb facs="#l80"/>&u_to_v;res &et_tironien;&espace;ta gr&a_tilde;t luxure&point_virgule; <choice>
                      <orig>
                         <hi rend="majuscule">E</hi>
                      </orig>
@@ -977,8 +961,7 @@
                   <!-- Encodage de la quatrième colonne du folio 169 -->
                   <cb n="169d"/>
                   <lb facs="#l81"/>le&s_long;t mes be&s_long;ier tie&u_to_n;s meins car eles
-                  <lb facs="#l82"/>ne &s_long;ont mie dignes&point; 
-                  </said>
+                  <lb facs="#l82"/>ne &s_long;ont mie dignes&point; </said>
                      <persName ref="#saint_brice">
                      <choice>
                         <orig>
@@ -995,8 +978,7 @@
                      </orig>
                      <reg>m</reg>
                   </choice>es c&o_tilde_om; pl&neuf_us; &s_long;en e&s_long;condi&s_long;oit &et_tironien; cil me&i_tilde;s
-                  <lb facs="#l86"/>l&apostrophe;en&espace;creoi&e_tilde_en;t&point; 
-                  <choice>
+                  <lb facs="#l86"/>l&apostrophe;en&espace;creoi&e_tilde_en;t&point; <choice>
                      <orig>
                         <hi rend="majuscule">T</hi>
                      </orig>
@@ -1004,19 +986,16 @@
                   </choice>&a_tilde;t &q_tilde; <persName ref="#saint_brice">&s_long;e&i_tilde;t &b_to_B;rices</persName> di&s_long;t q&a_tilde;t
                   <lb facs="#l87"/>il &u_to_v;it qil ni porroit a&espace;eus durer en nu-
                   <lb facs="#l88"/>-le maniere &q_tilde;&espace;l&apostrophe;en li aport&s_long;t l&apostrophe;<persName ref="#enfant">enfant</persName>
-                  <lb facs="#l89"/>de&u_to_v;&a_tilde;t lui&point; 
-                  <choice>
+                  <lb facs="#l89"/>de&u_to_v;&a_tilde;t lui&point; <choice>
                      <orig>
                         <hi rend="majuscule">L</hi>
                      </orig>
                      <reg>l</reg>
                   </choice>i enfez fu aportez qi na-
-                  <lb facs="l90"/>-&u_to_v;oit &q_tilde; 
-                  <choice>
+                  <lb facs="l90"/>-&u_to_v;oit &q_tilde; <choice>
                      <orig>xxx</orig>
                      <reg type="graphie">XXX</reg>
-                  </choice> &i_to_j;orz 
-                  <choice>
+                  </choice> &i_to_j;orz <choice>
                      <orig>
                         <hi rend="majuscule">Q</hi>
                      </orig>
