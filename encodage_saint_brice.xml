@@ -170,22 +170,22 @@
                      </scriptNote>
                   </scriptDesc>
                   <decoDesc>
-                     <decoNote type="miniature" rend="empty">
+                     <decoNote type="miniature">
                         <dimensions>
                            <height unit="lines">10</height>
                         </dimensions>
                      </decoNote>
-                     <decoNote type="grande_initiale" rend="empty">
+                     <decoNote type="grande_initiale">
                         <dimensions>
                            <height unit="lines">5</height>
                         </dimensions>
                      </decoNote>
-                     <decoNote type="moyenne_initiale" rend="empty">
+                     <decoNote type="moyenne_initiale">
                         <dimensions>
                            <height unit="lines">3</height>
                         </dimensions>
                      </decoNote>
-                     <decoNote type="petite_initiale" rend="empty">
+                     <decoNote type="petite_initiale">
                         <dimensions>
                            <height unit="lines">2</height>
                         </dimensions>
@@ -196,7 +196,7 @@
                         </dimensions>
                      </decoNote>
                      <decoNote type="titre_courant" rend="top center">De seint Brice</decoNote>
-                     <decoNote type="lettre_attente" xml:id="lettre_attente">
+                     <decoNote type="lettre_attente">
                         <note>Lettre minuscule à la mine de plomb de dimensions <dimensions><height unit="lines">0.5</height></dimensions> positionnée en haut à gauche de la position de l'initiale prévue.</note>
                         <note>Seul le troisème cahier (f.17-24v) dispose d'une décoration complète avec une rubrication, des initiales champies, des miniatures, des majuscules rehaussées de jaune.</note>
                      </decoNote>
@@ -581,11 +581,11 @@
                      <ref type="note" n="1" xml:id="bdl_rubrique" target="#bdl_rubrique_note"/>
                   </hi>
                </head>
-               <figure type="miniature" facs="#miniature"/>
+               <figure type="miniature"  rend="empty" facs="#miniature"/>
                <!-- Encodage de la deuxième colonne du folio 169 -->
                <cb n="169b"/>
                <p>
-                  <hi rend="grande_lettrine" facs="#grande_lettrine">
+                  <hi rend="grande_initiale empty" facs="#grande_lettrine">
                      <hi rend="lettre_attente">q</hi>
                   </hi>
                   <lb facs="#l1"/>
@@ -640,7 +640,7 @@
                <lg type="octosyllabe">
                   <l n="1" rhyme="re">
                      <lb facs="#l16"/>
-                     <hi rend="petite_lettrine" facs="petite_lettrine">
+                     <hi rend="petite_initiale empty" facs="petite_lettrine">
                         <hi rend="lettre_attente">p</hi>
                      </hi>
                      <choice>
@@ -746,7 +746,7 @@
                   </l>
                </lg>
                <p>
-                  <hi rend="moyenne_lettrine" facs="#moyenne_lettrine1">
+                  <hi rend="moyenne_initiale empty" facs="#moyenne_lettrine1">
                      <hi rend="lettre_attente">u</hi>
                   </hi>
                   <lb facs="#l26"/>
@@ -882,7 +882,7 @@
                   <lb facs="#l58"/>&s_long;i com &u_to_v;os a&u_to_v;es oi &neuf;ter arrieres&point;
                </p>
                <p>
-                  <hi rend="moyenne_lettrine" facs="moyenne_lettrine2">
+                  <hi rend="moyenne_initiale empty" facs="moyenne_lettrine2">
                      <hi rend="lettre_attente">q</hi>
                   </hi>
                   <lb facs="#l59"/>

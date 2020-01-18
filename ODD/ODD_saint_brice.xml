@@ -215,9 +215,48 @@
             
             <div2>
                <head>Normalisation du texte</head>
+               <p>Le présent encodage permet de présenter une édition facsimilaire, et une édition normalisée.</p>
                
                <div3>
                   <head>Mise en page du manuscrit</head>
+                  <p>Pour permetter l'édition facsmilaire, il a fallu, en plus d'indiquer les zones du texte, encoder la mise en page du manuscrit et la décoration.</p>
+                 
+                 <div4>
+                    <head>La mise en page</head>
+                    <p>Les balises suivantes ont été utilisées de manière à faire correspondre la mise en page à l'encodage:<specList>
+                       <specDesc key="pb" atts="n facs"/>
+                       <specDesc key="cb" atts="n"/>
+                       <specDesc key="lb" atts="facs"/>
+                    </specList>La balise <gi>pb</gi> permet de signaler le début d'une ligne, c'est à dire un saut de page. On lui fait porter la référence de l'image de cette page qui débute. Sur le même principe, <gi>cb</gi> permet d'indiquer le début d'une colonne, porter l'attribut <att>n</att> avec comme valeur le numéro de la page et la lettre de la colonne sur le folio. Enfin, <gi>lb</gi> encode le début de chaque ligne et porte la référenve vers la zone de cette ligne sur l'image.</p>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                       <div type="section" n="39">
+                          <pb n="169r" facs="#f169b"/>
+                          <cb n="169a"/>
+                          <lb facs="#rubrique1"/>
+                       </div>
+                    </egXML>
+                 </div4>
+                  
+                 <div4>
+                    <head>La décoration du manuscrit</head>
+                    <p>La décoration est encodée avec la balise <gi>hi</gi> accompagnée de l'attribut <att>rend</att>. Cet attribut permet de différencier les différents types de décoration (définie dans le <gi>teiHeader</gi> dans les <gi>decoNote</gi> <att>type</att>:<list>
+                       <label><val>miniature</val></label>
+                       <item>cette valeur correspond à l'emplacement d'une miniature de 10 U.R. </item>
+                       <label><val>grande_initiale</val></label>
+                       <item>indique la présence d'une initiale de 5 U.R.</item>
+                       <label>moyenne_initiale</label>
+                       <item>indique la présence d'une initiale de 3 U.R.</item>
+                       <label>petite_initiale</label>
+                       <item>indique la présence d'une initiale de 2 U.R.</item>
+                       <label>majuscule</label>
+                       <item>indique que la lettre est en majuscule, 1 U.R. de haut</item>
+                       <label>titre_courant</label>
+                       <item>indique l'emplacement du titre courant du chapitre, en haut de la page</item>
+                       <label>lettre_attente</label>
+                       <item>les initiales n'étant pas réalisées, il n'y a que les lettres d'attente, indiquées dans un <gi>hi</gi> à l'intérieur du <gi>hi</gi> avec un <att>rend</att> de valeur initiale</item>
+                    </list>L'attribut <att>rend</att> mis dans les <gi>hi</gi> permet également d'indiquer le rendu complet, ou inexistant, la miniature et les lettrines n'étant pas présentes. Cet attribut est obligatoire dans <gi>hi</gi>.</p>
+                 </div4>
+                 
                </div3>
                
                <div3>
