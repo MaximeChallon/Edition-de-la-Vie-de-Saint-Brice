@@ -255,6 +255,11 @@
                        <label>lettre_attente</label>
                        <item>les initiales n'étant pas réalisées, il n'y a que les lettres d'attente, indiquées dans un <gi>hi</gi> à l'intérieur du <gi>hi</gi> avec un <att>rend</att> de valeur initiale</item>
                     </list>L'attribut <att>rend</att> mis dans les <gi>hi</gi> permet également d'indiquer le rendu complet, ou inexistant, la miniature et les lettrines n'étant pas présentes. Cet attribut est obligatoire dans <gi>hi</gi>.</p>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                       <hi rend="grande_initiale empty" facs="#grande_lettrine">
+                          <hi rend="lettre_attente">q</hi>
+                       </hi>
+                    </egXML>
                  </div4>
                  
                </div3>
