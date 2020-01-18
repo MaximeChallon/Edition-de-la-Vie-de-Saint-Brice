@@ -261,18 +261,51 @@
                        </hi>
                     </egXML>
                  </div4>
-                 
                </div3>
                
                <div3>
                   <head>Edition à visée paléographique</head>
+                  <p>L'encodage purement facsimilaire aurait peu d'intérêt. C'est pourquoi le choix a été fait de proposer un encodage parallèle normalisant selon les pratiques actuelles de graphie, et résolvant les abréviations.</p>
                   
                   <div4>
                      <head>Les résolutions d'abréviations</head>
+                     <p>Les résolutions d'abréviations se font au moyen de trois balises:<specList>
+                        <specDesc key="choice"/>
+                        <specDesc key="abbr"/>
+                        <specDesc key="expan"/>
+                     </specList>Pour plus de facilités dans l'encodage, ces résolutions ont fait l'objet de déclarations d'entités dans une DTD insérée en début d'encodage. Certaines abréviations nécessitant des caractères Unicode spécifiques, ils ont été récupérés via la fonte MUFI, spécifique aux textes médiévaux et à la paléographie.</p>
+                     <p>L'abréviation présente dans le manuscrit est reportée dans <gi>abbr</gi>, et la résolution de celle-ci dans <gi>expan</gi>. <gi>choice</gi> englobe les deux balises de manière à pouvoir choisir quelle graphie utiliser pour chaque type d'édition. De plus, <gi>abbr</gi> porte l'attribut <att>type</att> décrivant le type de l'abréviation.</p>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <choice>
+                           <abbr type='breviographe'>&#8266;</abbr>
+                           <expan>et</expan>
+                        </choice>
+                     </egXML>
                   </div4>
                   
                   <div4>
                      <head>La normalisation graphique</head>
+                     <p>La normalisation graphique du texte s'est faite selon l'utilisation des balises suivantes, accompagnées de <att>type</att> portant sur <gi>reg</gi> et permettant de différencier chaque régularisation:<specList>
+                        <specDesc key="choice"/>
+                        <specDesc key="orig"/>
+                        <specDesc key="reg"/>
+                     </specList></p>
+                     <p>Les lettres ramistes i/j et u/v ont été régularisées et sont repérables par la valeur <val>ramiste</val> de <att>type</att>. De même, les s longs ont été régularisés et sont visibles par la valeur <val>graphie</val>.</p>
+                     <p>Le choix ayant été fait de normaliser selon l'usage moderne, les accents aigus ont été rajoutés dans le texte sans les signaler. En revanche, l'utilisation des majuscules et leur régularisation sont signalées par la valeur <val>majuscule</val> de <att>type</att>.</p>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <choice>
+                           <orig>
+                              <hi rend="majuscule">U</hi>
+                           </orig>
+                           <reg>u</reg>
+                        </choice>
+                     </egXML>
+                     <p>Enfin, la ponctuation a été rétablie telle qu'utilisée actuellement dans les <gi>pc</gi>. Ces <gi>pc</gi> sont dans des <gi>reg</gi> qui portent l'attribut <att>type</att> avec la valeur <val>ponctuation</val>.</p>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <reg type='ponctuation'>
+                           <pc type='virgule'>,</pc>
+                        </reg>
+                     </egXML>
                   </div4>
                   
                </div3>

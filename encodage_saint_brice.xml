@@ -35,7 +35,7 @@
 <!ENTITY c_to_C "<choice><orig>c</orig><reg type='majuscule'>C</reg></choice>" >
 <!ENTITY m_to_M "<choice><orig>m</orig><reg type='majuscule'>M</reg></choice>" >
 
-<!ENTITY espace "<reg type='espace'> </reg>" >
+<!ENTITY espace "<reg type='ponctuation'> </reg>" >
 <!ENTITY apostrophe "<reg type='ponctuation'><pc type='apostrophe'>'</pc></reg>" >
 <!ENTITY virgule "<reg type='ponctuation'><pc type='virgule'>,</pc></reg>" >
 <!ENTITY point "<reg type='ponctuation'><pc type='point'>.</pc></reg>" >
@@ -571,12 +571,7 @@
                <head>
                   <hi rend="rubrique">
                      <lb facs="#rubrique1"/>
-                     <choice>
-                        <orig>
-                           <hi rend="majuscule">C</hi>
-                        </orig>
-                        <reg>C</reg>
-                     </choice>i &neuf;mence la &u_to_v;ie
+                     <hi rend="majuscule">C</hi>i &neuf;mence la &u_to_v;ie
                      <lb facs="#rubrique2"/>de <persName ref="#saint_brice">m&o_tilde;&s_long;eigneur &s_long;eint &b_to_B;rice</persName>
                      <ref type="note" n="1" xml:id="bdl_rubrique" target="#bdl_rubrique_note"/>
                   </hi>
