@@ -9,7 +9,7 @@
          <publicationStmt>
             <publisher>Ecole nationale des Chartes</publisher>
             <availability>
-               <p>Cet encodage est réalisé pour l'exercice noté d'XML/TEI du M2.</p>
+               <p>Cet encodage est réalisé pour l'exercice noté d'XML/TEI du M2 2019-2020.</p>
             </availability>
          </publicationStmt>
          <sourceDesc>
@@ -48,11 +48,11 @@
             
             <div2>
                <head>Structure de l'encodage XML/TEI</head>
-               <p>L'encodage n'a été réalisé que sur l'échantillon de la Vie de Saint-Brice, mais il pourrait être transposé à toutes les Vies du manuscrit qui lui sont similaires.</p>
+               <p>L'encodage n'a été réalisé que sur l'échantillon de la Vie de Saint-Brice, mais il pourrait être transposé à toutes les Vies du manuscrit qui lui sont similaires. Le présent guide en reprend que les éléments qui nécessitent une explication pour l'encodage du manuscrit, pour plus de documentation sur les balises, voir la documentation TEI.</p>
                
                <div3>
                   <head>Structure du <gi>teiHeader</gi></head>
-                  <p>Le <gi>teiHeader</gi>, enfant de la balise globale <gi>TEI</gi>, se compose de trois grandes parties:
+                  <p>Le <gi>teiHeader</gi>, enfant de la balise racine <gi>TEI</gi>, se compose de trois grandes parties:
                   <specList>
                      <specDesc key="fileDesc"/>
                      <specDesc key="encodingDesc"/>
@@ -98,7 +98,7 @@
                               </altIdentifier>
                            </msIdentifier>
                         </egXML>
-                        <p>Le texte encodé est ensuite extrait du manuscrit grâce à <gi>msContents</gi>. La <hi>Vie de Saint-Brice</hi> étant la 39<hi rend="exp">ème</hi> vie du manuscrit, elle se trouve dans l'<gi>msItemStruct</gi> portant l'<att>n</att> <val>39</val>. Le <gi>msItemStruct</gi> porte la mention de la langue plutôt que le manuscrit pour éviter de typer une vie en ancien français au lieu de l'être en latin. l'<gi>incipit</gi> et l'<gi>explicit</gi> sont un moyen courant d'identifier des textes anciens, c'est pourquoi ils sont présents dans l'encodage.</p>
+                        <p>Le texte encodé est ensuite extrait du manuscrit grâce à <gi>msContents</gi>. La <hi>Vie de Saint-Brice</hi> étant la 39<hi rend="exp">ème</hi> vie du manuscrit, elle se trouve dans le <gi>msItemStruct</gi> portant l'attribut <att>n</att> de valeur <val>39</val>. Le <gi>msItemStruct</gi> porte la mention de la langue plutôt que le manuscrit pour éviter de typer une vie en ancien français au lieu de l'être en latin par exemple. L'<gi>incipit</gi> et l'<gi>explicit</gi> sont un moyen courant d'identifier des textes anciens, c'est pourquoi ils sont présents dans l'encodage.</p>
                         <note>Le choix a été fait de mettre un autre <gi>msItemStruct</gi>, le premier du manuscrit.</note>
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">
                            <msItemStruct n="39" xml:lang="fro">
@@ -113,7 +113,7 @@
                               <textLang mainLang="fro">Français, langue d'oïl</textLang>
                            </msItemStruct>
                         </egXML>
-                        <p>Le <gi>physDesc</gi> permet de décrire la matérialité du manuscrit(support, dimensions, foliotation, conservation, mise en page, mains, écriture, décoration). Le <gi>decoDesc</gi> permet d'indiquer la décoration du manuscrit et de créer des <att>id</att> insérables dans l'encodage. Les <att>type</att> et <att>rend</att> de <gi>decoNote</gi> permettent de décrire la décoration, qui nécessite des dimensions.</p>
+                        <p>Le <gi>physDesc</gi> permet de décrire la matérialité du manuscrit(support, dimensions, foliotation, conservation, mise en page, mains, écriture, décoration). Le <gi>decoDesc</gi> permet d'indiquer la décoration du manuscrit et de créer des <att>id</att> insérables dans l'encodage. Les attributs  <att>type</att> et <att>rend</att> de <gi>decoNote</gi> permettent de décrire la décoration, qui nécessite des dimensions.</p>
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">
                            <decoDesc>
                               <decoNote type="miniature" rend="empty">
@@ -184,7 +184,7 @@
                         <specDesc key="div" atts="type n"/>
                         <specDesc key="head"/>
                         <specDesc key="p"/>
-                     </specList>. La première <gi>div</gi> porte les attributs <att>type</att> <val>book</val> et <att>facs</att> <val>numéro_ark</val>, étant au niveau du manuscrit. C'est la seconde <gi>div</gi> de <att>type</att> <val>section</val> et numérotée <att>n</att> selon <gi>msItemStruct</gi><att>n</att> qui permet d'encoder la Vie de Saint-Brice. Le texte est ensuite réparti entre <gi>head</gi> qui accepte la rubrication, et <gi>p</gi> pour le reste du texte.</p>
+                     </specList>. La première <gi>div</gi> porte les attributs <att>type</att> de valeur <val>book</val> et <att>facs</att> de valeur  <val>numéro_ark</val>, étant au niveau du manuscrit. C'est la seconde <gi>div</gi> d'attribut <att>type</att> et de valeur<val>section</val> et numérotée <att>n</att> (selon <gi>msItemStruct</gi><att>n</att>) qui permet d'encoder la Vie de Saint-Brice. Le texte est ensuite réparti entre <gi>head</gi> qui accepte la rubrication, et <gi>p</gi> pour le reste du texte.</p>
                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <TEI>
                            <text>
@@ -219,7 +219,7 @@
                
                <div3>
                   <head>Mise en page du manuscrit</head>
-                  <p>Pour permetter l'édition facsmilaire, il a fallu, en plus d'indiquer les zones du texte, encoder la mise en page du manuscrit et la décoration.</p>
+                  <p>Pour permettre l'édition facsmilaire, il a fallu, en plus d'indiquer les zones du texte, encoder la mise en page du manuscrit et la décoration.</p>
                  
                  <div4>
                     <head>La mise en page</head>
@@ -265,7 +265,7 @@
                
                <div3>
                   <head>Edition à visée paléographique</head>
-                  <p>L'encodage purement facsimilaire aurait peu d'intérêt. C'est pourquoi le choix a été fait de proposer un encodage parallèle normalisant selon les pratiques actuelles de graphie, et résolvant les abréviations.</p>
+                  <p>L'encodage purement facsimilaire aurait peu d'intérêt. C'est pourquoi le choix a été fait de proposer un encodage parallèle normalisé selon les pratiques actuelles de graphie, et aux abréviations résolues.</p>
                   
                   <div4>
                      <head>Les résolutions d'abréviations</head>
