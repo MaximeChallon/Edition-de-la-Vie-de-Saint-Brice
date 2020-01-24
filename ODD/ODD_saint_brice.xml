@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:s="http://purl.oclc.org/dsdl/schematron" xml:lang="en">
    <teiHeader xml:lang="fr">
       <fileDesc>
          <titleStmt>
@@ -563,6 +563,7 @@
                         <valItem ident="moyenne_initiale"/>
                         <valItem ident="petite_initiale"/>
                         <valItem ident="titre_courant"/>
+                        <!-- pied_de_mouche n'est pas présent dans l'encodage de la Vie de Saint-Brice, mais il fait partie de la description codicologique et pourrait être utile en cas d'encodage d'une autre vie -->
                         <valItem ident="pied_de_mouche"/>
                      </valList>
                   </attDef>
@@ -1046,7 +1047,20 @@
                   <attDef ident="source" mode="delete"/>
                </attList>
             </elementSpec>
+            <!-- création d'une séquence d'enchaînement dans l'élément choice -->
             <elementSpec ident="choice" mode="change">
+               <content>
+                  <alternate>
+                     <sequence>
+                        <elementRef key="orig" minOccurs="1" maxOccurs="1"/>
+                        <elementRef key="reg" minOccurs="1" maxOccurs="1"/>
+                     </sequence>
+                     <sequence>
+                        <elementRef key="abbr" minOccurs="1" maxOccurs="1"/>
+                        <elementRef key="expan" minOccurs="1" maxOccurs="1"/>
+                     </sequence>
+                  </alternate>
+               </content>
                <attList>
                   <attDef ident="corresp" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
@@ -1134,6 +1148,14 @@
                </attList>
             </elementSpec>
             <elementSpec ident="ref" mode="change">
+               <!-- activation de l'attribut type de valeur note dans l'élément ref -->
+               <constraintSpec scheme="schematron" ident="note">
+                  <constraint>
+                     <s:rule context="ref[@type='note']">
+                        <s:assert test="@type='note'">L'élément 'ref' doit porter un attribut 'type' de valeur 'note'.</s:assert>
+                     </s:rule>
+                  </constraint>
+               </constraintSpec>
                <attList>
                   <attDef ident="corresp" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
