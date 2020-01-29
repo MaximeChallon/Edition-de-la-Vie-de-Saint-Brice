@@ -9,6 +9,8 @@
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?> -->
 
+<!-- La sortie HTML de la documentation a été légèrement modifié pour les deux liens css: les url ont été remplacées par les chemins relatifs vers les deux fichiers CSS récupérés sur le Github https://github.com/TEIC/Stylesheets/tree/dev/css et placés dans le dossier 'css' qui a le chemin ODD/css depuis la racine du devoir. les deux liens générés automatiquement ne focntionnaient plus. -->
+
 <!-- DTD pour les déclarations d'entités, dans l'ordre: abréviations, graphie, lettres ramistes, majuscules, ponctuation -->
 <!DOCTYPE text [
 <!ENTITY et_tironien "<choice><abbr type='breviographe'>&#8266;</abbr><expan>et</expan></choice>" >

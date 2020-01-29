@@ -315,6 +315,7 @@
          </div1>
          <div1>
             <head>Tableau des éléments utilisés dans l'édition</head>
+            <!-- les modifications apportées sont dispersées dans le code suivant -->
          <schemaSpec ident="oddbyexample" start="TEI ">
             <moduleRef key="tei"/>
             <!--Checking module textcrit-->
@@ -563,7 +564,7 @@
                         <valItem ident="moyenne_initiale"/>
                         <valItem ident="petite_initiale"/>
                         <valItem ident="titre_courant"/>
-                        <!-- pied_de_mouche n'est pas présent dans l'encodage de la Vie de Saint-Brice, mais il fait partie de la description codicologique et pourrait être utile en cas d'encodage d'une autre vie -->
+                        <!-- pied_de_mouche n'est pas présent dans l'encodage de la Vie de Saint-Brice, mais il fait partie de la description codicologique et pourrait être utile en cas d'encodage d'une autre Vie -->
                         <valItem ident="pied_de_mouche"/>
                      </valList>
                   </attDef>
