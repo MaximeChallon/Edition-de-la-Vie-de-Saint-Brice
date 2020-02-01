@@ -9,7 +9,7 @@
          <publicationStmt>
             <publisher>Ecole nationale des Chartes</publisher>
             <availability>
-               <p>Cet encodage est réalisé pour l'exercice noté d'XML/TEI du M2 2019-2020.</p>
+               <p>Cet encodage est réalisé pour l'exercice noté d'XML/TEI du Master 2 2019-2020.</p>
             </availability>
          </publicationStmt>
          <sourceDesc>
@@ -33,9 +33,9 @@
                   <p>L'édition de la <hi>Vie de Saint-Brice</hi> est une édition à visée paléographique d'une partie du manuscrit Français 411 conservé à la Bibliothèque nationale de France. C'est par conséquent une édition fidèle au texte, qui présente en plus du texte original les corrections, développements d'abréviations et normalisations graphiques nécessaires pour permettre au lecteur de comprendre le texte.</p>
                   <p>Le format de l'édition numérique permet d'établir des index, de lieux et de personnes, mais également d'enrichir l'édition par:
                   <list>
-                     <item>la position du texte sur une image</item>
-                     <item>la description de la mise en page</item>
-                     <item>l'indication de la décoration du manuscrit</item>
+                     <item>la position du texte sur une image;</item>
+                     <item>la description de la mise en page;</item>
+                     <item>l'indication de la décoration du manuscrit.</item>
                   </list>
                   </p>
                </div3>
@@ -72,13 +72,20 @@
                   
                      <div5>
                         <head>Le <gi>notesStmt</gi></head>
-                        <p>Le choix a été fait d'ajouter des notes d'édition quand celles-ci étaient jugées nécessaires dans l'encodage, pour préciser la mise en page du manuscrit, notamment les bouts de ligne. Cela a permis d'éviter de créer un élément spécial pour ces bouts de lignes. Ces notes se trouvent dans le <gi>fileDesc</gi> dans des balises <gi>note</gi> comprises dans <gi>notesStmt</gi>. De manière à pouvoir les lier avec l'endroit du texte qui les nécessite, elles possèdent un attribut <att>xml:id</att> et un autre <att>target</att>.</p>
+                        <p>Le choix a été fait d'ajouter des notes d'édition quand celles-ci étaient jugées nécessaires dans l'encodage, pour préciser la mise en page du manuscrit, notamment les bouts de ligne de la partie versifiée. Cela a permis d'éviter de créer un élément spécial pour ces bouts de lignes. Ces notes se trouvent dans le <gi>fileDesc</gi> dans des balises <gi>note</gi> comprises dans <gi>notesStmt</gi>. De manière à pouvoir les lier avec l'endroit du texte qui les nécessite, elles possèdent un attribut <att>xml:id</att> et un autre <att>target</att>.</p>
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">
                            <fileDesc>
                               <notesStmt>
                                  <note n="1" xml:id="bdl_rubrique_note" target="#bdl_rubrique">Présence d'un bout de ligne simple sous la forme d'un trait à deux jambages, de la même couleur que la rubrique.</note>
                               </notesStmt>
                            </fileDesc>
+                           <text>
+                              <body>
+                                 <l>
+                                    <ref type="note" n="1" xml:id="bdl_rubrique" target="#bdl_rubrique_note"/>
+                                 </l>
+                              </body>
+                           </text>
                         </egXML>
                      </div5>
                   
@@ -113,7 +120,7 @@
                               <textLang mainLang="fro">Français, langue d'oïl</textLang>
                            </msItemStruct>
                         </egXML>
-                        <p>Le <gi>physDesc</gi> permet de décrire la matérialité du manuscrit(support, dimensions, foliotation, conservation, mise en page, mains, écriture, décoration). Le <gi>decoDesc</gi> permet d'indiquer la décoration du manuscrit et de créer des <att>id</att> insérables dans l'encodage. Les attributs  <att>type</att> et <att>rend</att> de <gi>decoNote</gi> permettent de décrire la décoration, qui nécessite des dimensions.</p>
+                        <p>Le <gi>physDesc</gi> permet de décrire la matérialité du manuscrit (support, dimensions, foliotation, conservation, mise en page, mains, écriture, décoration). Le <gi>decoDesc</gi> permet d'indiquer la décoration du manuscrit et de créer des <att>id</att> insérables dans l'encodage. Les attributs  <att>type</att> et <att>rend</att> de <gi>decoNote</gi> permettent de décrire la décoration, qui nécessite des dimensions.</p>
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">
                            <decoDesc>
                               <decoNote type="miniature" rend="empty">
@@ -179,12 +186,12 @@
                   
                   <div4>
                      <head>Structure globale</head>
-                     <p>Le texte ets structuré dans un <gi>body</gi> présent dans <gi>text</gi>, enfant de <gi>TEI</gi>.Ce <gi>body</gi> comprend tout l'encodage du texte suivant le modèle:<specList>
+                     <p>Le texte est structuré dans un <gi>body</gi> présent dans <gi>text</gi>, enfant de <gi>TEI</gi>.Ce <gi>body</gi> comprend tout l'encodage du texte suivant le modèle:<specList>
                         <specDesc key="div" atts="type facs"/>
                         <specDesc key="div" atts="type n"/>
                         <specDesc key="head"/>
                         <specDesc key="p"/>
-                     </specList>. La première <gi>div</gi> porte les attributs <att>type</att> de valeur <val>book</val> et <att>facs</att> de valeur  <val>numéro_ark</val>, étant au niveau du manuscrit. C'est la seconde <gi>div</gi> d'attribut <att>type</att> et de valeur<val>section</val> et numérotée <att>n</att> (selon <gi>msItemStruct</gi><att>n</att>) qui permet d'encoder la Vie de Saint-Brice. Le texte est ensuite réparti entre <gi>head</gi> qui accepte la rubrication, et <gi>p</gi> pour le reste du texte.</p>
+                     </specList>. La première <gi>div</gi> porte les attributs <att>type</att> de valeur <val>book</val> et <att>facs</att> de valeur  <val>numéro_ark</val>, étant au niveau du manuscrit. C'est la seconde <gi>div</gi> d'attribut <att>type</att> et de valeur <val>section</val> et numérotée <att>n</att> (selon <gi>msItemStruct</gi> <att>n</att>) qui permet d'encoder la Vie de Saint-Brice. Le texte est ensuite réparti entre <gi>head</gi> qui accepte la rubrication, et <gi>p</gi> pour le reste du texte.</p>
                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <TEI>
                            <text>
@@ -290,7 +297,7 @@
                         <specDesc key="orig"/>
                         <specDesc key="reg"/>
                      </specList></p>
-                     <p>Les lettres ramistes i/j et u/v ont été régularisées et sont repérables par la valeur <val>ramiste</val> de <att>type</att>. De même, les s longs ont été régularisés et sont visibles par la valeur <val>graphie</val>.</p>
+                     <p>Les lettres ramistes i/j et u/v ont été régularisées et sont repérables par la valeur <val>ramiste</val> de <att>type</att>. De même, les s longs ont été régularisé et sont visibles par la valeur <val>graphie</val>.</p>
                      <p>Le choix ayant été fait de normaliser selon l'usage moderne, les accents aigus ont été rajoutés dans le texte sans les signaler. En revanche, l'utilisation des majuscules et leur régularisation sont signalées par la valeur <val>majuscule</val> de <att>type</att>.</p>
                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <choice>
@@ -315,7 +322,7 @@
          </div1>
          <div1>
             <head>Tableau des éléments utilisés dans l'édition</head>
-            <!-- les modifications apportées sont dispersées dans le code suivant -->
+            <!-- les modifications apportées à l'ODD générée automatiquement sont dispersées dans le code suivant -->
          <schemaSpec ident="oddbyexample" start="TEI ">
             <moduleRef key="tei"/>
             <!--Checking module textcrit-->

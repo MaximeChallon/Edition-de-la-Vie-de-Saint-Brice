@@ -9,7 +9,7 @@
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?> -->
 
-<!-- La sortie HTML de la documentation a été légèrement modifié pour les deux liens css: les url ont été remplacées par les chemins relatifs vers les deux fichiers CSS récupérés sur le Github https://github.com/TEIC/Stylesheets/tree/dev/css et placés dans le dossier 'css' qui a le chemin ODD/css depuis la racine du devoir. les deux liens générés automatiquement ne focntionnaient plus. -->
+<!-- La sortie HTML de la documentation n'a pas été modifié pour rétablir des liens css valides. Ils sont cependant trouvables dans le dossier css ou sur le Github https://github.com/TEIC/Stylesheets/tree/dev/css . Les deux liens générés automatiquement ne fonctionnaient plus. -->
 
 <!-- DTD pour les déclarations d'entités, dans l'ordre: abréviations, graphie, lettres ramistes, majuscules, ponctuation -->
 <!DOCTYPE text [
@@ -63,7 +63,8 @@
                <surname>de Denain</surname>
             </author>
          </titleStmt>
-         <publicationStmt><p>Texte encodé pour l'évaluation de XML/TEI du master 2 TNAH de l'Ecole nationale des Chartes</p>
+         <publicationStmt>
+            <p>Texte encodé pour l'évaluation de XML/TEI du master 2 TNAH de l'Ecole nationale des Chartes</p>
          </publicationStmt>
          <!-- Ajout des notes utilisées dans l'encodage: elles seront appelées par la balise <ref> -->
          <notesStmt>
@@ -87,15 +88,14 @@
                   <country>France</country>
                   <settlement>Paris</settlement>
                   <repository>Bibliothèque Nationale de France</repository>
-                  <collection>département ddes manuscrits</collection>
+                  <collection>département des manuscrits</collection>
                   <idno>Français 411</idno>
                   <altIdentifier>
                      <idno>Anc. 7019</idno>
                      <note>ancienne cote de la Bibliothèque nationale de France</note>
                   </altIdentifier>
                   <altIdentifier>
-                     <idno>
-                        ark:/12148/btv1b107209247 </idno>
+                     <idno>ark:/12148/btv1b107209247 </idno>
                      <note>permalien de la notice</note>
                   </altIdentifier>
                   <altIdentifier>
@@ -137,7 +137,7 @@
                         <support>
                            <material>Parchemin</material>
                            <material>Vélin</material>
-                           <note>La règle des faces du vélin de Carl Grégory est respectée</note>
+                           <note>La règle des faces du vélin de Carl Grégory est respectée.</note>
                         </support>
                         <extent>
                            <width unit="mm">250</width>
@@ -172,7 +172,7 @@
                   </handDesc>
                   <scriptDesc corresp="#mainHand">
                      <scriptNote>
-                        <p>Ecriture gothique textualis du <date notBefore="1300" notAfter="1399">XIV</date>ème siècle.</p>
+                        <p>Ecriture gothique textualis du <date notBefore="1300" notAfter="1399">XIVème siècle</date>.</p>
                         <p>Elle se distingue par des lignes droites, des angles aigus et des pointes, une mise en page et des lettres serrées, un ductus vertical, un développement réduit des hastes montantes et descendantes, un contraste entre traits épais et traits fins, et un usage abondant des abréviations.</p>
                         <p>La main principale se distingue également par des initiales ornées en début de paragraphe, et des majuscules ornées d'une unité de réglure de haut.</p>
                      </scriptNote>
@@ -205,8 +205,8 @@
                      </decoNote>
                      <decoNote type="titre_courant" rend="top center">De seint Brice</decoNote>
                      <decoNote type="lettre_attente">
-                        <note>Lettre minuscule à la mine de plomb de dimensions <dimensions><height unit="lines">0.5</height></dimensions> positionnée en haut à gauche de la position de l'initiale prévue.</note>
-                        <note>Seul le troisème cahier (f.17-24v) dispose d'une décoration complète avec une rubrication, des initiales champies, des miniatures, des majuscules rehaussées de jaune.</note>
+                        <note>Lettre minuscule à la mine de plomb de dimensions <dimensions><height unit="lines">0.5</height></dimensions>U.R. positionnée en haut à gauche de la position de l'initiale prévue.</note>
+                        <note>Seul le troisème cahier (f.17-24v) dispose d'une décoration complète avec une rubrication, des initiales champies, des miniatures et des majuscules rehaussées de jaune.</note>
                      </decoNote>
                   </decoDesc>
                </physDesc>
@@ -217,7 +217,7 @@
                         <idno>MF 16080</idno>
                      </bibl>
                      <bibl>
-                        <title type="online" facs="https://gallica.bnf.fr/ark:/12148/btv1b107209247">version numérisée de Gallica à partir du microfilm MF 16080 </title>
+                        <title type="online" facs="https://gallica.bnf.fr/ark:/12148/btv1b107209247">version numérisée de Gallica à partir du microfilm MF 16080.</title>
                      </bibl>
                   </surrogates>
                   <listBibl>
@@ -256,7 +256,7 @@
       </fileDesc>
       <encodingDesc>
          <projectDesc>
-            <p>Encodage de la vie de Saint-Brice du manuscrit Français 411 de la BnF réalisé par Maxime Challon dans le cadre de l'évaluation du cours de XML/TEI 2019-2020 du master 2 TNAH de l'Ecole des Chartes.</p>
+            <p>Encodage de la vie de Saint-Brice du manuscrit Français 411 de la BnF réalisé par Maxime Challon dans le cadre de l'évaluation du cours de XML/TEI 2019-2020 du Master 2 TNAH de l'Ecole des Chartes.</p>
          </projectDesc>
       </encodingDesc>
       <profileDesc>
@@ -448,7 +448,7 @@
                </person>
                <person xml:id="citoyens">
                   <residence ref="#tours"/>
-                  <note>nommés citoyens, peuple, assemblée dans le texte</note>
+                  <note>Nommés citoyens, peuple, ou assemblée dans le texte.</note>
                </person>
                <!-- Lien de parenté entre saint Brice, la religieuse et l'enfant -->
                <listRelation>
