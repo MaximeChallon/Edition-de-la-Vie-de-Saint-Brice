@@ -345,7 +345,7 @@
                   <persName ref="https://fr.wikipedia.org/wiki/Martin_de_Tours">
                      <forename xml:lang="fre">Martin</forename>
                      <addName xml:lang="fre">de Tours</addName>
-                     <addName xml:lang="fre">le Miséricordieux</addName>
+                     <addName xml:lang="fre">&#x20;le Miséricordieux</addName>
                      <roleName xml:lang="fre">saint</roleName>
                      <!-- nom en latin -->
                      <forename xml:lang="lat">Martinus</forename>
@@ -435,6 +435,9 @@
                   <note source="https://fr.wikipedia.org/wiki/Martin_de_Tours">Saint Martin de Tours, aussi nommé Martin le Miséricordieux, ou encore saint Martin des Champs (qui a donné lieu à appellation de différents édifices religieux), né dans l'Empire romain, plus précisément à Savaria, dans la province romaine de Pannonie (actuelle Hongrie), en 316, et mort à Candes, en Gaule, le 8 novembre 397, est l'un des principaux saints de la chrétienté et le plus célèbre des évêques de Tours avec Grégoire de Tours. Sa vie est essentiellement connue par la Vita sancti Martini (Vie de saint Martin) écrite en 396-397 par Sulpice-Sévère, qui fut l'un de ses disciples. La dévotion à Martin se manifeste à travers une relique, le manteau ou la chape de Martin — qu'il partage avec un déshérité transi de froid. Dès le Ve siècle, le culte martinien donne lieu à un cycle hagiographique, c'est-à-dire à une série d'images successives relatant les faits et gestes du saint. Il introduit le monachisme en Gaule moyenne, le monachisme martinien s'ancrant autour de la Loire, tandis que les monachismes lérinien et cassianite se développent dans la Gaule méridionale. Son culte se répand partout en Europe occidentale, depuis l'Italie, puis surtout en Gaule où il devient le patron des dynasties mérovingiennes et carolingiennes.  Les très nombreuses églises portant un patronage martinien à travers toute l'Europe sont fondées à des dates très variées. Saint Martin compte parmi les patrons secondaires de la France. Il est le patron notamment de Tours, Buenos Aires, Rivière-au-Renard, Vevey, de la cathédrale de Mayence, de celle d'Utrecht, de celle de Lucques et de la basilique San Martino. Autrefois fêté le 4 juillet (consécration épiscopale en 371), saint Martin est aujourd'hui célébré le 11 novembre (funérailles en 397). En Allemagne, il est fêté lors du jour de la Saint-Martin, également appelée Saint Martin le bouillant ou Saint Martin d'été. </note>
                </person>
                <person xml:id="enfant" sex="F">
+                  <persName>
+                     <forename xml:lang="fre">Enfant</forename>
+                  </persName>
                   <birth>
                      <date when="0430"/>
                      <placeName>
@@ -444,9 +447,15 @@
                   </birth>
                </person>
                <person xml:id="religieuse" sex="F">
+                  <persName>
+                     <forename xml:lang="fre">Religieuse</forename>
+                  </persName>
                   <occupation>religieuse de saint Brice</occupation>
                </person>
                <person xml:id="citoyens">
+                  <persName>
+                     <forename xml:lang="fre">Citoyens</forename>
+                  </persName>
                   <residence ref="#tours"/>
                   <note>Nommés citoyens, peuple, ou assemblée dans le texte.</note>
                </person>

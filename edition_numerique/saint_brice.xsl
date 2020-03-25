@@ -8,46 +8,164 @@
 
     <!-- configuration des sorties -->
     <xsl:template match="/">
-        
+
         <xsl:variable name="file">
             <xsl:value-of select="replace(base-uri(./edition_numerique), '.xml', '')"/>
             <!-- récupération du nom et du chemin du fichier courant -->
         </xsl:variable>
-        
+
         <xsl:variable name="pathAccueil">
-            <xsl:value-of select="concat($file,'accueil','.html')"/>
+            <xsl:value-of select="concat($file, 'accueil', '.html')"/>
         </xsl:variable>
         <xsl:variable name="pathAlloNorm">
-            <xsl:value-of select="concat($file,'comparaison','.html')"/>
+            <xsl:value-of select="concat($file, 'comparaison', '.html')"/>
         </xsl:variable>
-        
+
         <!-- pages des index -->
         <xsl:variable name="pathIndexPers">
-            <xsl:value-of select="concat($file,'personnages','.html')"/>
+            <xsl:value-of select="concat($file, 'personnages', '.html')"/>
         </xsl:variable>
         <xsl:variable name="pathIndexLieux">
-            <xsl:value-of select="concat($file,'lieux','.html')"/>
+            <xsl:value-of select="concat($file, 'lieux', '.html')"/>
         </xsl:variable>
-        
+
         <!-- pour l'édition allographétique -->
         <xsl:variable name="pathAllo1">
-            <xsl:value-of select="concat($file,'allographe169r','.html')"/>
+            <xsl:value-of select="concat($file, 'allographe169r', '.html')"/>
         </xsl:variable>
         <xsl:variable name="pathAllo2">
-            <xsl:value-of select="concat($file,'allographe169v','.html')"/>
+            <xsl:value-of select="concat($file, 'allographe169v', '.html')"/>
         </xsl:variable>
-        
+
         <!-- pour l'édition normalisée -->
         <xsl:variable name="pathNorm1">
-            <xsl:value-of select="concat($file,'normalise169r','.html')"/>
+            <xsl:value-of select="concat($file, 'normalise169r', '.html')"/>
         </xsl:variable>
         <xsl:variable name="pathNorm2">
-            <xsl:value-of select="concat($file,'normalise169v','.html')"/>
+            <xsl:value-of select="concat($file, 'normalise169v', '.html')"/>
         </xsl:variable>
-        
+
         <!-- page d'acceuil -->
-        <xsl:result-document href="{$pathAccueil}"
-            method="html" indent="yes">
+        <xsl:result-document href="{$pathAccueil}" method="html" indent="yes">
+            <html>
+                <head>
+                    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+                    <link rel="stylesheet" href="static/css/bootstrap.min.css"/>
+                    <link rel="stylesheet" href="static/css/css.css"/>
+                    <title>
+                        <xsl:value-of select="//titleStmt/title[1]"/>
+                    </title>
+                </head>
+                <body class="container">
+
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <a class="navbar-brand" href="{//titleStmt/title[1]}"
+                            style="color: #be122a;font-weight:bold;">
+                            <xsl:value-of select="//titleStmt/title[1]"/>
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"/>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{$pathAccueil}">Accueil</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{$pathAlloNorm}">Comparaison</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">Edition allographétique</a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{$pathAllo1}">f169r</a>
+                                        <a class="dropdown-item" href="{$pathAllo2}">f169v</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">Edition normalisée</a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{$pathNorm1}">f169r</a>
+                                        <a class="dropdown-item" href="{$pathNorm2}">f169v</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">Index</a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{$pathIndexPers}"
+                                            >Personnages</a>
+                                        <a class="dropdown-item" href="{$pathIndexLieux}">Lieux</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <p>Edition numérique réalisée à partir du manuscrit Français 411 de la
+                                Bibliothèque nationale de France, numérisé sur <a
+                                    href="{//body/div/@facs}">Gallica</a>.</p>
+                            <p>
+                                <ul>
+                                    <li>Index <ul>
+                                            <li><a href="{$pathIndexPers}">Index des noms de
+                                                  personnages</a></li>
+                                            <li><a href="{$pathIndexLieux}">Index des noms de
+                                                  lieux</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>Transcriptions allographétiques <ul>
+                                            <li><a href="{$pathAllo1}">Transcription allographétique
+                                                  du folio 169r</a></li>
+                                            <li><a href="{$pathAllo2}">Transcription allographétique
+                                                  du folio 169v</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>Transcriptions normalisées <ul>
+                                            <li><a href="{$pathNorm1}">Transcription normalisée du
+                                                  folio 169r</a></li>
+                                            <li><a href="{$pathNorm2}">Transcription normalisée du
+                                                  folio 169v</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="{$pathAlloNorm}">Comparaison entre le texte
+                                            d'origine et celui normalisé</a>
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
+                        <div class="col-sm-4" style="text-align:center;">
+                            <img alt="f169r" src="static/img/f174_demi.jpg"
+                                style="width:300px; hieght:auto;"/>
+                        </div>
+                    </div>
+
+                    <!-- utilitaires Bootstrap -->
+                    <script src="static/js/jquery-3.4.1.slim.min.js"/>
+                    <script src="static/js/popper.min.js"/>
+                    <script src="static/js/bootstrap.min.js"/>
+                </body>
+                <footer class="blog-footer">
+                    <div class="container" style="padding: 1em; text-align: center">
+                        <p>© <a href="https://www.chartes.psl.eu">Ecole nationale des Chartes</a> -
+                            Maxime Challon</p>
+                    </div>
+                </footer>
+            </html>
+        </xsl:result-document>
+        
+        <!-- page des personnages -->
+        <xsl:result-document href="{$pathIndexPers}" method="html" indent="yes">
             <html>
                 <head>
                     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -60,31 +178,49 @@
                 <body class="container">
                     
                     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                        <a class="navbar-brand" href="{//titleStmt/title[1]}" style="color: #be122a;font-weight:bold;"><xsl:value-of select="//titleStmt/title[1]"/></a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
+                        <a class="navbar-brand" href="{//titleStmt/title[1]}"
+                            style="color: #be122a;font-weight:bold;">
+                            <xsl:value-of select="//titleStmt/title[1]"/>
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"/>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mr-auto">
-                                <li class="nav-item"><a class="nav-link" href="{$pathAccueil}">Accueil</a></li>
-                                <li class="nav-item"><a class="nav-link" href="{$pathAlloNorm}">Comparaison</a></li>
-                                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Edition allographétique</a>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{$pathAccueil}">Accueil</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{$pathAlloNorm}">Comparaison</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">Edition allographétique</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="{$pathAllo1}">f169r</a>
                                         <a class="dropdown-item" href="{$pathAllo2}">f169v</a>
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Edition normalisée</a>
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">Edition normalisée</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="{$pathNorm1}">f169r</a>
                                         <a class="dropdown-item" href="{$pathNorm2}">f169v</a>
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Index</a>
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">Index</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{$pathIndexPers}">Personnages</a>
+                                        <a class="dropdown-item" href="{$pathIndexPers}"
+                                            >Personnages</a>
                                         <a class="dropdown-item" href="{$pathIndexLieux}">Lieux</a>
                                     </div>
                                 </li>
@@ -92,37 +228,140 @@
                         </div>
                     </nav>
                     
-                    <div class="row">
-                        <div class="col-sm-8">
-                            <p>Edition numérique réalisée à partir du manuscrit Français 411 de la Bibliothèque nationale de France, numérisé sur <a href="{//body/div/@facs}">Gallica</a>.</p>
-                            <p>
-                    <ul>
-                        <li>Index
-                        <ul>
-                            <li><a href="{$pathIndexPers}">Index des noms de personnages</a></li>
-                            <li><a href="{$pathIndexLieux}">Index des noms de lieux</a></li>
-                        </ul>
-                        </li>
-                        <li>Transcriptions allographétiques
-                        <ul>
-                            <li><a href="{$pathAllo1}">Transcription allographétique du folio 169r</a></li>
-                            <li><a href="{$pathAllo2}">Transcription allographétique du folio 169v</a></li>
-                        </ul>
-                        </li>
-                        <li>Transcriptions normalisées
-                        <ul>
-                            <li><a href="{$pathNorm1}">Transcription normalisée du folio 169r</a></li>
-                            <li><a href="{$pathNorm2}">Transcription normalisée du folio 169v</a></li>
-                        </ul>
-                        </li>
-                        <li><a href="{$pathAlloNorm}">Comparaison entre le texte d'origine et celui normalisé</a></li>
-                    </ul></p>
+                    <div class="row" style="color: #be122a;text-align: center;">
+                        <h1>Index des personnages des folios 169r et 169v</h1>
                     </div>
-                        <div class="col-sm-4" style="text-align:center;">
-                            <img alt="f169r" src="static/img/f174_demi.jpg" style="width:300px; hieght:auto;"/>
-                        </div>
+                        <div class="row">
+                                <xsl:for-each select="//person">
+                                    <!-- création de cartes de personnes renvoyant vers les pages individuelles -->
+                                    
+                                    <!-- création d'une page par personnage -->
+                                    <xsl:variable name="pathPersonne">
+                                        <xsl:value-of select="concat($file, persName/forename[1]/text(), '.html')"/>
+                                    </xsl:variable>
+                                    <xsl:result-document href="{$pathPersonne}" method="html" indent="yes">
+                                        <!-- mettre ici le squelette html, la navbar et le ffoter, et les infos de chacun -->
+                                    </xsl:result-document>
+                            </xsl:for-each>
                     </div>
                     
+                    
+                    <!-- utilitaires Bootstrap -->
+                    <script src="static/js/jquery-3.4.1.slim.min.js"/>
+                    <script src="static/js/popper.min.js"/>
+                    <script src="static/js/bootstrap.min.js"/>
+                    <script src="static/js/fontawesome.js"/>
+                </body>
+                <footer class="blog-footer">
+                    <div class="container" style="padding: 1em; text-align: center">
+                        <p>© <a href="https://www.chartes.psl.eu">Ecole nationale des Chartes</a> -
+                            Maxime Challon</p>
+                    </div>
+                </footer>
+            </html>
+        </xsl:result-document>
+
+        <!-- page de comparaison entre les deux textes -->
+        <xsl:result-document href="{$pathAlloNorm}" method="html" indent="yes">
+            <html>
+                <head>
+                    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+                    <link rel="stylesheet" href="static/css/bootstrap.min.css"/>
+                    <link rel="stylesheet" href="static/css/css.css"/>
+                    <title>
+                        <xsl:value-of select="//titleStmt/title[1]"/>
+                    </title>
+                </head>
+                <body class="container">
+
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <a class="navbar-brand" href="{//titleStmt/title[1]}"
+                            style="color: #be122a;font-weight:bold;">
+                            <xsl:value-of select="//titleStmt/title[1]"/>
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"/>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{$pathAccueil}">Accueil</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{$pathAlloNorm}">Comparaison</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">Edition allographétique</a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{$pathAllo1}">f169r</a>
+                                        <a class="dropdown-item" href="{$pathAllo2}">f169v</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">Edition normalisée</a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{$pathNorm1}">f169r</a>
+                                        <a class="dropdown-item" href="{$pathNorm2}">f169v</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">Index</a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{$pathIndexPers}"
+                                            >Personnages</a>
+                                        <a class="dropdown-item" href="{$pathIndexLieux}">Lieux</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h2 style="color: #be122a;text-align: right;">Transcription facsimilaire
+                                des folios <xsl:for-each select="//pb">
+                                    <xsl:variable name="foliosN">
+                                        <xsl:value-of select="replace(@facs, '#', '')"/>
+                                    </xsl:variable>
+                                    <a
+                                        href="{ancestor::TEI//surface[@xml:id=$foliosN]/graphic/@url}">
+                                        <xsl:value-of select="@n"/>
+                                    </a>
+                                    <xsl:text> </xsl:text>
+                                </xsl:for-each>
+                            </h2>
+                            <div class="col-sm-12" style="text-align: right;">
+                                <p>
+                                    <xsl:apply-templates select="//text" mode="orig"/>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <h2 style="color: #be122a;">Transcription normalisée des folios
+                                    <xsl:for-each select="//pb">
+                                    <xsl:variable name="foliosN">
+                                        <xsl:value-of select="replace(@facs, '#', '')"/>
+                                    </xsl:variable>
+                                    <a
+                                        href="{ancestor::TEI//surface[@xml:id=$foliosN]/graphic/@url}">
+                                        <xsl:value-of select="@n"/>
+                                    </a>
+                                    <xsl:text> </xsl:text>
+                                </xsl:for-each></h2>
+                            <p>
+                                <xsl:apply-templates select="//text" mode="reg"/>
+                            </p>
+                        </div>
+                    </div>
                     <!-- utilitaires Bootstrap -->
                     <script src="static/js/jquery-3.4.1.slim.min.js"/>
                     <script src="static/js/popper.min.js"/>
@@ -130,106 +369,13 @@
                 </body>
                 <footer class="blog-footer">
                     <div class="container" style="padding: 1em; text-align: center">
-                        <p>© <a href="https://www.chartes.psl.eu">Ecole nationale des Chartes</a> - Maxime Challon</p>
+                        <p>© <a href="https://www.chartes.psl.eu">Ecole nationale des Chartes</a> -
+                            Maxime Challon</p>
                     </div>
                 </footer>
             </html>
         </xsl:result-document>
-        
-        <!-- page de comparaison entre les deux textes -->
-        <xsl:result-document href="{$pathAlloNorm}"  method="html" indent="yes">
-        <html>
-            <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-                <link rel="stylesheet" href="static/css/bootstrap.min.css"/>
-                <link rel="stylesheet" href="static/css/css.css"/>
-                <title>
-                    <xsl:value-of select="//titleStmt/title[1]"/>
-                </title>
-            </head>
-            <body class="container">
-                
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <a class="navbar-brand" href="{//titleStmt/title[1]}" style="color: #be122a;font-weight:bold;"><xsl:value-of select="//titleStmt/title[1]"/></a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item"><a class="nav-link" href="{$pathAccueil}">Accueil</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{$pathAlloNorm}">Comparaison</a></li>
-                            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Edition allographétique</a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{$pathAllo1}">f169r</a>
-                                    <a class="dropdown-item" href="{$pathAllo2}">f169v</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Edition normalisée</a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{$pathNorm1}">f169r</a>
-                                    <a class="dropdown-item" href="{$pathNorm2}">f169v</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Index</a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{$pathIndexPers}">Personnages</a>
-                                    <a class="dropdown-item" href="{$pathIndexLieux}">Lieux</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-                
-                <div class="row">
-                    <div class="col-sm-6">
-                        <h2 style="color: #be122a;text-align: right;">Transcription facsimilaire des folios
-                                <xsl:for-each select="//pb">
-                                <xsl:variable name="foliosN">
-                                    <xsl:value-of select="replace(@facs, '#', '')"/>
-                                </xsl:variable>
-                                <a href="{ancestor::TEI//surface[@xml:id=$foliosN]/graphic/@url}">
-                                    <xsl:value-of select="@n"/>
-                                </a>
-                                <xsl:text> </xsl:text>
-                            </xsl:for-each>
-                        </h2>
-                        <div class="col-sm-12" style="text-align: right;">
-                            <p>
-                            <xsl:apply-templates select="//text" mode="orig"/>
-                        </p>
-                            </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <h2 style="color: #be122a;">Transcription normalisée des folios
-                                <xsl:for-each select="//pb">
-                                <xsl:variable name="foliosN">
-                                    <xsl:value-of select="replace(@facs, '#', '')"/>
-                                </xsl:variable>
-                                <a href="{ancestor::TEI//surface[@xml:id=$foliosN]/graphic/@url}">
-                                    <xsl:value-of select="@n"/>
-                                </a>
-                                <xsl:text> </xsl:text>
-                            </xsl:for-each></h2>
-                        <p>
-                            <xsl:apply-templates select="//text" mode="reg"/>
-                        </p>
-                    </div>
-                </div>
-                <!-- utilitaires Bootstrap -->
-                <script src="static/js/jquery-3.4.1.slim.min.js"/>
-                <script src="static/js/popper.min.js"/>
-                <script src="static/js/bootstrap.min.js"/>
-            </body>
-            <footer class="blog-footer">
-                <div class="container" style="padding: 1em; text-align: center">
-                    <p>© <a href="https://www.chartes.psl.eu">Ecole nationale des Chartes</a> - Maxime Challon</p>
-                </div>
-            </footer>
-        </html>
-        </xsl:result-document>
-        
+
     </xsl:template>
 
     <!-- pour tous les modes -->
@@ -266,10 +412,12 @@
 
     <!-- gestion de la partie originale -->
     <xsl:template match="choice" mode="orig">
-        <xsl:value-of select="
+        <xsl:value-of
+            select="
                 .//orig/text() |
                 .//abbr/text() |
-                .//orig/hi/text()"/>
+                .//orig/hi/text()"
+        />
     </xsl:template>
 
     <!-- gestion de la partie régularisée -->
