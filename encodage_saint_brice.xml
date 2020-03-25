@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- Schéma RNG -->
-<?xml-model href="ODD/out/ODD_saint_brice.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="doc/ODD/out/ODD_saint_brice.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 
 <!-- validité du document avec la TEI -->
 <!-- 
