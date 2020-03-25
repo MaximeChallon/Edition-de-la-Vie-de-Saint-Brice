@@ -43,7 +43,7 @@
 <!ENTITY c_to_C "<choice><orig>c</orig><reg type='majuscule'>C</reg></choice>" >
 <!ENTITY m_to_M "<choice><orig>m</orig><reg type='majuscule'>M</reg></choice>" >
 
-<!ENTITY espace "<reg type='ponctuation'> </reg>" >
+<!ENTITY espace "<reg type='ponctuation'>&#x20;</reg>" >
 <!ENTITY apostrophe "<reg type='ponctuation'><pc type='apostrophe'>'</pc></reg>" >
 <!ENTITY virgule "<reg type='ponctuation'><pc type='virgule'>,</pc></reg>" >
 <!ENTITY point "<reg type='ponctuation'><pc type='point'>.</pc></reg>" >
@@ -588,18 +588,18 @@
                <!-- Encodage de la deuxième colonne du folio 169 -->
                <cb n="169b"/>
                <p>
+                  <lb facs="#l1"/>
                   <hi rend="grande_initiale empty" facs="#grande_lettrine">
                      <hi rend="lettre_attente">q</hi>
                   </hi>
-                  <lb facs="#l1"/>
                   <choice>
                      <orig>
                         <hi rend="majuscule">U</hi>
                      </orig>
                      <reg>u</reg>
-                  </choice>ant <persName ref="#saint_brice">&s_long;e&i_tilde;z &b_to_B;rices</persName> e&s_long;toit
+                  </choice>ant&#x20;<persName ref="#saint_brice">&s_long;e&i_tilde;z &b_to_B;rices</persName>&#x20;e&s_long;toit
                   <lb facs="#l2"/>&i_to_j;ou&u_to_v;enciaus&virgule; il guetoit
-                  <lb facs="#l3"/>molt <persName ref="#saint_martin">&s_long;e&i_tilde;t &m_to_M;artin</persName> 
+                  <lb facs="#l3"/>molt&#x20;<persName ref="#saint_martin">&s_long;e&i_tilde;t &m_to_M;artin</persName>&#x20; 
                   <choice>
                      <orig>
                         <hi rend="majuscule">P</hi>
@@ -608,14 +608,14 @@
                   </choice>or
                   <lb facs="#l4"/>ce q&apostrophe;il le &u_to_v;eoit &u_to_v;iell home
                   <lb facs="#l5"/>&et_tironien; de gr&a_tilde;t ab&s_long;tin&e_tilde_en;ce &et_tironien;&espace;de
-                  <lb facs="#l6"/>&s_long;einte &u_to_v;ie&point; <choice>
+                  <lb facs="#l6"/>&s_long;einte &u_to_v;ie&point;&#x20;<choice>
                      <orig>
                         <hi rend="majuscule">E</hi>
                      </orig>
                      <reg>e</reg>
                   </choice>t li &i_to_j;ou&u_to_v;&e_tilde_en;ciaus avoit le cuer
                   <lb facs="#l7"/>&i_to_j;oenne &s_long;i ne li ple&s_long;i&e_tilde_en;t mie les oe&u_to_v;res
-                  <lb facs="#l8"/>del &s_long;e&i_tilde;t home &q_pointe;i e&s_long;toit arce&u_to_v;e&s_long;qes <choice>
+                  <lb facs="#l8"/>del &s_long;e&i_tilde;t home &q_pointe;i e&s_long;toit arce&u_to_v;e&s_long;qes&#x20;<choice>
                      <orig>
                         <hi rend="majuscule">C</hi>
                      </orig>
@@ -623,7 +623,7 @@
                   </choice>ar
                   <lb facs="#l9"/>il &u_to_v;ol&s_long;i&s_long;t &b_pointe;n q&apostrophe;il &s_long;e&espace;m&e_tilde_ein;teni&s_long;t de dras&virgule; &et_tironien; da-
                   <lb facs="#l10"/>utres cho&s_long;es plus belem&e_tilde_en;t &s_long;i com&espace;li pl&neuf_us;
-                  <lb facs="#l11"/>eu &s_long;ervi&e_tilde_en;t encore <choice>
+                  <lb facs="#l11"/>eu &s_long;ervi&e_tilde_en;t encore&#x20;<choice>
                      <orig>
                         <hi rend="majuscule">Q</hi>
                      </orig>
@@ -631,7 +631,7 @@
                   </choice>e &s_long;&apostrophe;il &u_to_v;eoi&e_tilde_en;t&espace;les e&u_to_v;e&s_long;-
                   <lb facs="#l12"/>-qes &et_tironien; les autres &p_barre_per;&s_long;ones deduire poure-
                   <lb facs="#l13"/>-m&e_tilde_en;t&virgule; &et_tironien;&espace;en &u_to_v;ielz abiz&virgule; &et_tironien;&espace;en gr&a_tilde;z ab&s_long;tin&e_tilde_en;ces
-                  <lb facs="#l14"/> por lamor n&r_tilde_ostr;e &s_long;eig&u_to_n;or&point; <choice>
+                  <lb facs="#l14"/> por lamor n&r_tilde_ostr;e &s_long;eig&u_to_n;or&point;&#x20;<choice>
                      <orig>
                         <hi rend="majuscule">I</hi>
                      </orig>
@@ -681,7 +681,7 @@
                            <hi rend="majuscule">N</hi>
                         </orig>
                         <reg>n</reg>
-                     </choice>e nus nel tient <choice>
+                     </choice>e nus nel tient&#x20;<choice>
                         <orig>acre&s_long;tien</orig>
                         <reg type="espace">a &c_to_C;re&s_long;tien</reg>
                      </choice>
@@ -749,10 +749,10 @@
                   </l>
                </lg>
                <p>
+                  <lb facs="#l26"/>
                   <hi rend="moyenne_initiale empty" facs="#moyenne_lettrine1">
                      <hi rend="lettre_attente">u</hi>
                   </hi>
-                  <lb facs="#l26"/>
                   <choice>
                      <orig>
                         <hi rend="majuscule">N</hi>
@@ -760,8 +760,8 @@
                      <reg>n</reg>
                   </choice>&espace;&i_to_j;or a&u_to_v;int &q_tilde; uns hom e&s_long;toit
                   <lb facs="#l27"/>entrepris de gr&a_tilde;t enfermere&virgule; &s_long;i&espace;a-
-                  <lb facs="#l28"/>-loit querant <persName ref="#saint_martin">&s_long;e&i_tilde;t &m_to_M;artin</persName> por a-
-                  <lb facs="#l29"/>-&u_to_v;oir &s_long;ante &et_tironien;&espace;aide car li <persName ref="#saint_martin">&s_long;e&i_tilde;t home</persName> &i_to_j;u&u_to_v;oit
+                  <lb facs="#l28"/>-loit querant&#x20;<persName ref="#saint_martin">&s_long;e&i_tilde;t &m_to_M;artin&#x20;</persName> por a-
+                  <lb facs="#l29"/>-&u_to_v;oir &s_long;ante &et_tironien;&espace;aide car li&#x20;<persName ref="#saint_martin">&s_long;e&i_tilde;t home&#x20;</persName> &i_to_j;u&u_to_v;oit
                   <lb facs="30"/>encore&virgule; adonc <persName ref="#saint_brice">
                      <choice>
                         <orig>
@@ -885,10 +885,10 @@
                   <lb facs="#l58"/>&s_long;i com &u_to_v;os a&u_to_v;es oi &neuf;ter arrieres&point;
                </p>
                <p>
+                  <lb facs="#l59"/>
                   <hi rend="moyenne_initiale empty" facs="moyenne_lettrine2">
                      <hi rend="lettre_attente">q</hi>
                   </hi>
-                  <lb facs="#l59"/>
                   <choice>
                      <orig>
                         <hi rend="majuscule">U</hi>
