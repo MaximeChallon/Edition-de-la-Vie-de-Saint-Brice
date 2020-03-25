@@ -1,0 +1,6 @@
+a, a:visited {
+    color: #be122a; /* couleur blanche */
+}
+a:hover, a:focus, a:active {
+    color: #be122a;
+}
