@@ -46,4 +46,4 @@ Proposer une transformation XSLT de son projet XML TEI pour créer une visualisa
 
 ## Rendu
 
-L'ensemble du rendu se trouve dans le dossier `edition_numerique`. Pour ouvrir le site html, ouvrir `[accueil.html](edition_numerique/accueil.html)`.
+L'ensemble du rendu se trouve dans le dossier `edition_numerique`. Pour ouvrir le site html, ouvrir [accueil.html](edition_numerique/accueil.html).
