@@ -1297,6 +1297,21 @@
         />
     </xsl:template>
     
+    <xsl:template match="body//persName" mode="orig">
+        <xsl:variable name="refPers">
+            <xsl:value-of select="replace(@ref, '#', '')"/>
+        </xsl:variable>
+        <xsl:variable name="nomPers">
+            <xsl:value-of select="ancestor::TEI//person[@xml:id=$refPers]/persName/forename[1]/text()"/>
+        </xsl:variable>
+        <a href="{$nomPers}.html">
+            <xsl:text> </xsl:text>
+            <xsl:value-of select="./text() | .//orig/text() | .//abbr/text() | .//orig/hi/text()"/>
+            <xsl:text> </xsl:text>
+        </a>
+    </xsl:template>
+
+    
     <!-- les vers -->
     <xsl:template match="lg" mode="orig">
         <xsl:element name="ul">
@@ -1324,6 +1339,20 @@
         <xsl:value-of select="
                 .//reg/text() |
                 .//expan//text()"/>
+    </xsl:template>
+    
+    <xsl:template match="body//persName" mode="reg">
+        <xsl:variable name="refPers">
+            <xsl:value-of select="replace(@ref, '#', '')"/>
+        </xsl:variable>
+        <xsl:variable name="nomPers">
+            <xsl:value-of select="ancestor::TEI//person[@xml:id=$refPers]/persName/forename[1]/text()"/>
+        </xsl:variable>
+        <a href="{$nomPers}.html">
+            <xsl:text> </xsl:text>
+            <xsl:value-of select="./text() | .//reg/text() | .//expan/text() | .//reg/hi/text()"/>
+        <xsl:text> </xsl:text>
+        </a>
     </xsl:template>
     
     <!-- les vers -->
