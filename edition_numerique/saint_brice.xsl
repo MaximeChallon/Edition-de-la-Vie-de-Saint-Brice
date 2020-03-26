@@ -163,7 +163,7 @@
                 </footer>
             </html>
         </xsl:result-document>
-        
+
         <!-- page des personnages -->
         <xsl:result-document href="{$pathIndexPers}" method="html" indent="yes">
             <html>
@@ -176,7 +176,7 @@
                     </title>
                 </head>
                 <body class="container">
-                    
+
                     <nav class="navbar navbar-expand-lg navbar-light bg-light">
                         <a class="navbar-brand" href="{//titleStmt/title[1]}"
                             style="color: #be122a;font-weight:bold;">
@@ -227,25 +227,81 @@
                             </ul>
                         </div>
                     </nav>
-                    
+
                     <div class="row" style="color: #be122a;text-align: center;">
                         <h1>Index des personnages des folios 169r et 169v</h1>
                     </div>
-                        <div class="row">
-                                <xsl:for-each select="//person">
-                                    <!-- création de cartes de personnes renvoyant vers les pages individuelles -->
-                                    
-                                    <!-- création d'une page par personnage -->
-                                    <xsl:variable name="pathPersonne">
-                                        <xsl:value-of select="concat($file, persName/forename[1]/text(), '.html')"/>
-                                    </xsl:variable>
-                                    <xsl:result-document href="{$pathPersonne}" method="html" indent="yes">
-                                        <!-- mettre ici le squelette html, la navbar et le ffoter, et les infos de chacun -->
-                                    </xsl:result-document>
-                            </xsl:for-each>
+                    <div class="row">
+                        <xsl:for-each select="//person">
+                            <!-- création d'une page par personnage -->
+                            <xsl:variable name="pathPersonne">
+                                <xsl:value-of
+                                    select="concat($file, persName/forename[1]/text(), '.html')"/>
+                            </xsl:variable>
+                            <xsl:result-document href="{$pathPersonne}" method="html" indent="yes">
+                                <!-- mettre ici le squelette html, la navbar et le ffoter, et les infos de chacun -->
+                            </xsl:result-document>
+
+                            <!-- création de cartes de personnes renvoyant vers les pages individuelles -->
+                            <div class="card" style="width: 14rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <xsl:value-of select="persName/forename[1]/text()"/>
+                                    </h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">
+                                        <xsl:choose>
+                                            <xsl:when test="persName/roleName[@xml:lang = 'fre']">
+                                                <xsl:value-of
+                                                  select="persName/roleName[@xml:lang = 'fre']/text()"/>
+                                                <xsl:text> </xsl:text>
+                                                <xsl:value-of
+                                                  select="persName/forename[@xml:lang = 'fre']/text()"/>
+                                                <xsl:text> </xsl:text>
+                                                <xsl:value-of
+                                                  select="persName/addName[@xml:lang = 'fre']/text()"
+                                                />
+                                            </xsl:when>
+                                            <xsl:when test="birth/placeName/settlement">
+                                                <xsl:value-of
+                                                  select="birth/placeName/settlement/text()"/>
+                                            </xsl:when>
+                                            <xsl:when test="occupation">
+                                                <xsl:value-of select="occupation/text()"/>
+                                            </xsl:when>
+                                            <xsl:otherwise>
+                                                <xsl:value-of select="note/text()"/>
+                                            </xsl:otherwise>
+                                        </xsl:choose>
+                                    </h6>
+                                    <xsl:if test="birth">
+                                        <p>
+                                            <xsl:text>Né en/le </xsl:text>
+                                            <xsl:value-of select="birth/date/@when"/>
+                                            <xsl:text> à </xsl:text>
+                                            <xsl:value-of select="birth/placeName/settlement/text()"/>
+                                            <xsl:text> en </xsl:text>
+                                            <xsl:value-of select="birth/placeName/country/text()"/>
+                                        </p>
+                                    </xsl:if>
+                                    <xsl:if test="death">
+                                        <p>
+                                            <xsl:text>Mort en/le </xsl:text>
+                                            <xsl:value-of select="death/date/@when"/>
+                                            <xsl:text> à </xsl:text>
+                                            <xsl:value-of select="death/placeName/settlement/text()"/>
+                                            <xsl:text> en </xsl:text>
+                                            <xsl:value-of select="death/placeName/country/text()"/>
+                                        </p>
+                                    </xsl:if>
+                                    <a href="{$pathPersonne}" class="card-link">Voir la fiche</a>
+                                    <xsl:if test="persName/@ref">
+                                        <a href="{persName/@ref}" class="card-link">Wikipédia</a>
+                                    </xsl:if>
+                                </div>
+                            </div>
+                        </xsl:for-each>
                     </div>
-                    
-                    
+
                     <!-- utilitaires Bootstrap -->
                     <script src="static/js/jquery-3.4.1.slim.min.js"/>
                     <script src="static/js/popper.min.js"/>
