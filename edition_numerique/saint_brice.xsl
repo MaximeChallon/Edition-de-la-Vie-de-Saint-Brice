@@ -44,7 +44,6 @@
         <xsl:variable name="pathNorm2">
             <xsl:value-of select="concat($file, 'normalise169v', '.html')"/>
         </xsl:variable>
-
         <!-- page d'acceuil -->
         <xsl:result-document href="{$pathAccueil}" method="html" indent="yes">
             <html>
@@ -57,7 +56,7 @@
                     </title>
                 </head>
                 <body class="container">
-
+                    
                     <nav class="navbar navbar-expand-lg navbar-light bg-light">
                         <a class="navbar-brand" href="{//titleStmt/title[1]}"
                             style="color: #be122a;font-weight:bold;">
@@ -176,7 +175,7 @@
                     </title>
                 </head>
                 <body class="container">
-
+                    
                     <nav class="navbar navbar-expand-lg navbar-light bg-light">
                         <a class="navbar-brand" href="{//titleStmt/title[1]}"
                             style="color: #be122a;font-weight:bold;">
@@ -240,6 +239,135 @@
                             </xsl:variable>
                             <xsl:result-document href="{$pathPersonne}" method="html" indent="yes">
                                 <!-- mettre ici le squelette html, la navbar et le ffoter, et les infos de chacun -->
+                                <html>
+                                    <head>
+                                        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+                                        <link rel="stylesheet" href="static/css/bootstrap.min.css"/>
+                                        <link rel="stylesheet" href="static/css/css.css"/>
+                                        <title>
+                                            <xsl:value-of select="//titleStmt/title[1]"/>
+                                        </title>
+                                    </head>
+                                    <body class="container">
+                                        
+                                        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                                            <a class="navbar-brand" href="{//titleStmt/title[1]}"
+                                                style="color: #be122a;font-weight:bold;">
+                                                <xsl:value-of select="//titleStmt/title[1]"/>
+                                            </a>
+                                            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                                data-target="#navbarSupportedContent"
+                                                aria-controls="navbarSupportedContent" aria-expanded="false"
+                                                aria-label="Toggle navigation">
+                                                <span class="navbar-toggler-icon"/>
+                                            </button>
+                                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                                <ul class="navbar-nav mr-auto">
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="{$pathAccueil}">Accueil</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="{$pathAlloNorm}">Comparaison</a>
+                                                    </li>
+                                                    <li class="nav-item dropdown">
+                                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                                            role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="false">Edition allographétique</a>
+                                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                            <a class="dropdown-item" href="{$pathAllo1}">f169r</a>
+                                                            <a class="dropdown-item" href="{$pathAllo2}">f169v</a>
+                                                        </div>
+                                                    </li>
+                                                    <li class="nav-item dropdown">
+                                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                                            role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="false">Edition normalisée</a>
+                                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                            <a class="dropdown-item" href="{$pathNorm1}">f169r</a>
+                                                            <a class="dropdown-item" href="{$pathNorm2}">f169v</a>
+                                                        </div>
+                                                    </li>
+                                                    <li class="nav-item dropdown">
+                                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                                            role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="false">Index</a>
+                                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                            <a class="dropdown-item" href="{$pathIndexPers}"
+                                                                >Personnages</a>
+                                                            <a class="dropdown-item" href="{$pathIndexLieux}">Lieux</a>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </nav>
+                                        
+                                        <div class="row" style="margin-top:20px;">
+                                            <div class="col-sm-4">
+                                                <h2 style="color:#be122a; font-weight:bold;"><xsl:value-of select="persName/forename[1]/text()"/></h2>
+                                                <!-- gestion des noms des personnes -->
+                                                    <xsl:if test="persName/forename[@xml:lang='lat']">
+                                                    <p>Variantes des noms de <xsl:value-of select="persName/forename[1]/text()"/>:
+                                                    <ul>
+                                                        <li>En français:
+                                                        <ul>
+                                                            <li><xsl:value-of select="persName/roleName[@xml:lang='fre']/text()"/><xsl:text> </xsl:text><xsl:value-of select="persName/forename[@xml:lang='fre']/text()"/></li>
+                                                            <xsl:for-each select="persName/addName[@xml:lang='fre']">
+                                                                <li><xsl:value-of select="text()"/></li>
+                                                            </xsl:for-each>
+                                                        </ul>
+                                                        </li>
+                                                        <li>En latin:
+                                                            <ul>
+                                                                <li><xsl:value-of select="persName/roleName[@xml:lang='lat']/text()"/><xsl:text> </xsl:text><xsl:value-of select="persName/forename[@xml:lang='lat']/text()"/></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                    </p>
+                                                </xsl:if>
+                                            </div>
+                                            <div class="col-sm-4" style="margin-top:3em;">
+                                                <xsl:if test="birth">
+                                                    <p>
+                                                        <xsl:text>Né en/le </xsl:text>
+                                                        <xsl:value-of select="birth/date/@when"/>
+                                                        <xsl:text> à </xsl:text>
+                                                        <xsl:value-of select="birth/placeName/settlement/text()"/>
+                                                        <xsl:text> en </xsl:text>
+                                                        <xsl:value-of select="birth/placeName/country/text()"/>
+                                                    </p>
+                                                </xsl:if>
+                                                <xsl:if test="death">
+                                                    <p>
+                                                        <xsl:text>Mort en/le </xsl:text>
+                                                        <xsl:value-of select="death/date/@when"/>
+                                                        <xsl:text> à </xsl:text>
+                                                        <xsl:value-of select="death/placeName/settlement/text()"/>
+                                                        <xsl:text> en </xsl:text>
+                                                        <xsl:value-of select="death/placeName/country/text()"/>
+                                                    </p>
+                                                </xsl:if>
+                                            </div>
+                                            <div class="col-sm-4" style="margin-top:3em;">
+                                                <xsl:if test="occupation">
+                                                    <p style="font-weight:bold;">Activités:
+                                                    <ul>
+                                                        <xsl:for-each select="occupation">
+                                                            <li><xsl:value-of select="text()"/>
+                                                            <xsl:if test="@from">
+                                                                <xsl:text> à partir de </xsl:text><xsl:value-of select="@from"/>
+                                                            </xsl:if>
+                                                                <xsl:if test="@to">
+                                                                    <xsl:text> jusqu'en </xsl:text><xsl:value-of select="@to"/>
+                                                                </xsl:if>
+                                                            </li>
+                                                        </xsl:for-each>
+                                                    </ul>
+                                                    </p>
+                                                </xsl:if>
+                                            </div>
+                                        </div>
+                                    </body>
+                                </html>
                             </xsl:result-document>
 
                             <!-- création de cartes de personnes renvoyant vers les pages individuelles -->
@@ -329,7 +457,7 @@
                     </title>
                 </head>
                 <body class="container">
-
+                    
                     <nav class="navbar navbar-expand-lg navbar-light bg-light">
                         <a class="navbar-brand" href="{//titleStmt/title[1]}"
                             style="color: #be122a;font-weight:bold;">
