@@ -45,8 +45,8 @@
         <xsl:variable name="pathNorm2">
             <xsl:value-of select="concat($file, 'normalise169v', '.html')"/>
         </xsl:variable>
-        
-        
+
+
         <!-- page d'accueil -->
         <xsl:result-document href="{$pathAccueil}" method="html" indent="yes">
             <html>
@@ -110,12 +110,38 @@
                             </ul>
                         </div>
                     </nav>
-
-                    <div class="row">
+                    
+                    <div class="row" style="margin:20px;">
+                        <div class="col-sm-4" style="text-align:center;">
+                            <img alt="f169r" src="static/img/f174_demi.jpg"
+                                style="width:300px; hieght:auto;"/>
+                        </div>
                         <div class="col-sm-8">
-                            <p>Edition numérique réalisée à partir du manuscrit Français 411 de la
+                            <h4 style="color:#be122a;">Informations générales sur le manuscrit</h4>
+                            <ul>
+                                <li>Titre: <xsl:value-of select="//titleStmt/title[1]/text()"/></li>
+                                <li>Auteur: <xsl:value-of select="//titleStmt/author/forename/text()"/><xsl:text> </xsl:text><xsl:value-of select="//titleStmt/author/surname/text()"/></li>
+                                <li>Lieu de conservation: <xsl:value-of select="concat(//msIdentifier/repository/text(), ', ', //msIdentifier/collection/text(), ', ', //msIdentifier/settlement/text(), ', ', //msIdentifier/country/text())"/>
+                                </li>
+                                <li>Date: <xsl:value-of select="//origDate/text()"/> </li>
+                                <li>Description codicologique: <xsl:value-of select="//foliation/p[1]/text()"/> sur <xsl:value-of select="//support/material[2]/text()"/></li>
+                                <li>Marges:<ul>
+                                <xsl:for-each select="//layoutDesc/summary/p">
+                                    <li><xsl:value-of select=".//text()"/></li>
+                                </xsl:for-each>
+                                    <li><xsl:value-of select="//layout/note/text()"/></li>
+                                </ul>
+                                </li>
+                                <li>Ecriture: <xsl:value-of select="//scriptDesc//p//text()"/></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin:20px;">
+                        <div class="col-sm-8">
+                            <h4 style="color:#be122a;">Edition numérique réalisée à partir du manuscrit Français 411 de la
                                 Bibliothèque nationale de France, numérisé sur <a
-                                    href="{//body/div/@facs}">Gallica</a>.</p>
+                                    href="{//body/div/@facs}">Gallica</a>.</h4>
                             <p>
                                 <ul>
                                     <li>Index <ul>
@@ -147,7 +173,7 @@
                             </p>
                         </div>
                         <div class="col-sm-4" style="text-align:center;">
-                            <img alt="f169r" src="static/img/f174_demi.jpg"
+                            <img alt="f169v" src="static/img/f175_demi.jpg"
                                 style="width:300px; hieght:auto;"/>
                         </div>
                     </div>
@@ -547,7 +573,7 @@
                 </footer>
             </html>
         </xsl:result-document>
-        
+
         <!-- page des lieux -->
         <xsl:result-document href="{$pathIndexLieux}" method="html" indent="yes">
             <html>
@@ -560,7 +586,7 @@
                     </title>
                 </head>
                 <body class="container">
-                    
+
                     <nav class="navbar navbar-expand-lg navbar-light bg-light">
                         <a class="navbar-brand" href="{//titleStmt/title[1]}"
                             style="color: #be122a;font-weight:bold;">
@@ -611,25 +637,27 @@
                             </ul>
                         </div>
                     </nav>
-                    
+
                     <div class="row" style="color: #be122a;text-align: center;">
                         <h1>Index des lieux des folios 169r et 169v</h1>
-                    </div>                    
+                    </div>
                     <div class="row">
                         <xsl:for-each select="//place">
                             <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <xsl:value-of select="placeName/settlement/text() | placeName/addName/text()"/>
-                                </h5>
-                                <xsl:if test="placeName[contains(@ref, 'wikipedia')]">
-                                <a href="{placeName/@ref}" class="card-link">Wikipédia</a>
-                                </xsl:if>
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <xsl:value-of
+                                            select="placeName/settlement/text() | placeName/addName/text()"
+                                        />
+                                    </h5>
+                                    <xsl:if test="placeName[contains(@ref, 'wikipedia')]">
+                                        <a href="{placeName/@ref}" class="card-link">Wikipédia</a>
+                                    </xsl:if>
+                                </div>
                             </div>
-                        </div>
                         </xsl:for-each>
                     </div>
-                    
+
                     <!-- utilitaires Bootstrap -->
                     <script src="static/js/jquery-3.4.1.slim.min.js"/>
                     <script src="static/js/popper.min.js"/>
@@ -712,7 +740,7 @@
                     <div class="row">
                         <div class="col-sm-6">
                             <h2 style="color: #be122a;text-align: right;">Transcription facsimilaire
-                                des folios <xsl:for-each select="//div[@type='folio']">
+                                des folios <xsl:for-each select="//div[@type = 'folio']">
                                     <xsl:variable name="foliosN">
                                         <xsl:value-of select="replace(@facs, '#', '')"/>
                                     </xsl:variable>
@@ -731,7 +759,7 @@
                         </div>
                         <div class="col-sm-6">
                             <h2 style="color: #be122a;">Transcription normalisée des folios
-                                    <xsl:for-each select="//div[@type='folio']">
+                                    <xsl:for-each select="//div[@type = 'folio']">
                                     <xsl:variable name="foliosN">
                                         <xsl:value-of select="replace(@facs, '#', '')"/>
                                     </xsl:variable>
@@ -771,7 +799,7 @@
                     </title>
                 </head>
                 <body class="container page_img">
-                    
+
                     <nav class="navbar navbar-expand-lg navbar-light bg-light">
                         <a class="navbar-brand" href="{//titleStmt/title[1]}"
                             style="color: #be122a;font-weight:bold;">
@@ -822,63 +850,70 @@
                             </ul>
                         </div>
                     </nav>
-                    
+
                     <div class="row">
-                        <h2 style="color:#be122a; margin-top:20px;">Edition allographétique numérique du feuillet 169r</h2>
+                        <h2 style="color:#be122a; margin-top:20px;">Edition allographétique
+                            numérique du feuillet 169r</h2>
                     </div>
-                    
+
                     <div class="row">
                         <div class="col-sm-8">
                             <!-- image interactive inspirée d'après un morceau de javascript trouvé sur internet -->
-                        <img usemap="#mapfax.jpg" src="static/img/f174_demi.jpg" border="0" style="width: 800px;height: auto;"/>
-                        <map name="mapfax.jpg">                            
-                            <xsl:for-each select="//div[@n='169r']//seg">
-                                <!-- récupération de chaque l'id de chaque segment pour pouvoir le faire correspondre avec son facsimile -->
-                                <xsl:variable name="idSeg">
-                                    <xsl:value-of select="replace(@facs, '#', '')"/>
-                                </xsl:variable>
-                                <!-- récupération du texte à insérer dans le popup javascript -->
-                                <xsl:variable name="texte">
-                                    <xsl:apply-templates select="." mode="orig"/>
-                                </xsl:variable>
-                                <!-- création des variables de chaque coordonnée qui est à calculer en focntion de la taille de l'image dans la page html -->
-                                <!-- l'image affichée dans le HTML n'est que la moitié de celle IIIF téléchargée sur Gallica. Or l'encodage TEI a été réalisé avec -->
-                                <!-- l'image entière: pour l'axe x, on retire 4341px (ce qui a été rogné de la photo originale) des <zone ulx lrx>.  -->
-                                <!-- pour les abscisses: 800 est le nombre de pixels de l'image finale dans le html -->
-                                <!-- (ancestor::TEI//zone[@xml:id=$idSeg]/@ulx - 4341) est l'abscisse gauche du rectangle recalculée en fonction de la partie rognée  -->
-                                <!-- la division par 4341 est la largeur de la photo rognée nécessaire au produit en croix -->
-                                <xsl:variable name="ulx">
-                                    <xsl:value-of select="800*(ancestor::TEI//zone[@xml:id=$idSeg]/@ulx - 4341) div 4341"/>
-                                </xsl:variable>
-                                <!-- pour les ordonnées: 800 est le nombre de pixels de l'image finale dans le html -->
-                                <!-- ancestor::TEI//zone[@xml:id=$idSeg]/@uly est l'orodnnée gauche du rectangle  -->
-                                <!-- la division par 8682 est la hauteur de la photo nécessaire au produit en croix -->
-                                <!-- le *2 final s'explique par le rognage en largeur de la photo -->
-                                <xsl:variable name="uly">
-                                    <xsl:value-of select="800*ancestor::TEI//zone[@xml:id=$idSeg]/@uly div 8682 *2"/>
-                                </xsl:variable>
-                                <xsl:variable name="lrx">
-                                    <xsl:value-of select="800*(ancestor::TEI//zone[@xml:id=$idSeg]/@lrx - 4341) div 4341"/>
-                                </xsl:variable>
-                                <xsl:variable name="lry">
-                                    <xsl:value-of select="800*ancestor::TEI//zone[@xml:id=$idSeg]/@lry div 8682 *2"/>
-                                </xsl:variable>
-                                
-                                <area shape="rect" 
-                                    coords="{$ulx},{$uly},{$lrx},{$lry}" 
-                                    href="#" 
-                                    OnMouseOver="AffBulle(' {$texte}',{$ulx})" 
-                                    OnMouseOut="HideBulle()" 
-                                    OnClick="return false"></area>
-                            </xsl:for-each>
-                        </map>
+                            <img usemap="#mapfax.jpg" src="static/img/f174_demi.jpg" border="0"
+                                style="width: 800px;height: auto;"/>
+                            <map name="mapfax.jpg">
+                                <xsl:for-each select="//div[@n = '169r']//seg">
+                                    <!-- récupération de chaque l'id de chaque segment pour pouvoir le faire correspondre avec son facsimile -->
+                                    <xsl:variable name="idSeg">
+                                        <xsl:value-of select="replace(@facs, '#', '')"/>
+                                    </xsl:variable>
+                                    <!-- récupération du texte à insérer dans le popup javascript -->
+                                    <xsl:variable name="texte">
+                                        <xsl:apply-templates select="." mode="orig"/>
+                                    </xsl:variable>
+                                    <!-- création des variables de chaque coordonnée qui est à calculer en focntion de la taille de l'image dans la page html -->
+                                    <!-- l'image affichée dans le HTML n'est que la moitié de celle IIIF téléchargée sur Gallica. Or l'encodage TEI a été réalisé avec -->
+                                    <!-- l'image entière: pour l'axe x, on retire 4341px (ce qui a été rogné de la photo originale) des <zone ulx lrx>.  -->
+                                    <!-- pour les abscisses: 800 est le nombre de pixels de l'image finale dans le html -->
+                                    <!-- (ancestor::TEI//zone[@xml:id=$idSeg]/@ulx - 4341) est l'abscisse gauche du rectangle recalculée en fonction de la partie rognée  -->
+                                    <!-- la division par 4341 est la largeur de la photo rognée nécessaire au produit en croix -->
+                                    <xsl:variable name="ulx">
+                                        <xsl:value-of
+                                            select="800 * (ancestor::TEI//zone[@xml:id = $idSeg]/@ulx - 4341) div 4341"
+                                        />
+                                    </xsl:variable>
+                                    <!-- pour les ordonnées: 800 est le nombre de pixels de l'image finale dans le html -->
+                                    <!-- ancestor::TEI//zone[@xml:id=$idSeg]/@uly est l'orodnnée gauche du rectangle  -->
+                                    <!-- la division par 8682 est la hauteur de la photo nécessaire au produit en croix -->
+                                    <!-- le *2 final s'explique par le rognage en largeur de la photo -->
+                                    <xsl:variable name="uly">
+                                        <xsl:value-of
+                                            select="800 * ancestor::TEI//zone[@xml:id = $idSeg]/@uly div 8682 * 2"
+                                        />
+                                    </xsl:variable>
+                                    <xsl:variable name="lrx">
+                                        <xsl:value-of
+                                            select="800 * (ancestor::TEI//zone[@xml:id = $idSeg]/@lrx - 4341) div 4341"
+                                        />
+                                    </xsl:variable>
+                                    <xsl:variable name="lry">
+                                        <xsl:value-of
+                                            select="800 * ancestor::TEI//zone[@xml:id = $idSeg]/@lry div 8682 * 2"
+                                        />
+                                    </xsl:variable>
+
+                                    <area shape="rect" coords="{$ulx},{$uly},{$lrx},{$lry}" href="#"
+                                        OnMouseOver="AffBulle(' {$texte}',{$ulx})"
+                                        OnMouseOut="HideBulle()" OnClick="return false"/>
+                                </xsl:for-each>
+                            </map>
                             <a href="{$pathAllo2}">Page suivante</a>
                         </div>
                         <div class="col-sm-4" style="padding-left:75px;">
-                            <xsl:apply-templates select="//div[@n='169r']" mode="orig"/>
+                            <xsl:apply-templates select="//div[@n = '169r']" mode="orig"/>
                         </div>
                     </div>
-                    
+
                     <!-- utilitaires Bootstrap -->
                     <script src="static/js/jquery-3.4.1.slim.min.js"/>
                     <script src="static/js/popper.min.js"/>
@@ -893,7 +928,7 @@
                 </footer>
             </html>
         </xsl:result-document>
-        
+
         <xsl:result-document href="{$pathAllo2}" method="html" indent="yes">
             <html>
                 <head>
@@ -905,7 +940,7 @@
                     </title>
                 </head>
                 <body class="container page_img">
-                    
+
                     <nav class="navbar navbar-expand-lg navbar-light bg-light">
                         <a class="navbar-brand" href="{//titleStmt/title[1]}"
                             style="color: #be122a;font-weight:bold;">
@@ -956,17 +991,19 @@
                             </ul>
                         </div>
                     </nav>
-                    
+
                     <div class="row">
-                        <h2 style="color:#be122a; margin-top:20px;">Edition allographétique numérique du feuillet 169v</h2>
+                        <h2 style="color:#be122a; margin-top:20px;">Edition allographétique
+                            numérique du feuillet 169v</h2>
                     </div>
-                    
+
                     <div class="row">
                         <div class="col-sm-8">
                             <!-- image interactive inspirée d'après un morceau de javascript trouvé sur internet -->
-                            <img usemap="#mapfax.jpg" src="static/img/f175_demi.jpg" border="0" style="width: 800px;height: auto;"/>
-                            <map name="mapfax.jpg">                            
-                                <xsl:for-each select="//div[@n='169v']//seg">
+                            <img usemap="#mapfax.jpg" src="static/img/f175_demi.jpg" border="0"
+                                style="width: 800px;height: auto;"/>
+                            <map name="mapfax.jpg">
+                                <xsl:for-each select="//div[@n = '169v']//seg">
                                     <!-- récupération de chaque l'id de chaque segment pour pouvoir le faire correspondre avec son facsimile -->
                                     <xsl:variable name="idSeg">
                                         <xsl:value-of select="replace(@facs, '#', '')"/>
@@ -977,33 +1014,38 @@
                                     </xsl:variable>
                                     <!-- création des variables de chaque coordonnée qui est à calculer en focntion de la taille de l'image dans la page html -->
                                     <xsl:variable name="ulx">
-                                        <xsl:value-of select="800*ancestor::TEI//zone[@xml:id=$idSeg]/@ulx div 4349"/>
+                                        <xsl:value-of
+                                            select="800 * ancestor::TEI//zone[@xml:id = $idSeg]/@ulx div 4349"
+                                        />
                                     </xsl:variable>
                                     <xsl:variable name="uly">
-                                        <xsl:value-of select="800*ancestor::TEI//zone[@xml:id=$idSeg]/@uly div 8697 *2"/>
+                                        <xsl:value-of
+                                            select="800 * ancestor::TEI//zone[@xml:id = $idSeg]/@uly div 8697 * 2"
+                                        />
                                     </xsl:variable>
                                     <xsl:variable name="lrx">
-                                        <xsl:value-of select="800*ancestor::TEI//zone[@xml:id=$idSeg]/@lrx div 4349"/>
+                                        <xsl:value-of
+                                            select="800 * ancestor::TEI//zone[@xml:id = $idSeg]/@lrx div 4349"
+                                        />
                                     </xsl:variable>
                                     <xsl:variable name="lry">
-                                        <xsl:value-of select="800*ancestor::TEI//zone[@xml:id=$idSeg]/@lry div 8697 *2"/>
+                                        <xsl:value-of
+                                            select="800 * ancestor::TEI//zone[@xml:id = $idSeg]/@lry div 8697 * 2"
+                                        />
                                     </xsl:variable>
-                                    
-                                    <area shape="rect" 
-                                        coords="{$ulx},{$uly},{$lrx},{$lry}" 
-                                        href="#" 
-                                        OnMouseOver="AffBulle(' {$texte}',{$ulx})" 
-                                        OnMouseOut="HideBulle()" 
-                                        OnClick="return false"></area>
+
+                                    <area shape="rect" coords="{$ulx},{$uly},{$lrx},{$lry}" href="#"
+                                        OnMouseOver="AffBulle(' {$texte}',{$ulx})"
+                                        OnMouseOut="HideBulle()" OnClick="return false"/>
                                 </xsl:for-each>
                             </map>
                             <a href="{$pathAllo1}">Page précédente</a>
                         </div>
                         <div class="col-sm-4" style="padding-left:75px;">
-                            <xsl:apply-templates select="//div[@n='169v']" mode="orig"/>
+                            <xsl:apply-templates select="//div[@n = '169v']" mode="orig"/>
                         </div>
                     </div>
-                    
+
                     <!-- utilitaires Bootstrap -->
                     <script src="static/js/jquery-3.4.1.slim.min.js"/>
                     <script src="static/js/popper.min.js"/>
@@ -1018,7 +1060,7 @@
                 </footer>
             </html>
         </xsl:result-document>
-        
+
         <xsl:result-document href="{$pathNorm1}" method="html" indent="yes">
             <html>
                 <head>
@@ -1030,7 +1072,7 @@
                     </title>
                 </head>
                 <body class="container page_img">
-                    
+
                     <nav class="navbar navbar-expand-lg navbar-light bg-light">
                         <a class="navbar-brand" href="{//titleStmt/title[1]}"
                             style="color: #be122a;font-weight:bold;">
@@ -1081,17 +1123,19 @@
                             </ul>
                         </div>
                     </nav>
-                    
+
                     <div class="row">
-                        <h2 style="color:#be122a; margin-top:20px;">Edition normalisée numérique du feuillet 169r</h2>
+                        <h2 style="color:#be122a; margin-top:20px;">Edition normalisée numérique du
+                            feuillet 169r</h2>
                     </div>
-                    
+
                     <div class="row">
                         <div class="col-sm-8">
                             <!-- image interactive inspirée d'après un morceau de javascript trouvé sur internet -->
-                            <img usemap="#mapfax.jpg" src="static/img/f174_demi.jpg" border="0" style="width: 800px;height: auto;"/>
-                            <map name="mapfax.jpg">                            
-                                <xsl:for-each select="//div[@n='169r']//seg">
+                            <img usemap="#mapfax.jpg" src="static/img/f174_demi.jpg" border="0"
+                                style="width: 800px;height: auto;"/>
+                            <map name="mapfax.jpg">
+                                <xsl:for-each select="//div[@n = '169r']//seg">
                                     <!-- récupération de chaque l'id de chaque segment pour pouvoir le faire correspondre avec son facsimile -->
                                     <xsl:variable name="idSeg">
                                         <xsl:value-of select="replace(@facs, '#', '')"/>
@@ -1107,38 +1151,43 @@
                                     <!-- (ancestor::TEI//zone[@xml:id=$idSeg]/@ulx - 4341) est l'abscisse gauche du rectangle recalculée en fonction de la partie rognée  -->
                                     <!-- la division par 4341 est la largeur de la photo rognée nécessaire au produit en croix -->
                                     <xsl:variable name="ulx">
-                                        <xsl:value-of select="800*(ancestor::TEI//zone[@xml:id=$idSeg]/@ulx - 4341) div 4341"/>
+                                        <xsl:value-of
+                                            select="800 * (ancestor::TEI//zone[@xml:id = $idSeg]/@ulx - 4341) div 4341"
+                                        />
                                     </xsl:variable>
                                     <!-- pour les ordonnées: 800 est le nombre de pixels de l'image finale dans le html -->
                                     <!-- ancestor::TEI//zone[@xml:id=$idSeg]/@uly est l'orodnnée gauche du rectangle  -->
                                     <!-- la division par 8682 est la hauteur de la photo nécessaire au produit en croix -->
                                     <!-- le *2 final s'explique par le rognage en largeur de la photo -->
                                     <xsl:variable name="uly">
-                                        <xsl:value-of select="800*ancestor::TEI//zone[@xml:id=$idSeg]/@uly div 8682 *2"/>
+                                        <xsl:value-of
+                                            select="800 * ancestor::TEI//zone[@xml:id = $idSeg]/@uly div 8682 * 2"
+                                        />
                                     </xsl:variable>
                                     <xsl:variable name="lrx">
-                                        <xsl:value-of select="800*(ancestor::TEI//zone[@xml:id=$idSeg]/@lrx - 4341) div 4341"/>
+                                        <xsl:value-of
+                                            select="800 * (ancestor::TEI//zone[@xml:id = $idSeg]/@lrx - 4341) div 4341"
+                                        />
                                     </xsl:variable>
                                     <xsl:variable name="lry">
-                                        <xsl:value-of select="800*ancestor::TEI//zone[@xml:id=$idSeg]/@lry div 8682 *2"/>
+                                        <xsl:value-of
+                                            select="800 * ancestor::TEI//zone[@xml:id = $idSeg]/@lry div 8682 * 2"
+                                        />
                                     </xsl:variable>
-                                    
-                                    <area shape="rect" 
-                                        coords="{$ulx},{$uly},{$lrx},{$lry}" 
-                                        href="#" 
-                                        OnMouseOver="AffBulle(' {$texte}',{$ulx})" 
-                                        OnMouseOut="HideBulle()" 
-                                        OnClick="return false"></area>
+
+                                    <area shape="rect" coords="{$ulx},{$uly},{$lrx},{$lry}" href="#"
+                                        OnMouseOver="AffBulle(' {$texte}',{$ulx})"
+                                        OnMouseOut="HideBulle()" OnClick="return false"/>
                                 </xsl:for-each>
                             </map>
-                            
+
                             <a href="{$pathNorm2}">Page suivante</a>
                         </div>
                         <div class="col-sm-4" style="padding-left:75px;">
-                            <xsl:apply-templates select="//div[@n='169r']" mode="reg"/>
+                            <xsl:apply-templates select="//div[@n = '169r']" mode="reg"/>
                         </div>
                     </div>
-                    
+
                     <!-- utilitaires Bootstrap -->
                     <script src="static/js/jquery-3.4.1.slim.min.js"/>
                     <script src="static/js/popper.min.js"/>
@@ -1153,7 +1202,7 @@
                 </footer>
             </html>
         </xsl:result-document>
-        
+
         <xsl:result-document href="{$pathNorm2}" method="html" indent="yes">
             <html>
                 <head>
@@ -1165,7 +1214,7 @@
                     </title>
                 </head>
                 <body class="container page_img">
-                    
+
                     <nav class="navbar navbar-expand-lg navbar-light bg-light">
                         <a class="navbar-brand" href="{//titleStmt/title[1]}"
                             style="color: #be122a;font-weight:bold;">
@@ -1216,54 +1265,61 @@
                             </ul>
                         </div>
                     </nav>
-                    
+
                     <div class="row">
-                        <h2 style="color:#be122a; margin-top:20px;">Edition normalisée numérique du feuillet 169v</h2>
+                        <h2 style="color:#be122a; margin-top:20px;">Edition normalisée numérique du
+                            feuillet 169v</h2>
                     </div>
-                    
+
                     <div class="row">
                         <div class="col-sm-8">
                             <!-- image interactive inspirée d'après un morceau de javascript trouvé sur internet -->
-                            <img usemap="#mapfax.jpg" src="static/img/f175_demi.jpg" border="0" style="width: 800px;height: auto;"/>
-                            <map name="mapfax.jpg">                            
-                                <xsl:for-each select="//div[@n='169v']//seg">
+                            <img usemap="#mapfax.jpg" src="static/img/f175_demi.jpg" border="0"
+                                style="width: 800px;height: auto;"/>
+                            <map name="mapfax.jpg">
+                                <xsl:for-each select="//div[@n = '169v']//seg">
                                     <!-- récupération de chaque l'id de chaque segment pour pouvoir le faire correspondre avec son facsimile -->
                                     <xsl:variable name="idSeg">
                                         <xsl:value-of select="replace(@facs, '#', '')"/>
                                     </xsl:variable>
                                     <!-- récupération du texte à insérer dans le popup javascript -->
                                     <xsl:variable name="texte">
-                                        <xsl:apply-templates select="." mode="reg"/>
+                                       <xsl:apply-templates select="." mode="reg"/>
                                     </xsl:variable>
                                     <!-- création des variables de chaque coordonnée qui est à calculer en focntion de la taille de l'image dans la page html -->
                                     <xsl:variable name="ulx">
-                                        <xsl:value-of select="800*ancestor::TEI//zone[@xml:id=$idSeg]/@ulx div 4349"/>
+                                        <xsl:value-of
+                                            select="800 * ancestor::TEI//zone[@xml:id = $idSeg]/@ulx div 4349"
+                                        />
                                     </xsl:variable>
                                     <xsl:variable name="uly">
-                                        <xsl:value-of select="800*ancestor::TEI//zone[@xml:id=$idSeg]/@uly div 8697 *2"/>
+                                        <xsl:value-of
+                                            select="800 * ancestor::TEI//zone[@xml:id = $idSeg]/@uly div 8697 * 2"
+                                        />
                                     </xsl:variable>
                                     <xsl:variable name="lrx">
-                                        <xsl:value-of select="800*ancestor::TEI//zone[@xml:id=$idSeg]/@lrx div 4349"/>
+                                        <xsl:value-of
+                                            select="800 * ancestor::TEI//zone[@xml:id = $idSeg]/@lrx div 4349"
+                                        />
                                     </xsl:variable>
                                     <xsl:variable name="lry">
-                                        <xsl:value-of select="800*ancestor::TEI//zone[@xml:id=$idSeg]/@lry div 8697 *2"/>
+                                        <xsl:value-of
+                                            select="800 * ancestor::TEI//zone[@xml:id = $idSeg]/@lry div 8697 * 2"
+                                        />
                                     </xsl:variable>
-                                    
-                                    <area shape="rect" 
-                                        coords="{$ulx},{$uly},{$lrx},{$lry}" 
-                                        href="#" 
-                                        OnMouseOver="AffBulle(' {$texte}',{$ulx})" 
-                                        OnMouseOut="HideBulle()" 
-                                        OnClick="return false"></area>
+
+                                    <area shape="rect" coords="{$ulx},{$uly},{$lrx},{$lry}" href="#"
+                                        OnMouseOver="AffBulle(' {$texte}',{$ulx})"
+                                        OnMouseOut="HideBulle()" OnClick="return false"/>
                                 </xsl:for-each>
                             </map>
                             <a href="{$pathNorm1}">Page précédente</a>
                         </div>
                         <div class="col-sm-4" style="padding-left:75px;">
-                            <xsl:apply-templates select="//div[@n='169v']" mode="reg"/>
+                            <xsl:apply-templates select="//div[@n = '169v']" mode="reg"/>
                         </div>
                     </div>
-                    
+
                     <!-- utilitaires Bootstrap -->
                     <script src="static/js/jquery-3.4.1.slim.min.js"/>
                     <script src="static/js/popper.min.js"/>
@@ -1279,30 +1335,31 @@
             </html>
         </xsl:result-document>
 
-    </xsl:template>    
+    </xsl:template>
 
     <!-- gestion de la partie originale -->
-    
+
     <xsl:template match="seg" mode="orig">
         <xsl:element name="br"/>
         <xsl:apply-templates mode="orig"/>
     </xsl:template>
-    
+
     <xsl:template match="choice" mode="orig">
         <xsl:value-of
             select="
-            .//orig/text() |
-            .//abbr/text() |
-            .//orig/hi/text()"
+                .//orig/text() |
+                .//abbr/text() |
+                .//orig/hi/text()"
         />
     </xsl:template>
-    
+
     <xsl:template match="body//persName" mode="orig">
         <xsl:variable name="refPers">
             <xsl:value-of select="replace(@ref, '#', '')"/>
         </xsl:variable>
         <xsl:variable name="nomPers">
-            <xsl:value-of select="ancestor::TEI//person[@xml:id=$refPers]/persName/forename[1]/text()"/>
+            <xsl:value-of
+                select="ancestor::TEI//person[@xml:id = $refPers]/persName/forename[1]/text()"/>
         </xsl:variable>
         <a href="{$nomPers}.html">
             <xsl:text> </xsl:text>
@@ -1311,17 +1368,19 @@
         </a>
     </xsl:template>
 
-    
+
     <!-- les vers -->
     <xsl:template match="lg" mode="orig">
         <xsl:element name="ul">
             <xsl:apply-templates mode="orig"/>
         </xsl:element>
     </xsl:template>
-    
+
     <xsl:template match="l" mode="orig">
         <li>
-            <xsl:value-of select="seg//hi//text() | seg//choice/orig/text() | seg//orig//text() | seg/text()"/>
+            <xsl:value-of
+                select="seg//hi//text() | seg//choice/orig/text() | seg//orig//text() | seg/text()"
+            />
         </li>
     </xsl:template>
 
@@ -1340,21 +1399,22 @@
                 .//reg/text() |
                 .//expan//text()"/>
     </xsl:template>
-    
+
     <xsl:template match="body//persName" mode="reg">
         <xsl:variable name="refPers">
             <xsl:value-of select="replace(@ref, '#', '')"/>
         </xsl:variable>
         <xsl:variable name="nomPers">
-            <xsl:value-of select="ancestor::TEI//person[@xml:id=$refPers]/persName/forename[1]/text()"/>
+            <xsl:value-of
+                select="ancestor::TEI//person[@xml:id = $refPers]/persName/forename[1]/text()"/>
         </xsl:variable>
         <a href="{$nomPers}.html">
             <xsl:text> </xsl:text>
             <xsl:value-of select="./text() | .//reg/text() | .//expan/text() | .//reg/hi/text()"/>
-        <xsl:text> </xsl:text>
+            <xsl:text> </xsl:text>
         </a>
     </xsl:template>
-    
+
     <!-- les vers -->
     <xsl:template match="lg" mode="reg">
         <xsl:element name="ul">
@@ -1366,6 +1426,6 @@
             <xsl:value-of select="seg/hi/hi/text() | seg//reg//text() | seg/text()"/>
         </li>
     </xsl:template>
-    
+
 
 </xsl:stylesheet>
