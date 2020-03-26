@@ -611,7 +611,23 @@
                         </div>
                     </nav>
                     
-                    <div class="row"></div>
+                    <div class="row" style="color: #be122a;text-align: center;">
+                        <h1>Index des lieux des folios 169r et 169v</h1>
+                    </div>                    
+                    <div class="row">
+                        <xsl:for-each select="//place">
+                            <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <xsl:value-of select="placeName/settlement/text() | placeName/addName/text()"/>
+                                </h5>
+                                <xsl:if test="placeName[contains(@ref, 'wikipedia')]">
+                                <a href="{placeName/@ref}" class="card-link">Wikipédia</a>
+                                </xsl:if>
+                            </div>
+                        </div>
+                        </xsl:for-each>
+                    </div>
                     
                     <!-- utilitaires Bootstrap -->
                     <script src="static/js/jquery-3.4.1.slim.min.js"/>
@@ -625,7 +641,6 @@
                             Maxime Challon</p>
                     </div>
                 </footer>
-                </body>
             </html>
         </xsl:result-document>
 
