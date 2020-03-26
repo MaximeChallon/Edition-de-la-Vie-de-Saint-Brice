@@ -274,7 +274,7 @@
                </place>
                <place xml:id="eveche">
                   <placeName ref="#tours">
-                     <addName>évêché</addName>
+                     <addName>évêché de Tours</addName>
                   </placeName>
                </place>
             </listPlace>
@@ -313,16 +313,16 @@
                   <!-- Lieux de résidence -->
                   <residence type="primary" from="0377" to="0430"  ref="#tours">
                      <placeName>
-                        <country>France</country>
+                        <country>Gaule</country>
                         <region>Touraine</region>
                         <settlement type="city">Tours</settlement>
                      </placeName>
                   </residence>
                   <residence type="primary" from="0377" notAfter="0397">
                      <placeName>
-                        <country>France</country>
+                        <country>Gaule</country>
                         <region>Touraine</region>
-                        <settlement type="city">Tours</settlement>
+                        <settlement type="city">Monastère de Saint-Martin de Tours</settlement>
                         <name>Monastère de Saint-Martin</name>
                      </placeName>
                   </residence>
@@ -334,7 +334,7 @@
                   </residence>
                   <residence type="primary" from="0437" to="0444"  ref="#tours">
                      <placeName>
-                        <country>France</country>
+                        <country>Gaule</country>
                         <region>Touraine</region>
                         <settlement type="city">Tours</settlement>
                      </placeName>
@@ -392,6 +392,7 @@
                   <residence type="temporary" from="0354" notAfter="0356">
                      <placeName>
                         <region>Rhin</region>
+                        <settlement>région du Rhin</settlement>
                      </placeName>
                   </residence>
                   <residence type="temporary" notBefore="0354" notAfter="0356">
