@@ -669,8 +669,7 @@
                </lg>
                <p>
                   <seg type="ligne" facs="#l26">
-                  <hi rend="moyenne_initiale empty" facs="#moyenne_lettrine1">
-                     <hi rend="lettre_attente">u</hi></hi><choice><orig><hi rend="majuscule">N</hi></orig><reg>n</reg></choice>&espace;&i_to_j;or a&u_to_v;int &q_tilde; uns hom e&s_long;toit</seg>
+                  <hi rend="moyenne_initiale empty" facs="#moyenne_lettrine1"><hi rend="lettre_attente">u</hi></hi><choice><orig><hi rend="majuscule">N</hi></orig><reg>n</reg></choice>&espace;&i_to_j;or a&u_to_v;int &q_tilde; uns hom e&s_long;toit</seg>
                   <seg type="ligne" facs="#l27">entrepris de gr&a_tilde;t enfermere&virgule; &s_long;i&espace;a-</seg>
                   <seg type="ligne" facs="#l28">-loit querant&#x20;<persName ref="#saint_martin">&s_long;e&i_tilde;t &m_to_M;artin&#x20;</persName> por a-</seg>
                   <seg type="ligne" facs="#l29">-&u_to_v;oir &s_long;ante &et_tironien;&espace;aide car li&#x20;<persName ref="#saint_martin">&s_long;e&i_tilde;t home&#x20;</persName> &i_to_j;u&u_to_v;oit</seg>
@@ -687,7 +686,7 @@
                   <seg type="ligne" facs="#l39"><persName>-me</persName> q&apostrophe;il lot tro&u_to_v;e &et_tironien; &s_long;i fu toz gueriz de &s_long;en-</seg>
                   <seg type="ligne" facs="#l40">fermete&point_virgule; <choice><orig><hi rend="majuscule">E</hi></orig><reg>e</reg></choice>t <persName ref="#saint_martin">&s_long;e&i_tilde;t &m_to_M;artins</persName> &u_to_v;int a&espace;<persName ref="#saint_brice">&s_long;e&i_tilde;t</persName></seg>
                </p></div>
-               <div type="folio" n="169c" facs="#f169c">
+               <div type="folio" n="169v" facs="#f169c">
                      <!-- Encodage de la troisième colonne du folio 169 -->
                      <cb n="169c"/>
                   <p><seg type="ligne" facs="#l41"><persName ref="#saint_brice">&b_to_B;rice</persName> qi diacres e&s_long;toit&virgule; &et_tironien;&espace;la parla en tel</seg>

@@ -4,6 +4,7 @@
     xpath-default-namespace="http://www.tei-c.org/ns/1.0" exclude-result-prefixes="xs tei"
     version="2.0">
     <xsl:output method="html" indent="yes" encoding="UTF-8"/>
+    <xsl:strip-space elements="*"/>
     <!-- l'omission de strip-space est volontaire, cette balise supprimait tous les espaces entre les fins de balise TEI et les mots -->
 
     <!-- configuration des sorties -->
@@ -711,7 +712,7 @@
                     <div class="row">
                         <div class="col-sm-6">
                             <h2 style="color: #be122a;text-align: right;">Transcription facsimilaire
-                                des folios <xsl:for-each select="//pb">
+                                des folios <xsl:for-each select="//div[@type='folio']">
                                     <xsl:variable name="foliosN">
                                         <xsl:value-of select="replace(@facs, '#', '')"/>
                                     </xsl:variable>
@@ -730,7 +731,7 @@
                         </div>
                         <div class="col-sm-6">
                             <h2 style="color: #be122a;">Transcription normalisée des folios
-                                    <xsl:for-each select="//pb">
+                                    <xsl:for-each select="//div[@type='folio']">
                                     <xsl:variable name="foliosN">
                                         <xsl:value-of select="replace(@facs, '#', '')"/>
                                     </xsl:variable>
@@ -824,13 +825,52 @@
                     
                     <div class="row">
                         <div class="col-sm-8">
+                            <!-- image interactive inspirée d'après un morceau de javascript trouvé sur internet -->
                         <img usemap="#mapfax.jpg" src="static/img/f174_demi.jpg" border="0" style="width: 800px;height: auto;"/>
-                        <map name="mapfax.jpg">
-                             <area shape="rect" coords="139,628,235,648" href="#" OnMouseOver="AffBulle(' bonjour',139)" OnMouseOut="HideBulle()" OnClick="return false"/>
+                        <map name="mapfax.jpg">                            
+                            <xsl:for-each select="//div[@n='169r']//seg">
+                                <!-- récupération de chaque l'id de chaque segment pour pouvoir le faire correspondre avec son facsimile -->
+                                <xsl:variable name="idSeg">
+                                    <xsl:value-of select="replace(@facs, '#', '')"/>
+                                </xsl:variable>
+                                <!-- récupération du texte à insérer dans le popup javascript -->
+                                <xsl:variable name="texte">
+                                    <xsl:apply-templates select="." mode="orig"/>
+                                </xsl:variable>
+                                <!-- création des variables de chaque coordonnée qui est à calculer en focntion de la taille de l'image dans la page html -->
+                                <!-- l'image affichée dans le HTML n'est que la moitié de celle IIIF téléchargée sur Gallica. Or l'encodage TEI a été réalisé avec -->
+                                <!-- l'image entière: pour l'axe x, on retire 4341px (ce qui a été rogné de la photo originale) des <zone ulx lrx>.  -->
+                                <!-- pour les abscisses: 800 est le nombre de pixels de l'image finale dans le html -->
+                                <!-- (ancestor::TEI//zone[@xml:id=$idSeg]/@ulx - 4341) est l'abscisse gauche du rectangle recalculée en fonction de la partie rognée  -->
+                                <!-- la division par 4341 est la largeur de la photo rognée nécessaire au produit en croix -->
+                                <xsl:variable name="ulx">
+                                    <xsl:value-of select="800*(ancestor::TEI//zone[@xml:id=$idSeg]/@ulx - 4341) div 4341"/>
+                                </xsl:variable>
+                                <!-- pour les ordonnées: 800 est le nombre de pixels de l'image finale dans le html -->
+                                <!-- ancestor::TEI//zone[@xml:id=$idSeg]/@uly est l'orodnnée gauche du rectangle  -->
+                                <!-- la division par 8682 est la hauteur de la photo nécessaire au produit en croix -->
+                                <!-- le *2 final s'explique par le rognage en largeur de la photo -->
+                                <xsl:variable name="uly">
+                                    <xsl:value-of select="800*ancestor::TEI//zone[@xml:id=$idSeg]/@uly div 8682 *2"/>
+                                </xsl:variable>
+                                <xsl:variable name="lrx">
+                                    <xsl:value-of select="800*(ancestor::TEI//zone[@xml:id=$idSeg]/@lrx - 4341) div 4341"/>
+                                </xsl:variable>
+                                <xsl:variable name="lry">
+                                    <xsl:value-of select="800*ancestor::TEI//zone[@xml:id=$idSeg]/@lry div 8682 *2"/>
+                                </xsl:variable>
+                                
+                                <area shape="rect" 
+                                    coords="{$ulx},{$uly},{$lrx},{$lry}" 
+                                    href="#" 
+                                    OnMouseOver="AffBulle(' {$texte}',{$ulx})" 
+                                    OnMouseOut="HideBulle()" 
+                                    OnClick="return false"></area>
+                            </xsl:for-each>
                         </map>
                         </div>
                         <div class="col-sm-4" style="padding-left:75px;">
-                            <xsl:apply-templates select="//text" mode="orig"/>
+                            <xsl:apply-templates select="//seg" mode="orig"/>
                         </div>
                     </div>
                     
@@ -849,52 +889,42 @@
             </html>
         </xsl:result-document>
 
-    </xsl:template>
-
-    <!-- pour tous les modes -->
-
-    <!-- les sauts de ligne: gestion partout sauf dans les vers -->
-    <xsl:template match="p/lb" mode="#all">
-        <xsl:element name="br"/>
-    </xsl:template>
-
-    <xsl:template match="said/lb" mode="#all">
-        <xsl:element name="br"/>
-    </xsl:template>
-
-    <xsl:template match="p/persName/lb" mode="#all">
-        <xsl:element name="br"/>
-    </xsl:template>
-
-    <xsl:template match="head//lb" mode="#all">
-        <xsl:element name="br"/>
-    </xsl:template>
-
-    <!-- les vers -->
-    <xsl:template match="lg" mode="#all">
-        <xsl:element name="ul">
-            <xsl:apply-templates/>
-        </xsl:element>
-    </xsl:template>
-    <xsl:template match="l" mode="#all">
-        <li>
-            <xsl:value-of select="hi//text() | choice/reg/text() | reg//text() | ./text()"/>
-        </li>
-    </xsl:template>
-
+    </xsl:template>    
 
     <!-- gestion de la partie originale -->
+    
+    <xsl:template match="seg" mode="orig">
+        <xsl:element name="br"/>
+        <xsl:apply-templates mode="orig"/>
+    </xsl:template>
+    
     <xsl:template match="choice" mode="orig">
         <xsl:value-of
             select="
-                .//orig/text() |
-                .//abbr/text() |
-                .//orig/hi/text()"
+            .//orig/text() |
+            .//abbr/text() |
+            .//orig/hi/text()"
         />
+    </xsl:template>
+    
+    <!-- les vers -->
+    <xsl:template match="lg" mode="orig">
+        <xsl:element name="ul">
+            <xsl:apply-templates mode="orig"/>
+        </xsl:element>
+    </xsl:template>
+    
+    <xsl:template match="l" mode="orig">
+        <li>
+            <xsl:value-of select="seg//hi//text() | seg//choice/orig/text() | seg//orig//text() | seg/text()"/>
+        </li>
     </xsl:template>
 
     <!-- gestion de la partie régularisée -->
-    <!-- les paragraphes -->
+    <xsl:template match="seg" mode="reg">
+        <xsl:element name="br"/>
+        <xsl:apply-templates mode="reg"/>
+    </xsl:template>
 
     <xsl:template match="reg[@type = 'ponctuation']" mode="reg">
         <xsl:value-of select="./text() | ./pc/text()"/>
@@ -905,5 +935,18 @@
                 .//reg/text() |
                 .//expan//text()"/>
     </xsl:template>
+    
+    <!-- les vers -->
+    <xsl:template match="lg" mode="reg">
+        <xsl:element name="ul">
+            <xsl:apply-templates mode="reg"/>
+        </xsl:element>
+    </xsl:template>
+    <xsl:template match="l" mode="reg">
+        <li>
+            <xsl:value-of select="seg/hi/hi/text() | seg//reg//text() | seg/text()"/>
+        </li>
+    </xsl:template>
+    
 
 </xsl:stylesheet>
