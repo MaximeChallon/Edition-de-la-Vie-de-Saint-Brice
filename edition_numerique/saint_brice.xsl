@@ -1370,6 +1370,7 @@
         </xsl:result-document>
 
     </xsl:template>
+    
 
     <!-- gestion de la partie originale -->
 
