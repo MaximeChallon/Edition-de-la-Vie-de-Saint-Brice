@@ -346,6 +346,12 @@
                                                         <xsl:value-of select="death/placeName/country/text()"/>
                                                     </p>
                                                 </xsl:if>
+                                                <xsl:if test="faith[@type='practicing']">
+                                                    <p><xsl:value-of select="persName/forename[1]/text()"/> est pratiquant <xsl:value-of select="faith/text()"/> </p>
+                                                </xsl:if>
+                                                <xsl:if test="faith[@type='convert']">
+                                                    <p><xsl:value-of select="persName/forename[1]/text()"/> est <xsl:value-of select="faith/text()"/> converti depuis <xsl:value-of select="faith/@when"/></p>
+                                                </xsl:if>
                                             </div>
                                             <div class="col-sm-4" style="margin-top:3em;">
                                                 <xsl:if test="occupation">
@@ -365,6 +371,13 @@
                                                     </p>
                                                 </xsl:if>
                                             </div>
+                                        </div>
+                                        
+                                        <div class="row">
+                                            <xsl:if test="note/@source">
+                                            <h3>Une courte description tirée de <a href="{note/@source}">Wikipédia</a></h3>
+                                                <xsl:value-of select="note/text()"/>
+                                            </xsl:if>
                                         </div>
                                     </body>
                                 </html>
