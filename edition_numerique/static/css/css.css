@@ -4,3 +4,8 @@ a, a:visited {
 a:hover, a:focus, a:active {
     color: #be122a;
 }
+
+.page_img{
+    margin-left:20px;
+    margin-right:0px;
+}

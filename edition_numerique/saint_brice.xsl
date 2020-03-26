@@ -759,6 +759,96 @@
             </html>
         </xsl:result-document>
 
+        <xsl:result-document href="{$pathAllo1}" method="html" indent="yes">
+            <html>
+                <head>
+                    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+                    <link rel="stylesheet" href="static/css/bootstrap.min.css"/>
+                    <link rel="stylesheet" href="static/css/css.css"/>
+                    <title>
+                        <xsl:value-of select="//titleStmt/title[1]"/>
+                    </title>
+                </head>
+                <body class="container page_img">
+                    
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <a class="navbar-brand" href="{//titleStmt/title[1]}"
+                            style="color: #be122a;font-weight:bold;">
+                            <xsl:value-of select="//titleStmt/title[1]"/>
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"/>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{$pathAccueil}">Accueil</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{$pathAlloNorm}">Comparaison</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">Edition allographétique</a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{$pathAllo1}">f169r</a>
+                                        <a class="dropdown-item" href="{$pathAllo2}">f169v</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">Edition normalisée</a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{$pathNorm1}">f169r</a>
+                                        <a class="dropdown-item" href="{$pathNorm2}">f169v</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">Index</a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{$pathIndexPers}"
+                                            >Personnages</a>
+                                        <a class="dropdown-item" href="{$pathIndexLieux}">Lieux</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    
+                    <div class="row">
+                        <div class="col-sm-8">
+                        <img usemap="#mapfax.jpg" src="static/img/f174_demi.jpg" border="0" style="width: 800px;height: auto;"/>
+                        <map name="mapfax.jpg">
+                             <area shape="rect" coords="139,628,235,648" href="#" OnMouseOver="AffBulle(' bonjour',139)" OnMouseOut="HideBulle()" OnClick="return false"/>
+                        </map>
+                        </div>
+                        <div class="col-sm-4" style="padding-left:75px;">
+                            <xsl:apply-templates select="//text" mode="orig"/>
+                        </div>
+                    </div>
+                    
+                    <!-- utilitaires Bootstrap -->
+                    <script src="static/js/jquery-3.4.1.slim.min.js"/>
+                    <script src="static/js/popper.min.js"/>
+                    <script src="static/js/bootstrap.min.js"/>
+                    <script src="static/js/js.js"/>
+                </body>
+                <footer class="blog-footer">
+                    <div class="container" style="padding: 1em; text-align: center">
+                        <p>© <a href="https://www.chartes.psl.eu">Ecole nationale des Chartes</a> -
+                            Maxime Challon</p>
+                    </div>
+                </footer>
+            </html>
+        </xsl:result-document>
+
     </xsl:template>
 
     <!-- pour tous les modes -->
