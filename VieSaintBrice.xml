@@ -618,53 +618,43 @@
                <lg type="octosyllabe">
                   <l n="1" rhyme="re">
                      <seg type="ligne" facs="#l16">
-                     <hi rend="petite_initiale empty" facs="petite_lettrine"><hi rend="lettre_attente">p</hi></hi><choice><orig><hi rend="majuscule">O</hi></orig><reg>o</reg></choice>r&espace;ce ne &s_long;et le&u_to_n; mes &q_tilde; fere</seg>
-                     <ref type="note" n="3" xml:id="bdl2" target="#bdl2_note"/>
+                     <hi rend="petite_initiale empty" facs="petite_lettrine"><hi rend="lettre_attente">p</hi></hi><choice><orig><hi rend="majuscule">O</hi></orig><reg>o</reg></choice>r&espace;ce ne &s_long;et le&u_to_n; mes &q_tilde; fere<ref type="note" n="3" xml:id="bdl2" target="#bdl2_note"/></seg>
                   </l>
                   <l n="2" rhyme="re">
                      <seg type="ligne" facs="#l17">
-                     <choice><orig><hi rend="majuscule">N</hi></orig><reg>n</reg></choice>us ne&s_long;e&s_long;et au&q_tilde;l chief trere</seg>
-                     <ref type="note" n="4" xml:id="bdl3" target="#bdl3_note"/>
+                     <choice><orig><hi rend="majuscule">N</hi></orig><reg>n</reg></choice>us ne&s_long;e&s_long;et au&q_tilde;l chief trere<ref type="note" n="4" xml:id="bdl3" target="#bdl3_note"/></seg>
                   </l>
                   <l n="3" rhyme="ien">
                      <seg type="ligne" facs="#l18">
-                     <choice><orig><hi rend="majuscule">B</hi></orig><reg>b</reg></choice>enigus e&s_long;t qi &u_to_v;eu&s_long;t fere &b_pointe;n</seg>
-                     <ref type="note" n="5" xml:id="bdl4" target="#bdl4_note"/>
+                     <choice><orig><hi rend="majuscule">B</hi></orig><reg>b</reg></choice>enigus e&s_long;t qi &u_to_v;eu&s_long;t fere &b_pointe;n<ref type="note" n="5" xml:id="bdl4" target="#bdl4_note"/></seg>
                   </l>
                   <l n="4" rhyme="ien">
                      <seg type="ligne" facs="#l19">
-                     <choice><orig><hi rend="majuscule">N</hi></orig><reg>n</reg></choice>e nus nel tient&#x20;<choice><orig>acre&s_long;tien</orig><reg type="espace">a &c_to_C;re&s_long;tien</reg></choice></seg>
-                     <ref type="note" n="6" xml:id="bdl5" target="#bdl5_note"/>
+                     <choice><orig><hi rend="majuscule">N</hi></orig><reg>n</reg></choice>e nus nel tient&#x20;<choice><orig>acre&s_long;tien</orig><reg type="espace">a &c_to_C;re&s_long;tien</reg></choice><ref type="note" n="6" xml:id="bdl5" target="#bdl5_note"/></seg>
                   </l>
                   <l n="5" rhyme="ent">
                      <seg type="ligne" facs="#l20">
-                     <choice><orig><hi rend="majuscule">Q</hi></orig><reg>q</reg></choice>i le mal fet a&p_barre_par;tem&e_tilde_en;t</seg>
-                     <ref type="note" n="7" xml:id="bdl6" target="#bdl6_note"/>
+                     <choice><orig><hi rend="majuscule">Q</hi></orig><reg>q</reg></choice>i le mal fet a&p_barre_par;tem&e_tilde_en;t<ref type="note" n="7" xml:id="bdl6" target="#bdl6_note"/></seg>
                   </l>
                   <l n="6" rhyme="ent">
                      <seg type="ligne" facs="#l21">
-                     <choice><orig><hi rend="majuscule">Q</hi></orig><reg>q</reg></choice>i&espace;&s_long;e&espace;meintient moiennem&e_tilde_en;t</seg>
-                     <ref type="note" n="8" xml:id="bdl7" target="#bdl7_note"/>
+                     <choice><orig><hi rend="majuscule">Q</hi></orig><reg>q</reg></choice>i&espace;&s_long;e&espace;meintient moiennem&e_tilde_en;t<ref type="note" n="8" xml:id="bdl7" target="#bdl7_note"/></seg>
                   </l>
                   <l n="7" rhyme="ars">
                      <seg type="ligne" facs="#l22">
-                     <choice><orig><hi rend="majuscule">L</hi></orig><reg>l</reg></choice>&apostrophe;on&espace;li&espace;met &s_long;us q&apostrophe;il es e&s_long;chars</seg>
-                     <ref type="note" n="9" xml:id="bdl8" target="#bdl8_note"/>
+                     <choice><orig><hi rend="majuscule">L</hi></orig><reg>l</reg></choice>&apostrophe;on&espace;li&espace;met &s_long;us q&apostrophe;il es e&s_long;chars<ref type="note" n="9" xml:id="bdl8" target="#bdl8_note"/></seg>
                   </l>
                   <l n="8" rhyme="ars">
                      <seg type="ligne" facs="#l23">
-                     <choice><orig><hi rend="majuscule">S</hi></orig><reg>s</reg></choice>i e&s_long;t li maus par tot e&s_long;pars</seg>
-                     <ref type="note" n="10" xml:id="bdl9" target="#bdl9_note"/>
+                     <choice><orig><hi rend="majuscule">S</hi></orig><reg>s</reg></choice>i e&s_long;t li maus par tot e&s_long;pars<ref type="note" n="10" xml:id="bdl9" target="#bdl9_note"/></seg>
                   </l>
                   <l n="9" rhyme="enir">
                      <seg type="ligne" facs="#l24">
-                     <choice><orig><hi rend="majuscule">Q</hi></orig><reg>q</reg></choice>e&espace;nus ne &s_long;et &q_tilde;&espace;de&u_to_v;e&u_to_n;ir</seg>
-                     <ref type="note" n="11" xml:id="bdl10" target="#bdl10_note"/>
+                     <choice><orig><hi rend="majuscule">Q</hi></orig><reg>q</reg></choice>e&espace;nus ne &s_long;et &q_tilde;&espace;de&u_to_v;e&u_to_n;ir<ref type="note" n="11" xml:id="bdl10" target="#bdl10_note"/></seg>
                   </l>
                   <l n="10" rhyme="enir">
                      <seg type="ligne" facs="#l25">
-                     <choice><orig><hi rend="majuscule">N</hi></orig><reg>n</reg></choice>e la quel &u_to_v;oie il pui&s_long;t tenir</seg>
-                     <ref type="note" n="12" xml:id="bdl11" target="#bdl11_note"/>
+                     <choice><orig><hi rend="majuscule">N</hi></orig><reg>n</reg></choice>e la quel &u_to_v;oie il pui&s_long;t tenir<ref type="note" n="12" xml:id="bdl11" target="#bdl11_note"/></seg>
                   </l>
                </lg>
                <p>
