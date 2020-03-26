@@ -1,6 +1,8 @@
+# XML-TEI
+
 À rendre pour le 27 janvier 2020
 
-# Consignes générales
+## Consignes générales
 
 Structurer en XML-TEI votre texte en vue d’une édition et en respectant le genre littéraire auquel appartient votre extrait (/6);    
 Compléter de la manière la plus précise possible le teiHeader de votre édition, en fonction des éléments nécessaires à son établissement et à la compréhension du texte (/3);    
@@ -14,7 +16,7 @@ Compléter de la manière la plus précise possible le teiHeader de votre éditi
 	- Présenter en introduction votre projet et ses exploitations possibles (/4);
 	- Documenter le fonctionnement de votre encodage et vos choix de balises (/2).
 
-# Edition à visée paléographique : Récits hagiographiques du manuscrit 411 de la Bibliothèque nationale de France.
+## Edition à visée paléographique : Récits hagiographiques du manuscrit 411 de la Bibliothèque nationale de France.
 
 - Structurer le texte fourni en divisions de type section en fonction des initiales ornées, et en paragraphes si des subdivisions vous semblent nécessaires pour le sens ;
 - Renseigner le teiHeader, et plus précisément le msDesc à l’aide de la notice Gallica du manuscrit 411 et de la notice Jonas : http://jonas.irht.cnrs.fr/consulter/manuscrit/detail_manuscrit.php?projet=71287#Association ;
@@ -26,4 +28,22 @@ Compléter de la manière la plus précise possible le teiHeader de votre éditi
 encodés : pourquoi et comment.
 - Présenter comment votre encodage pourrait être exploité.
 
-# Sujet choisi : 1: Début de la Vie de saint Brice, fol.169a-169c : de « Ci commence la vie monseigneur seint Brice » à « seint Brice parla et si dist » https://gallica.bnf.fr/ark:/12148/btv1b107209247/f174.item.zoom
+## Sujet choisi : 1: Début de la Vie de saint Brice, fol.169a-169c : de « Ci commence la vie monseigneur seint Brice » à « seint Brice parla et si dist » https://gallica.bnf.fr/ark:/12148/btv1b107209247/f174.item.zoom
+
+# XSLT
+
+À rendre pour le 04 mai 2020
+
+## Consignes générales
+
+Proposer une transformation XSLT de son projet XML TEI pour créer une visualisation de son travail.
+- Mettre en place une structure d’accueil LaTeX ou HTML
+- Rédiger des règles simples avec un Xpath valide pour insérer des informations du document source dans le document de sortie
+- Créer une ou des règles avec des conditions
+- Utiliser une ou des règles avec for-each uniquement si cela est nécessaire
+- Proposer un code facile à lire et commenté
+- Simplifier le plus possible ses règles XSL
+
+## Rendu
+
+L'ensemble du rendu se trouve dans le dossier `edition_numerique`. Pour ouvrir le site html, ouvrir `[accueil.html](edition_numerique/accueil.html)`.
