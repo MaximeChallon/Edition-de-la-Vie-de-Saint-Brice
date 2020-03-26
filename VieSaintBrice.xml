@@ -690,208 +690,64 @@
                      <!-- Encodage de la troisième colonne du folio 169 -->
                      <cb n="169c"/>
                   <p><seg type="ligne" facs="#l41"><persName ref="#saint_brice">&b_to_B;rice</persName> qi diacres e&s_long;toit&virgule; &et_tironien;&espace;la parla en tel</seg>
-                     <seg type="ligne" facs="#l42">maniere&deux_points; 
-                  <said who="#saint_martin">
-                  <persName ref="#saint_brice">
-                     <choice>
-                        <orig>
-                           <hi rend="majuscule">B</hi>
-                        </orig>
-                        <reg>b</reg>
-                     </choice>rices</persName> dont ne te&espace;&s_long;emble &i_to_j;e</said></seg>
-                     <seg type="ligne" facs="#l43"><said>borgnes &et_tironien; de&s_long;uez&point; 
-                  </said>
-                  <choice>
-                     <orig>
-                        <hi rend="majuscule">Q</hi>
-                     </orig>
-                     <reg>q</reg>
-                  </choice>ant il&espace;loi &s_long;i en&espace;ot</seg>
+                     <seg type="ligne" facs="#l42">maniere&deux_points; <said who="#saint_martin"><persName ref="#saint_brice"><choice><orig><hi rend="majuscule">B</hi></orig><reg>b</reg></choice>rices</persName> dont ne te&espace;&s_long;emble &i_to_j;e</said></seg>
+                     <seg type="ligne" facs="#l43"><said>borgnes &et_tironien; de&s_long;uez&point; </said><choice><orig><hi rend="majuscule">Q</hi></orig><reg>q</reg></choice>ant il&espace;loi &s_long;i en&espace;ot</seg>
                      <seg type="ligne" facs="#l44">gr&a_tilde;t honte &s_long;i &neuf;menca a&espace;&s_long;on pooir a</seg>
                      <seg type="ligne" facs="#l45">denoier ce&s_long;te parole con&q_tilde;s ne l&apostrophe;a&u_to_v;oit</seg>
-                     <seg type="ligne" facs="#l46">dite <choice>
-                     <orig>
-                        <hi rend="majuscule">D</hi>
-                     </orig>
-                     <reg>d</reg>
-                  </choice>ont li di&s_long;t <persName ref="#saint_martin">&s_long;e&i_tilde;t &m_to_M;artins</persName>
-                  <choice>
-                     <orig>.</orig>
-                     &deux_points;
-                  </choice> 
-                  <said who="#saint_martin">mes</said></seg>
+                     <seg type="ligne" facs="#l46">dite <choice><orig><hi rend="majuscule">D</hi></orig><reg>d</reg></choice>ont li di&s_long;t <persName ref="#saint_martin">&s_long;e&i_tilde;t &m_to_M;artins</persName><choice><orig>.</orig>&deux_points;</choice><said who="#saint_martin">mes</said></seg>
                      <seg type="ligne" facs="#l47"><said>oreilles e&s_long;toi&e_tilde_en;t &p_tilde;s de&espace;ta bouche dem&e_tilde_en;-</said></seg>
-                     <seg type="ligne" facs="#l48"><said>-tieres &q_tilde; tu le deis&point_virgule; <choice>
-                     <orig>
-                        <hi rend="majuscule">E</hi>
-                     </orig>
-                     <reg>e</reg>
-                  </choice>t &b_pointe;n &s_long;aches qa-</said></seg>
+                     <seg type="ligne" facs="#l48"><said>-tieres &q_tilde; tu le deis&point_virgule; <choice><orig><hi rend="majuscule">E</hi></orig><reg>e</reg></choice>t &b_pointe;n &s_long;aches qa-</said></seg>
                      <seg type="ligne" facs="#l49"><said>-peines ma&espace;otroie n&r_tilde_ostr;e &s_long;ires &q_tilde; tu aies</said></seg>
-                     <seg type="ligne" facs="#l50"><said>a&p_tilde;s moi l&apostrophe;<placeName ref="#eveche">e&u_to_v;e&s_long;chie</placeName>&point_virgule; <choice>
-                     <orig>
-                        <hi rend="majuscule">M</hi>
-                     </orig>
-                     <reg>m</reg>
-                  </choice>es neporq&a_tilde;t tu</said></seg>
+                     <seg type="ligne" facs="#l50"><said>a&p_tilde;s moi l&apostrophe;<placeName ref="#eveche">e&u_to_v;e&s_long;chie</placeName>&point_virgule; <choice><orig><hi rend="majuscule">M</hi></orig><reg>m</reg></choice>es neporq&a_tilde;t tu</said></seg>
                      <seg type="ligne" facs="#l51"><said>l&apostrophe;auras &s_long;i&espace;en&espace;&s_long;offeras aincois molt</said></seg>
-                     <seg type="ligne" facs="#l52"><said>da&u_tilde;sitez &et_tironien; molt de &p_barre_per;&s_long;ecut&o_tilde_io;ns&point; 
-                  </said>
-                  <choice>
-                     <orig>
-                        <hi rend="majuscule">Q</hi>
-                     </orig>
-                     <reg>q</reg>
-                  </choice>ant</seg>
+                     <seg type="ligne" facs="#l52"><said>da&u_tilde;sitez &et_tironien; molt de &p_barre_per;&s_long;ecut&o_tilde_io;ns&point; </said><choice><orig><hi rend="majuscule">Q</hi></orig><reg>q</reg></choice>ant</seg>
                      <seg type="ligne" facs="#l53"><persName ref="#saint_brice">&s_long;e&i_tilde;t &b_to_B;rices</persName> loi &s_long;i l&apostrophe;en &neuf;m&e_tilde_en;ca a&espace;degaber</seg>
-                     <seg type="ligne" facs="#l54">&et_tironien; a dire 
-                  <said who="#saint_brice">
-                  <choice>
-                     <orig>
-                        <hi rend="majuscule">D</hi>
-                     </orig>
-                     <reg>d</reg>
-                  </choice>&o_tilde;t ne di&s_long;oie&deux_points; &i_to_j;e &b_pointe;n &q_tilde; ci&s_long;t di-</said></seg>
-                     <seg type="ligne" facs="#l55"><said>-&s_long;oit &s_long;u&u_to_v;&e_tilde_en;tes foiz de&s_long;uces paroles&point;
-                  </said>
-                  <choice>
-                     <orig>
-                        <hi rend="majuscule">E</hi>
-                     </orig>
-                     <reg>e</reg>
-                  </choice>n</seg>
+                     <seg type="ligne" facs="#l54">&et_tironien; a dire <said who="#saint_brice"><choice><orig><hi rend="majuscule">D</hi></orig><reg>d</reg></choice>&o_tilde;t ne di&s_long;oie&deux_points; &i_to_j;e &b_pointe;n &q_tilde; ci&s_long;t di-</said></seg>
+                     <seg type="ligne" facs="#l55"><said>-&s_long;oit &s_long;u&u_to_v;&e_tilde_en;tes foiz de&s_long;uces paroles&point;</said><choice><orig><hi rend="majuscule">E</hi></orig><reg>e</reg></choice>n</seg>
                      <seg type="ligne" facs="#l56">tel maniere les denia il &s_long;o&u_to_v;&e_tilde_en;t le <persName ref="#saint_martin">&s_long;e&i_tilde;t</persName></seg>
-                     <seg type="ligne" facs="#l57"><persName>home</persName> par paroles <choice>
-                     <orig>
-                        <hi rend="majuscule">T</hi>
-                     </orig>
-                     <reg>t</reg>
-                  </choice>&a_tilde;t q&apostrophe;il fu morz</seg>
+                     <seg type="ligne" facs="#l57"><persName>home</persName> par paroles <choice><orig><hi rend="majuscule">T</hi></orig><reg>t</reg></choice>&a_tilde;t q&apostrophe;il fu morz</seg>
                      <seg type="ligne" facs="#l58">&s_long;i com &u_to_v;os a&u_to_v;es oi &neuf;ter arrieres&point;</seg>
                </p>
                <p>
-                  <seg type="ligne" facs="#l59">
-                  <hi rend="moyenne_initiale empty" facs="moyenne_lettrine2">
-                     <hi rend="lettre_attente">q</hi>
-                  </hi>
-                  <choice>
-                     <orig>
-                        <hi rend="majuscule">U</hi>
-                     </orig>
-                     <reg>u</reg>
-                  </choice>ant la <placeName ref="#tours">citez</placeName> fu&espace;&s_long;anz pa&s_long;-</seg>
-                  <seg type="ligne" facs="#l60">-tor qi la go&u_tilde;na&s_long;t&virgule; <choice>
-                     <orig>
-                        <hi rend="majuscule">L</hi>
-                     </orig>
-                     <reg>l</reg>
-                  </choice>i&espace;<persName ref="#citoyens">citoien</persName></seg>
+                  <seg type="ligne" facs="#l59"><hi rend="moyenne_initiale empty" facs="moyenne_lettrine2"><hi rend="lettre_attente">q</hi></hi><choice><orig><hi rend="majuscule">U</hi></orig><reg>u</reg></choice>ant la <placeName ref="#tours">citez</placeName> fu&espace;&s_long;anz pa&s_long;-</seg>
+                  <seg type="ligne" facs="#l60">-tor qi la go&u_tilde;na&s_long;t&virgule; <choice><orig><hi rend="majuscule">L</hi></orig><reg>l</reg></choice>i&espace;<persName ref="#citoyens">citoien</persName></seg>
                   <seg type="ligne" facs="#l61">e&s_long;lur&e_tilde_en;t <persName ref="#saint_brice">&s_long;e&i_tilde;t&espace;&b_to_B;rice</persName> a&espace;arce&u_to_v;e&s_long;&q_tilde;</seg>
                   <seg type="ligne" facs="#l62">car il e&s_long;toit de &s_long;e&i_tilde;te&espace;&u_to_v;ie encore&espace;fu&s_long;t il</seg>
-                  <seg type="ligne" facs="#l63">orgueilleus&point;&espace;<choice>
-                     <orig>
-                        <hi rend="majuscule">A</hi>
-                     </orig>
-                     <reg>a</reg>
-                  </choice>u tr&e_tilde_en;tie&s_long;me an a&p_tilde;s ce</seg>
+                  <seg type="ligne" facs="#l63">orgueilleus&point;&espace;<choice><orig><hi rend="majuscule">A</hi></orig><reg>a</reg></choice>u tr&e_tilde_en;tie&s_long;me an a&p_tilde;s ce</seg>
                   <seg type="ligne" facs="#l64">q&apostrophe;il fu a&espace;ordenez a&espace;arce&u_to_v;e&s_long;qe &et_tironien;&espace;mis en</seg>
-                  <seg type="ligne" facs="#l65">la &s_long;eignorie<choice>
-                     <orig>.</orig>
-                     &virgule;
-                  </choice> li &u_to_v;int uns gr&a_tilde;z anuiz</seg>
+                  <seg type="ligne" facs="#l65">la &s_long;eignorie<choice><orig>.</orig>&virgule;</choice> li &u_to_v;int uns gr&a_tilde;z anuiz</seg>
                   <seg type="ligne" facs="#l66">&et_tironien; uns gr&a_tilde;z bla&s_long;mes car une <persName ref="#religieuse">feme</persName>&espace;qi</seg>
                   <seg type="ligne" facs="#l67">les dras l&apostrophe;a&u_to_v;oit de la ma&s_long;mee fu ence-</seg>
-                  <seg type="ligne" facs="#l68">-inte &et_tironien;&espace;&s_long;i acocha &et_tironien;&espace;ot un <persName ref="#enfant">enf&a_tilde;t</persName>
-                  <choice>
-                     <orig>.</orig>
-                     &virgule;
-                  </choice> &et_tironien;&espace;&s_long;i&s_long;e me-</seg>
+                  <seg type="ligne" facs="#l68">-inte &et_tironien;&espace;&s_long;i acocha &et_tironien;&espace;ot un <persName ref="#enfant">enf&a_tilde;t</persName><choice><orig>.</orig>&virgule;</choice> &et_tironien;&espace;&s_long;i&s_long;e me-</seg>
                   <seg type="ligne" facs="#l69">-intenoit cele en gui&s_long;e religieu&s_long;e par</seg>
                   <seg type="ligne" facs="#l70">le &s_long;embl&a_tilde;t de &s_long;es &u_to_v;e&s_long;tem&e_tilde_en;z&point; 
-                  <choice>
-                     <orig>
-                        <hi rend="majuscule">E</hi>
-                     </orig>
-                     <reg>e</reg>
-                  </choice>t qant</seg>
+                  <choice><orig><hi rend="majuscule">E</hi></orig><reg>e</reg></choice>t qant</seg>
                   <seg type="ligne" facs="#l71">cil de&espace;la <placeName ref="#tours">cite</placeName> &s_long;or&e_tilde_en;t &q_tilde; cele e&s_long;toit acochie</seg>
                   <seg type="ligne" facs="#l72">d&apostrophe;<persName ref="#enfant">enf&a_tilde;t</persName>&virgule; il fur&e_tilde_en;t m&l_tilde_ol;t ro&i_to_j;e &et_tironien; molt corre-</seg>
                   <seg type="ligne" facs="#l73">-ciez parce qil loz &s_long;embloit &q_tilde; ele e&s_long;to-</seg>
-                  <seg type="ligne" facs="#l74">-it de molt bone &u_to_v;ie&point_virgule; <choice>
-                     <orig>
-                        <hi rend="majuscule">S</hi>
-                     </orig>
-                     <reg>s</reg>
-                  </choice>i mi&s_long;tr&e_tilde_en;t tot</seg>
+                  <seg type="ligne" facs="#l74">-it de molt bone &u_to_v;ie&point_virgule; <choice><orig><hi rend="majuscule">S</hi></orig><reg>s</reg></choice>i mi&s_long;tr&e_tilde_en;t tot</seg>
                   <seg type="ligne" facs="#l75">le bla&s_long;me &et_tironien;&espace;tot la fere <persName ref="#saint_brice">&s_long;eur &s_long;e&i_tilde;t &b_to_B;rice</persName></seg>
                   <seg type="ligne" facs="#l76">&et_tironien;&espace;li &u_to_v;oudr&e_tilde_en;t tuit en&s_long;emble corre &s_long;eure</seg>
                   <seg type="ligne" facs="#l77">por lapider &et_tironien;&espace;por&espace;ocirre &et_tironien;&espace;&s_long;i di&s_long;oi&e_tilde_en;t&deux_points; 
-                  <said who="#citoyens">
-                  <choice>
-                     <orig>
-                        <hi rend="majuscule">L</hi>
-                     </orig>
-                     <reg>l</reg>
-                  </choice>a</said></seg>
+                  <said who="#citoyens"><choice><orig><hi rend="majuscule">L</hi></orig><reg>l</reg></choice>a</said></seg>
                   <seg type="ligne" facs="#l78"><said>pitie del <persName ref="#saint_brice">&s_long;e&i_tilde;t home</persName> qi clers tu fus a fer</said></seg>
                   <seg type="ligne" facs="#l79"><said>a celer molt longuem&e_tilde_en;t tes males oe-</said></seg>
-                  <seg type="ligne" facs="#l80"><said>&u_to_v;res &et_tironien;&espace;ta gr&a_tilde;t luxure&point_virgule; <choice>
-                     <orig>
-                        <hi rend="majuscule">E</hi>
-                     </orig>
-                     <reg>e</reg>
-                  </choice>t dex ne nos</said></seg>
+                  <seg type="ligne" facs="#l80"><said>&u_to_v;res &et_tironien;&espace;ta gr&a_tilde;t luxure&point_virgule; <choice><orig><hi rend="majuscule">E</hi> </orig><reg>e</reg></choice>t dex ne nos</said></seg>
                   <!-- Encodage de la quatrième colonne du folio 169 -->
                   <cb n="169d"/>
                   <seg type="ligne" facs="#l81"><said>le&s_long;t mes be&s_long;ier tie&u_to_n;s meins car eles</said></seg>
                      <seg type="ligne" facs="#l82"><said>ne &s_long;ont mie dignes&point; </said>
-                     <persName ref="#saint_brice">
-                     <choice>
-                        <orig>
-                           <hi rend="majuscule">S</hi>
-                        </orig>
-                        <reg>s</reg>
-                     </choice>e&i_tilde;z &b_to_B;rices</persName> re&s_long;-</seg>
+                     <persName ref="#saint_brice"><choice><orig><hi rend="majuscule">S</hi></orig><reg>s</reg></choice>e&i_tilde;z &b_to_B;rices</persName> re&s_long;-</seg>
                      <seg type="ligne" facs="#l83">-pondit qanq&apostrophe;il&espace;pooit enc&o_tilde;tre &et_tironien;&espace;&s_long;i di&s_long;o-</seg>
                      <seg type="ligne" facs="#l84">-it &q_tilde; on&q_tilde;s tel cho&s_long;e ne&espace;li e&s_long;toit a&u_to_v;enue</seg>
-                     <seg type="ligne" facs="#l85">
-                  <choice>
-                     <orig>
-                        <hi rend="majuscule">M</hi>
-                     </orig>
-                     <reg>m</reg>
-                  </choice>es c&o_tilde_om; pl&neuf_us; &s_long;en e&s_long;condi&s_long;oit &et_tironien; cil me&i_tilde;s</seg>
-                     <seg type="ligne" facs="#l86">l&apostrophe;en&espace;creoi&e_tilde_en;t&point; <choice>
-                     <orig>
-                        <hi rend="majuscule">T</hi>
-                     </orig>
-                     <reg>t</reg>
-                  </choice>&a_tilde;t &q_tilde; <persName ref="#saint_brice">&s_long;e&i_tilde;t &b_to_B;rices</persName> di&s_long;t q&a_tilde;t</seg>
+                     <seg type="ligne" facs="#l85"><choice><orig><hi rend="majuscule">M</hi></orig><reg>m</reg></choice>es c&o_tilde_om; pl&neuf_us; &s_long;en e&s_long;condi&s_long;oit &et_tironien; cil me&i_tilde;s</seg>
+                     <seg type="ligne" facs="#l86">l&apostrophe;en&espace;creoi&e_tilde_en;t&point; <choice><orig><hi rend="majuscule">T</hi></orig><reg>t</reg></choice>&a_tilde;t &q_tilde; <persName ref="#saint_brice">&s_long;e&i_tilde;t &b_to_B;rices</persName> di&s_long;t q&a_tilde;t</seg>
                      <seg type="ligne" facs="#l87">il &u_to_v;it qil ni porroit a&espace;eus durer en nu-</seg>
                      <seg type="ligne" facs="#l88">-le maniere &q_tilde;&espace;l&apostrophe;en li aport&s_long;t l&apostrophe;<persName ref="#enfant">enfant</persName></seg>
-                     <seg type="ligne" facs="#l89">de&u_to_v;&a_tilde;t lui&point; <choice>
-                     <orig>
-                        <hi rend="majuscule">L</hi>
-                     </orig>
-                     <reg>l</reg>
-                  </choice>i enfez fu aportez qi na-</seg>
-                     <seg type="ligne" facs="#l90">-&u_to_v;oit &q_tilde; <choice>
-                     <orig>xxx</orig>
-                     <reg type="graphie">XXX</reg>
-                  </choice> &i_to_j;orz <choice>
-                     <orig>
-                        <hi rend="majuscule">Q</hi>
-                     </orig>
-                     <reg>q</reg>
-                  </choice>ant il fu nus de-</seg>
+                     <seg type="ligne" facs="#l89">de&u_to_v;&a_tilde;t lui&point; <choice><orig><hi rend="majuscule">L</hi></orig><reg>l</reg></choice>i enfez fu aportez qi na-</seg>
+                     <seg type="ligne" facs="#l90">-&u_to_v;oit &q_tilde; <choice><orig>xxx</orig><reg type="graphie">XXX</reg></choice> &i_to_j;orz <choice><orig><hi rend="majuscule">Q</hi></orig><reg>q</reg></choice>ant il fu nus de-</seg>
                      <seg type="ligne" facs="#l91">-&u_to_v;&a_tilde;t le <persName ref="#citoyens">pueple</persName> qi la e&s_long;toit <persName ref="#citoyens">a&s_long;&s_long;emblez</persName> &et_tironien;</seg>
-                     <seg type="ligne" facs="#l92">de&u_to_v;&a_tilde;t <persName ref="#saint_brice">&s_long;e&i_tilde;t &b_to_B;rice</persName>&point; <persName ref="#saint_brice">
-                     <choice>
-                        <orig>
-                           <hi rend="majuscule">S</hi>
-                        </orig>
-                        <reg>s</reg>
-                     </choice>e&i_tilde;z &b_to_B;rices</persName> &p_barre_par;la &et_tironien;&espace;&s_long;i&espace;di&s_long;t&deux_points;</seg>
+                     <seg type="ligne" facs="#l92">de&u_to_v;&a_tilde;t <persName ref="#saint_brice">&s_long;e&i_tilde;t &b_to_B;rice</persName>&point; <persName ref="#saint_brice"><choice><orig><hi rend="majuscule">S</hi></orig><reg>s</reg></choice>e&i_tilde;z &b_to_B;rices</persName> &p_barre_par;la &et_tironien;&espace;&s_long;i&espace;di&s_long;t&deux_points;</seg>
                </p>
             
          </div>

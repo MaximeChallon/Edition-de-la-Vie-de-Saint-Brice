@@ -870,7 +870,376 @@
                         </map>
                         </div>
                         <div class="col-sm-4" style="padding-left:75px;">
-                            <xsl:apply-templates select="//seg" mode="orig"/>
+                            <xsl:apply-templates select="//div[@n='169r']" mode="orig"/>
+                        </div>
+                    </div>
+                    
+                    <!-- utilitaires Bootstrap -->
+                    <script src="static/js/jquery-3.4.1.slim.min.js"/>
+                    <script src="static/js/popper.min.js"/>
+                    <script src="static/js/bootstrap.min.js"/>
+                    <script src="static/js/js.js"/>
+                </body>
+                <footer class="blog-footer">
+                    <div class="container" style="padding: 1em; text-align: center">
+                        <p>© <a href="https://www.chartes.psl.eu">Ecole nationale des Chartes</a> -
+                            Maxime Challon</p>
+                    </div>
+                </footer>
+            </html>
+        </xsl:result-document>
+        
+        <xsl:result-document href="{$pathAllo2}" method="html" indent="yes">
+            <html>
+                <head>
+                    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+                    <link rel="stylesheet" href="static/css/bootstrap.min.css"/>
+                    <link rel="stylesheet" href="static/css/css.css"/>
+                    <title>
+                        <xsl:value-of select="//titleStmt/title[1]"/>
+                    </title>
+                </head>
+                <body class="container page_img">
+                    
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <a class="navbar-brand" href="{//titleStmt/title[1]}"
+                            style="color: #be122a;font-weight:bold;">
+                            <xsl:value-of select="//titleStmt/title[1]"/>
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"/>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{$pathAccueil}">Accueil</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{$pathAlloNorm}">Comparaison</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">Edition allographétique</a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{$pathAllo1}">f169r</a>
+                                        <a class="dropdown-item" href="{$pathAllo2}">f169v</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">Edition normalisée</a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{$pathNorm1}">f169r</a>
+                                        <a class="dropdown-item" href="{$pathNorm2}">f169v</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">Index</a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{$pathIndexPers}"
+                                            >Personnages</a>
+                                        <a class="dropdown-item" href="{$pathIndexLieux}">Lieux</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <!-- image interactive inspirée d'après un morceau de javascript trouvé sur internet -->
+                            <img usemap="#mapfax.jpg" src="static/img/f175_demi.jpg" border="0" style="width: 800px;height: auto;"/>
+                            <map name="mapfax.jpg">                            
+                                <xsl:for-each select="//div[@n='169v']//seg">
+                                    <!-- récupération de chaque l'id de chaque segment pour pouvoir le faire correspondre avec son facsimile -->
+                                    <xsl:variable name="idSeg">
+                                        <xsl:value-of select="replace(@facs, '#', '')"/>
+                                    </xsl:variable>
+                                    <!-- récupération du texte à insérer dans le popup javascript -->
+                                    <xsl:variable name="texte">
+                                        <xsl:apply-templates select="." mode="orig"/>
+                                    </xsl:variable>
+                                    <!-- création des variables de chaque coordonnée qui est à calculer en focntion de la taille de l'image dans la page html -->
+                                    <xsl:variable name="ulx">
+                                        <xsl:value-of select="800*ancestor::TEI//zone[@xml:id=$idSeg]/@ulx div 4349"/>
+                                    </xsl:variable>
+                                    <xsl:variable name="uly">
+                                        <xsl:value-of select="800*ancestor::TEI//zone[@xml:id=$idSeg]/@uly div 8697 *2"/>
+                                    </xsl:variable>
+                                    <xsl:variable name="lrx">
+                                        <xsl:value-of select="800*ancestor::TEI//zone[@xml:id=$idSeg]/@lrx div 4349"/>
+                                    </xsl:variable>
+                                    <xsl:variable name="lry">
+                                        <xsl:value-of select="800*ancestor::TEI//zone[@xml:id=$idSeg]/@lry div 8697 *2"/>
+                                    </xsl:variable>
+                                    
+                                    <area shape="rect" 
+                                        coords="{$ulx},{$uly},{$lrx},{$lry}" 
+                                        href="#" 
+                                        OnMouseOver="AffBulle(' {$texte}',{$ulx})" 
+                                        OnMouseOut="HideBulle()" 
+                                        OnClick="return false"></area>
+                                </xsl:for-each>
+                            </map>
+                        </div>
+                        <div class="col-sm-4" style="padding-left:75px;">
+                            <xsl:apply-templates select="//div[@n='169v']" mode="orig"/>
+                        </div>
+                    </div>
+                    
+                    <!-- utilitaires Bootstrap -->
+                    <script src="static/js/jquery-3.4.1.slim.min.js"/>
+                    <script src="static/js/popper.min.js"/>
+                    <script src="static/js/bootstrap.min.js"/>
+                    <script src="static/js/js.js"/>
+                </body>
+                <footer class="blog-footer">
+                    <div class="container" style="padding: 1em; text-align: center">
+                        <p>© <a href="https://www.chartes.psl.eu">Ecole nationale des Chartes</a> -
+                            Maxime Challon</p>
+                    </div>
+                </footer>
+            </html>
+        </xsl:result-document>
+        
+        <xsl:result-document href="{$pathNorm1}" method="html" indent="yes">
+            <html>
+                <head>
+                    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+                    <link rel="stylesheet" href="static/css/bootstrap.min.css"/>
+                    <link rel="stylesheet" href="static/css/css.css"/>
+                    <title>
+                        <xsl:value-of select="//titleStmt/title[1]"/>
+                    </title>
+                </head>
+                <body class="container page_img">
+                    
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <a class="navbar-brand" href="{//titleStmt/title[1]}"
+                            style="color: #be122a;font-weight:bold;">
+                            <xsl:value-of select="//titleStmt/title[1]"/>
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"/>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{$pathAccueil}">Accueil</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{$pathAlloNorm}">Comparaison</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">Edition allographétique</a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{$pathAllo1}">f169r</a>
+                                        <a class="dropdown-item" href="{$pathAllo2}">f169v</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">Edition normalisée</a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{$pathNorm1}">f169r</a>
+                                        <a class="dropdown-item" href="{$pathNorm2}">f169v</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">Index</a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{$pathIndexPers}"
+                                            >Personnages</a>
+                                        <a class="dropdown-item" href="{$pathIndexLieux}">Lieux</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <!-- image interactive inspirée d'après un morceau de javascript trouvé sur internet -->
+                            <img usemap="#mapfax.jpg" src="static/img/f174_demi.jpg" border="0" style="width: 800px;height: auto;"/>
+                            <map name="mapfax.jpg">                            
+                                <xsl:for-each select="//div[@n='169r']//seg">
+                                    <!-- récupération de chaque l'id de chaque segment pour pouvoir le faire correspondre avec son facsimile -->
+                                    <xsl:variable name="idSeg">
+                                        <xsl:value-of select="replace(@facs, '#', '')"/>
+                                    </xsl:variable>
+                                    <!-- récupération du texte à insérer dans le popup javascript -->
+                                    <xsl:variable name="texte">
+                                        <xsl:apply-templates select="." mode="reg"/>
+                                    </xsl:variable>
+                                    <!-- création des variables de chaque coordonnée qui est à calculer en focntion de la taille de l'image dans la page html -->
+                                    <!-- l'image affichée dans le HTML n'est que la moitié de celle IIIF téléchargée sur Gallica. Or l'encodage TEI a été réalisé avec -->
+                                    <!-- l'image entière: pour l'axe x, on retire 4341px (ce qui a été rogné de la photo originale) des <zone ulx lrx>.  -->
+                                    <!-- pour les abscisses: 800 est le nombre de pixels de l'image finale dans le html -->
+                                    <!-- (ancestor::TEI//zone[@xml:id=$idSeg]/@ulx - 4341) est l'abscisse gauche du rectangle recalculée en fonction de la partie rognée  -->
+                                    <!-- la division par 4341 est la largeur de la photo rognée nécessaire au produit en croix -->
+                                    <xsl:variable name="ulx">
+                                        <xsl:value-of select="800*(ancestor::TEI//zone[@xml:id=$idSeg]/@ulx - 4341) div 4341"/>
+                                    </xsl:variable>
+                                    <!-- pour les ordonnées: 800 est le nombre de pixels de l'image finale dans le html -->
+                                    <!-- ancestor::TEI//zone[@xml:id=$idSeg]/@uly est l'orodnnée gauche du rectangle  -->
+                                    <!-- la division par 8682 est la hauteur de la photo nécessaire au produit en croix -->
+                                    <!-- le *2 final s'explique par le rognage en largeur de la photo -->
+                                    <xsl:variable name="uly">
+                                        <xsl:value-of select="800*ancestor::TEI//zone[@xml:id=$idSeg]/@uly div 8682 *2"/>
+                                    </xsl:variable>
+                                    <xsl:variable name="lrx">
+                                        <xsl:value-of select="800*(ancestor::TEI//zone[@xml:id=$idSeg]/@lrx - 4341) div 4341"/>
+                                    </xsl:variable>
+                                    <xsl:variable name="lry">
+                                        <xsl:value-of select="800*ancestor::TEI//zone[@xml:id=$idSeg]/@lry div 8682 *2"/>
+                                    </xsl:variable>
+                                    
+                                    <area shape="rect" 
+                                        coords="{$ulx},{$uly},{$lrx},{$lry}" 
+                                        href="#" 
+                                        OnMouseOver="AffBulle(' {$texte}',{$ulx})" 
+                                        OnMouseOut="HideBulle()" 
+                                        OnClick="return false"></area>
+                                </xsl:for-each>
+                            </map>
+                        </div>
+                        <div class="col-sm-4" style="padding-left:75px;">
+                            <xsl:apply-templates select="//div[@n='169r']" mode="reg"/>
+                        </div>
+                    </div>
+                    
+                    <!-- utilitaires Bootstrap -->
+                    <script src="static/js/jquery-3.4.1.slim.min.js"/>
+                    <script src="static/js/popper.min.js"/>
+                    <script src="static/js/bootstrap.min.js"/>
+                    <script src="static/js/js.js"/>
+                </body>
+                <footer class="blog-footer">
+                    <div class="container" style="padding: 1em; text-align: center">
+                        <p>© <a href="https://www.chartes.psl.eu">Ecole nationale des Chartes</a> -
+                            Maxime Challon</p>
+                    </div>
+                </footer>
+            </html>
+        </xsl:result-document>
+        
+        <xsl:result-document href="{$pathNorm2}" method="html" indent="yes">
+            <html>
+                <head>
+                    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+                    <link rel="stylesheet" href="static/css/bootstrap.min.css"/>
+                    <link rel="stylesheet" href="static/css/css.css"/>
+                    <title>
+                        <xsl:value-of select="//titleStmt/title[1]"/>
+                    </title>
+                </head>
+                <body class="container page_img">
+                    
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <a class="navbar-brand" href="{//titleStmt/title[1]}"
+                            style="color: #be122a;font-weight:bold;">
+                            <xsl:value-of select="//titleStmt/title[1]"/>
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"/>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{$pathAccueil}">Accueil</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{$pathAlloNorm}">Comparaison</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">Edition allographétique</a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{$pathAllo1}">f169r</a>
+                                        <a class="dropdown-item" href="{$pathAllo2}">f169v</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">Edition normalisée</a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{$pathNorm1}">f169r</a>
+                                        <a class="dropdown-item" href="{$pathNorm2}">f169v</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">Index</a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{$pathIndexPers}"
+                                            >Personnages</a>
+                                        <a class="dropdown-item" href="{$pathIndexLieux}">Lieux</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <!-- image interactive inspirée d'après un morceau de javascript trouvé sur internet -->
+                            <img usemap="#mapfax.jpg" src="static/img/f175_demi.jpg" border="0" style="width: 800px;height: auto;"/>
+                            <map name="mapfax.jpg">                            
+                                <xsl:for-each select="//div[@n='169v']//seg">
+                                    <!-- récupération de chaque l'id de chaque segment pour pouvoir le faire correspondre avec son facsimile -->
+                                    <xsl:variable name="idSeg">
+                                        <xsl:value-of select="replace(@facs, '#', '')"/>
+                                    </xsl:variable>
+                                    <!-- récupération du texte à insérer dans le popup javascript -->
+                                    <xsl:variable name="texte">
+                                        <xsl:apply-templates select="." mode="reg"/>
+                                    </xsl:variable>
+                                    <!-- création des variables de chaque coordonnée qui est à calculer en focntion de la taille de l'image dans la page html -->
+                                    <xsl:variable name="ulx">
+                                        <xsl:value-of select="800*ancestor::TEI//zone[@xml:id=$idSeg]/@ulx div 4349"/>
+                                    </xsl:variable>
+                                    <xsl:variable name="uly">
+                                        <xsl:value-of select="800*ancestor::TEI//zone[@xml:id=$idSeg]/@uly div 8697 *2"/>
+                                    </xsl:variable>
+                                    <xsl:variable name="lrx">
+                                        <xsl:value-of select="800*ancestor::TEI//zone[@xml:id=$idSeg]/@lrx div 4349"/>
+                                    </xsl:variable>
+                                    <xsl:variable name="lry">
+                                        <xsl:value-of select="800*ancestor::TEI//zone[@xml:id=$idSeg]/@lry div 8697 *2"/>
+                                    </xsl:variable>
+                                    
+                                    <area shape="rect" 
+                                        coords="{$ulx},{$uly},{$lrx},{$lry}" 
+                                        href="#" 
+                                        OnMouseOver="AffBulle(' {$texte}',{$ulx})" 
+                                        OnMouseOut="HideBulle()" 
+                                        OnClick="return false"></area>
+                                </xsl:for-each>
+                            </map>
+                        </div>
+                        <div class="col-sm-4" style="padding-left:75px;">
+                            <xsl:apply-templates select="//div[@n='169v']" mode="reg"/>
                         </div>
                     </div>
                     
