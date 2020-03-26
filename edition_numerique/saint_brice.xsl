@@ -114,30 +114,68 @@
                     <div class="row" style="margin:20px;">
                         <div class="col-sm-4" style="text-align:center;">
                             <img alt="f169r" src="static/img/f174_demi.jpg"
-                                style="width:300px; hieght:auto;"/>
+                                style="width:300px; height:auto;"/>
                         </div>
                         <div class="col-sm-8">
                             <h4 style="color:#be122a;">Informations générales sur le manuscrit</h4>
                             <ul>
-                                <li>Titre: <xsl:value-of select="//titleStmt/title[1]/text()"/></li>
-                                <li>Auteur: <xsl:value-of select="//titleStmt/author/forename/text()"/><xsl:text> </xsl:text><xsl:value-of select="//titleStmt/author/surname/text()"/></li>
-                                <li>Lieu de conservation: <xsl:value-of select="concat(//msIdentifier/repository/text(), ', ', //msIdentifier/collection/text(), ', ', //msIdentifier/settlement/text(), ', ', //msIdentifier/country/text())"/>
+                                <li><span style="color:#be122a;">Titre</span>: <xsl:value-of select="//titleStmt/title[1]/text()"/></li>
+                                <li><span style="color:#be122a;">Auteur</span>: <xsl:value-of select="//titleStmt/author/forename/text()"/><xsl:text> </xsl:text><xsl:value-of select="//titleStmt/author/surname/text()"/></li>
+                                <li><span style="color:#be122a;">Langue</span>: <xsl:value-of select="//langUsage/language/text()"/></li>
+                                <li><span style="color:#be122a;">Lieu de conservation</span>: <xsl:value-of select="concat(//msIdentifier/repository/text(), ', ', //msIdentifier/collection/text(), ', ', //msIdentifier/settlement/text(), ', ', //msIdentifier/country/text())"/>
                                 </li>
-                                <li>Date: <xsl:value-of select="//origDate/text()"/> </li>
-                                <li>Description codicologique: <xsl:value-of select="//foliation/p[1]/text()"/> sur <xsl:value-of select="//support/material[2]/text()"/></li>
-                                <li>Marges:<ul>
+                                <li><span style="color:#be122a;">Date</span>: <xsl:value-of select="//origDate/text()"/> </li>
+                                <li><span style="color:#be122a;">Description codicologique</span>: <xsl:value-of select="//foliation/p[1]/text()"/> sur <xsl:value-of select="//support/material[2]/text()"/></li>
+                                <li><span style="color:#be122a;">Marges</span>:<ul>
                                 <xsl:for-each select="//layoutDesc/summary/p">
                                     <li><xsl:value-of select=".//text()"/></li>
                                 </xsl:for-each>
                                     <li><xsl:value-of select="//layout/note/text()"/></li>
                                 </ul>
                                 </li>
-                                <li>Ecriture: <xsl:value-of select="//scriptDesc//p//text()"/></li>
+                                <li><span style="color:#be122a;">Ecriture</span>: <xsl:value-of select="//scriptDesc//p//text()"/></li>
                             </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="row" style="margin:20px;">
+                        <div class="col-sm-8">
+                            <h4 style="color:#be122a;">La décoration du manuscrit</h4>
+                            <p><xsl:value-of select="//decoNote/note[2]/text()"/></p>
+                            <p>Pour les feuillets 169r et 169v, la décoration (absente mais dont la place a été laissée) est la suivante:
+                                <ul>
+                                        <xsl:if test="//decoNote[@type='miniature']">
+                                            <li><span style="color:#be122a;">Miniature</span> de <xsl:value-of select="//decoNote[@type='miniature']/height/text()"/> lignes de haut</li>
+                                        </xsl:if>
+                                        <xsl:if test="//deconNote[@type='grande_initiale']">
+                                            <li><span style="color:#be122a;">Grande initiale</span> de <xsl:value-of select="//decoNote[@type='grande_initiale']/height/text()"/> lignes de haut</li>
+                                        </xsl:if>
+                                        <xsl:if test="//decoNote[@type='moyenne_initiale']">
+                                            <li><span style="color:#be122a;">Moyenne initiale</span> de <xsl:value-of select="//decoNote[@type='moyenne_initiale']/height/text()"/> lignes de haut</li>
+                                        </xsl:if>
+                                        <xsl:if test="//decoNote[@type='petite_initiale']">
+                                            <li><span style="color:#be122a;">Petite initiale</span> de <xsl:value-of select="//decoNote[@type='petite_initiale']/height/text()"/> lignes de haut</li>
+                                        </xsl:if>
+                                        <xsl:if test="//decoNote[@type='majuscule']">
+                                            <li><span style="color:#be122a;">Majuscule</span> de <xsl:value-of select="//decoNote[@type='majuscule']/height/text()"/> ligne de haut</li>
+                                        </xsl:if>
+                                        <xsl:if test="//decoNote[@type='lettre_attente']">
+                                            <li><span style="color:#be122a;">Lettre d'attente</span>:  <xsl:value-of select="//decoNote[@type='lettre_attente']/note//text()"/></li>
+                                        </xsl:if>
+                                </ul>
+                            </p>
+                        </div>
+                        <div class="col-sm-4" style="text-align:center;">
+                            <img alt="f23r" src="static/img/f23_demi.jpg"
+                                style="width:300px; hieght:auto;"/>
                         </div>
                     </div>
 
                     <div class="row" style="margin:20px;">
+                        <div class="col-sm-4" style="text-align:center;">
+                            <img alt="f169v" src="static/img/f175_demi.jpg"
+                                style="width:300px; hieght:auto;"/>
+                        </div>
                         <div class="col-sm-8">
                             <h4 style="color:#be122a;">Edition numérique réalisée à partir du manuscrit Français 411 de la
                                 Bibliothèque nationale de France, numérisé sur <a
@@ -171,10 +209,6 @@
                                     </li>
                                 </ul>
                             </p>
-                        </div>
-                        <div class="col-sm-4" style="text-align:center;">
-                            <img alt="f169v" src="static/img/f175_demi.jpg"
-                                style="width:300px; hieght:auto;"/>
                         </div>
                     </div>
 
