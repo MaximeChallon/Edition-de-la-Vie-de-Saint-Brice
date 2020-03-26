@@ -824,6 +824,10 @@
                     </nav>
                     
                     <div class="row">
+                        <h2 style="color:#be122a; margin-top:20px;">Edition allographétique numérique du feuillet 169r</h2>
+                    </div>
+                    
+                    <div class="row">
                         <div class="col-sm-8">
                             <!-- image interactive inspirée d'après un morceau de javascript trouvé sur internet -->
                         <img usemap="#mapfax.jpg" src="static/img/f174_demi.jpg" border="0" style="width: 800px;height: auto;"/>
@@ -868,6 +872,7 @@
                                     OnClick="return false"></area>
                             </xsl:for-each>
                         </map>
+                            <a href="{$pathAllo2}">Page suivante</a>
                         </div>
                         <div class="col-sm-4" style="padding-left:75px;">
                             <xsl:apply-templates select="//div[@n='169r']" mode="orig"/>
@@ -953,6 +958,10 @@
                     </nav>
                     
                     <div class="row">
+                        <h2 style="color:#be122a; margin-top:20px;">Edition allographétique numérique du feuillet 169v</h2>
+                    </div>
+                    
+                    <div class="row">
                         <div class="col-sm-8">
                             <!-- image interactive inspirée d'après un morceau de javascript trouvé sur internet -->
                             <img usemap="#mapfax.jpg" src="static/img/f175_demi.jpg" border="0" style="width: 800px;height: auto;"/>
@@ -988,6 +997,7 @@
                                         OnClick="return false"></area>
                                 </xsl:for-each>
                             </map>
+                            <a href="{$pathAllo1}">Page précédente</a>
                         </div>
                         <div class="col-sm-4" style="padding-left:75px;">
                             <xsl:apply-templates select="//div[@n='169v']" mode="orig"/>
@@ -1073,6 +1083,10 @@
                     </nav>
                     
                     <div class="row">
+                        <h2 style="color:#be122a; margin-top:20px;">Edition normalisée numérique du feuillet 169r</h2>
+                    </div>
+                    
+                    <div class="row">
                         <div class="col-sm-8">
                             <!-- image interactive inspirée d'après un morceau de javascript trouvé sur internet -->
                             <img usemap="#mapfax.jpg" src="static/img/f174_demi.jpg" border="0" style="width: 800px;height: auto;"/>
@@ -1117,6 +1131,8 @@
                                         OnClick="return false"></area>
                                 </xsl:for-each>
                             </map>
+                            
+                            <a href="{$pathNorm2}">Page suivante</a>
                         </div>
                         <div class="col-sm-4" style="padding-left:75px;">
                             <xsl:apply-templates select="//div[@n='169r']" mode="reg"/>
@@ -1202,6 +1218,10 @@
                     </nav>
                     
                     <div class="row">
+                        <h2 style="color:#be122a; margin-top:20px;">Edition normalisée numérique du feuillet 169v</h2>
+                    </div>
+                    
+                    <div class="row">
                         <div class="col-sm-8">
                             <!-- image interactive inspirée d'après un morceau de javascript trouvé sur internet -->
                             <img usemap="#mapfax.jpg" src="static/img/f175_demi.jpg" border="0" style="width: 800px;height: auto;"/>
@@ -1237,6 +1257,7 @@
                                         OnClick="return false"></area>
                                 </xsl:for-each>
                             </map>
+                            <a href="{$pathNorm1}">Page précédente</a>
                         </div>
                         <div class="col-sm-4" style="padding-left:75px;">
                             <xsl:apply-templates select="//div[@n='169v']" mode="reg"/>
