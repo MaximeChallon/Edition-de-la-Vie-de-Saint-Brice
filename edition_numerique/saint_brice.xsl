@@ -1399,7 +1399,7 @@
             <xsl:value-of
                 select="ancestor::TEI//person[@xml:id = $refPers]/persName/forename[1]/text()"/>
         </xsl:variable>
-        <a href="{$nomPers}.html">
+        <a href="{concat('personnages/', $nomPers)}.html">
             <xsl:text> </xsl:text>
             <xsl:value-of select="./text() | .//orig/text() | .//abbr/text() | .//orig/hi/text()"/>
             <xsl:text> </xsl:text>
@@ -1446,7 +1446,7 @@
             <xsl:value-of
                 select="ancestor::TEI//person[@xml:id = $refPers]/persName/forename[1]/text()"/>
         </xsl:variable>
-        <a href="{$nomPers}.html">
+        <a href="{concat('personnages/', $nomPers)}.html">
             <xsl:text> </xsl:text>
             <xsl:value-of select="./text() | .//reg/text() | .//expan/text() | .//reg/hi/text()"/>
             <xsl:text> </xsl:text>
