@@ -5,9 +5,9 @@
     version="2.0">
     <xsl:output method="html" indent="yes" encoding="UTF-8"/>
     <xsl:strip-space elements="*"/>
-    <!-- l'omission de strip-space est volontaire, cette balise supprimait tous les espaces entre les fins de balise TEI et les mots -->
+    <!-- l'omission de strip-space est volontaire, cette balise supprimait tous les espaces entre les fins de balise TEI et les mots, ce qui collait les mots entre eux dans le HTML  -->
 
-    <!-- configuration des sorties -->
+    <!-- configuration des sorties HTML -->
     <xsl:template match="/">
 
         <xsl:variable name="file">
@@ -15,14 +15,16 @@
             <!-- récupération du nom et du chemin du fichier courant -->
         </xsl:variable>
 
+        <!-- chemin de la page d'accueil; seule cette page n'est pas dans le sous-dossier "pages" -->
         <xsl:variable name="pathAccueil">
             <xsl:value-of select="concat($file, 'accueil', '.html')"/>
         </xsl:variable>
+        <!-- chemin de la page de comparaison entre les éditions allographétiques et normalisées -->
         <xsl:variable name="pathAlloNorm">
             <xsl:value-of select="concat($file, 'pages/comparaison', '.html')"/>
         </xsl:variable>
 
-        <!-- pages des index -->
+        <!-- pages des index de personnages et de lieux -->
         <xsl:variable name="pathIndexPers">
             <xsl:value-of select="concat($file, 'pages/personnages', '.html')"/>
         </xsl:variable>
@@ -30,7 +32,7 @@
             <xsl:value-of select="concat($file, 'pages/lieux', '.html')"/>
         </xsl:variable>
 
-        <!-- pour l'édition allographétique -->
+        <!-- pages de l'édition allographétique -->
         <xsl:variable name="pathAllo1">
             <xsl:value-of select="concat($file, 'pages/allographe169r', '.html')"/>
         </xsl:variable>
@@ -38,7 +40,7 @@
             <xsl:value-of select="concat($file, 'pages/allographe169v', '.html')"/>
         </xsl:variable>
 
-        <!-- pour l'édition normalisée -->
+        <!-- pages de l'édition normalisée -->
         <xsl:variable name="pathNorm1">
             <xsl:value-of select="concat($file, 'pages/normalise169r', '.html')"/>
         </xsl:variable>
@@ -60,6 +62,7 @@
                 </head>
                 <body class="container">
 
+                    <!-- barre de menu -->
                     <nav class="navbar navbar-expand-lg navbar-light bg-light">
                         <a class="navbar-brand" href="{//titleStmt/title[1]}"
                             style="color: #be122a;font-weight:bold;">
@@ -117,6 +120,8 @@
                                 style="width:300px; height:auto;"/>
                         </div>
                         <div class="col-sm-8">
+                            <!-- à partir des informations du TeiHeader, création d'une page d'informations générales sur le manuscrit en page d'accueil -->
+                            <!-- toutes les informatiosn du TeiHeader ne sont pas présentes dans cette page d'accueil -->
                             <h4 style="color:#be122a;">Informations générales sur le manuscrit</h4>
                             <ul>
                                 <li><span style="color:#be122a;">Titre</span>: <xsl:value-of select="//titleStmt/title[1]/text()"/></li>
@@ -144,37 +149,25 @@
                             <p><xsl:value-of select="//decoNote/note[2]/text()"/></p>
                             <p>Pour les feuillets 169r et 169v, la décoration (absente mais dont la place a été laissée) est la suivante:
                                 <ul>
-                                        <xsl:if test="//decoNote[@type='miniature']">
-                                            <li><span style="color:#be122a;">Miniature</span> de <xsl:value-of select="//decoNote[@type='miniature']/height/text()"/> lignes de haut</li>
-                                        </xsl:if>
-                                        <xsl:if test="//deconNote[@type='grande_initiale']">
-                                            <li><span style="color:#be122a;">Grande initiale</span> de <xsl:value-of select="//decoNote[@type='grande_initiale']/height/text()"/> lignes de haut</li>
-                                        </xsl:if>
-                                        <xsl:if test="//decoNote[@type='moyenne_initiale']">
-                                            <li><span style="color:#be122a;">Moyenne initiale</span> de <xsl:value-of select="//decoNote[@type='moyenne_initiale']/height/text()"/> lignes de haut</li>
-                                        </xsl:if>
-                                        <xsl:if test="//decoNote[@type='petite_initiale']">
-                                            <li><span style="color:#be122a;">Petite initiale</span> de <xsl:value-of select="//decoNote[@type='petite_initiale']/height/text()"/> lignes de haut</li>
-                                        </xsl:if>
-                                        <xsl:if test="//decoNote[@type='majuscule']">
-                                            <li><span style="color:#be122a;">Majuscule</span> de <xsl:value-of select="//decoNote[@type='majuscule']/height/text()"/> ligne de haut</li>
-                                        </xsl:if>
-                                        <xsl:if test="//decoNote[@type='lettre_attente']">
-                                            <li><span style="color:#be122a;">Lettre d'attente</span>:  <xsl:value-of select="//decoNote[@type='lettre_attente']/note//text()"/></li>
-                                        </xsl:if>
+                                        <li><span style="color:#be122a;">Miniature</span> de <xsl:value-of select="//decoNote[@type='miniature']/dimensions/height/text()"/> lignes de haut</li>
+                                        <li><span style="color:#be122a;">Grande initiale</span> de <xsl:value-of select="//decoNote[@type='grande_initiale']/dimensions/height/text()"/> lignes de haut</li>
+                                        <li><span style="color:#be122a;">Moyenne initiale</span> de <xsl:value-of select="//decoNote[@type='moyenne_initiale']/dimensions/height/text()"/> lignes de haut</li>
+                                        <li><span style="color:#be122a;">Petite initiale</span> de <xsl:value-of select="//decoNote[@type='petite_initiale']/dimensions/height/text()"/> lignes de haut</li>
+                                        <li><span style="color:#be122a;">Majuscule</span> de <xsl:value-of select="//decoNote[@type='majuscule']/dimensions/height/text()"/> ligne de haut</li>
+                                        <li><span style="color:#be122a;">Lettre d'attente</span>:  <xsl:value-of select="//decoNote[@type='lettre_attente']/note[1]//text()"/></li>
                                 </ul>
                             </p>
                         </div>
                         <div class="col-sm-4" style="text-align:center;">
                             <img alt="f23r" src="static/img/f23_demi.jpg"
-                                style="width:300px; hieght:auto;"/>
+                                style="width:300px; height:auto;"/>
                         </div>
                     </div>
 
                     <div class="row" style="margin:20px;">
                         <div class="col-sm-4" style="text-align:center;">
                             <img alt="f169v" src="static/img/f175_demi.jpg"
-                                style="width:300px; hieght:auto;"/>
+                                style="width:300px; height:auto;"/>
                         </div>
                         <div class="col-sm-8">
                             <h4 style="color:#be122a;">Edition numérique réalisée à partir du manuscrit Français 411 de la
