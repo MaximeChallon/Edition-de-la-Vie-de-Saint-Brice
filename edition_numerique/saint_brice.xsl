@@ -5,9 +5,9 @@
     version="2.0">
     <xsl:output method="html" indent="yes" encoding="UTF-8"/>
     <xsl:strip-space elements="*"/>
-    <!-- l'omission de strip-space est volontaire, cette balise supprimait tous les espaces entre les fins de balise TEI et les mots, ce qui collait les mots entre eux dans le HTML  -->
 
-    <!-- configuration des sorties HTML -->
+    <!-- configuration des sorties HTML. Chaque page HTML dispose de son xsl:result-document ce qui explique la longueur du template match="/". -->
+    <!-- L'XSL ayant été faite en mars, elle contient du JavaScript, ce que vous avez dit de ne pas mettre dans votre dernier mail. J'ai choisi de le laisser. -->
     <xsl:template match="/">
 
         <xsl:variable name="file">
@@ -113,7 +113,7 @@
                             </ul>
                         </div>
                     </nav>
-                    
+
                     <div class="row" style="margin:20px;">
                         <div class="col-sm-4" style="text-align:center;">
                             <img alt="f169r" src="static/img/f174_demi.jpg"
@@ -121,40 +121,73 @@
                         </div>
                         <div class="col-sm-8">
                             <!-- à partir des informations du TeiHeader, création d'une page d'informations générales sur le manuscrit en page d'accueil -->
-                            <!-- toutes les informatiosn du TeiHeader ne sont pas présentes dans cette page d'accueil -->
+                            <!-- toutes les informatiosn du TeiHeader ne sont pas présentes dans cette page d'accueil, seules les plus pertinentes y sont. -->
                             <h4 style="color:#be122a;">Informations générales sur le manuscrit</h4>
                             <ul>
-                                <li><span style="color:#be122a;">Titre</span>: <xsl:value-of select="//titleStmt/title[1]/text()"/></li>
-                                <li><span style="color:#be122a;">Auteur</span>: <xsl:value-of select="//titleStmt/author/forename/text()"/><xsl:text> </xsl:text><xsl:value-of select="//titleStmt/author/surname/text()"/></li>
-                                <li><span style="color:#be122a;">Langue</span>: <xsl:value-of select="//langUsage/language/text()"/></li>
-                                <li><span style="color:#be122a;">Lieu de conservation</span>: <xsl:value-of select="concat(//msIdentifier/repository/text(), ', ', //msIdentifier/collection/text(), ', ', //msIdentifier/settlement/text(), ', ', //msIdentifier/country/text())"/>
+                                <li><span style="color:#be122a;">Titre</span>: <xsl:value-of
+                                        select="//titleStmt/title[1]/text()"/></li>
+                                <li><span style="color:#be122a;">Auteur</span>: <xsl:value-of
+                                        select="//titleStmt/author/forename/text()"
+                                        /><xsl:text> </xsl:text><xsl:value-of
+                                        select="//titleStmt/author/surname/text()"/></li>
+                                <li><span style="color:#be122a;">Langue</span>: <xsl:value-of
+                                        select="//langUsage/language/text()"/></li>
+                                <li><span style="color:#be122a;">Lieu de conservation</span>:
+                                        <xsl:value-of
+                                        select="concat(//msIdentifier/repository/text(), ', ', //msIdentifier/collection/text(), ', ', //msIdentifier/settlement/text(), ', ', //msIdentifier/country/text())"
+                                    />
                                 </li>
-                                <li><span style="color:#be122a;">Date</span>: <xsl:value-of select="//origDate/text()"/> </li>
-                                <li><span style="color:#be122a;">Description codicologique</span>: <xsl:value-of select="//foliation/p[1]/text()"/> sur <xsl:value-of select="//support/material[2]/text()"/></li>
+                                <li><span style="color:#be122a;">Date</span>: <xsl:value-of
+                                        select="//origDate/text()"/>
+                                </li>
+                                <li><span style="color:#be122a;">Description codicologique</span>:
+                                        <xsl:value-of select="//foliation/p[1]/text()"/> sur
+                                        <xsl:value-of select="//support/material[2]/text()"/></li>
                                 <li><span style="color:#be122a;">Marges</span>:<ul>
-                                <xsl:for-each select="//layoutDesc/summary/p">
-                                    <li><xsl:value-of select=".//text()"/></li>
-                                </xsl:for-each>
-                                    <li><xsl:value-of select="//layout/note/text()"/></li>
-                                </ul>
+                                        <xsl:for-each select="//layoutDesc/summary/p">
+                                            <li><xsl:value-of select=".//text()"/></li>
+                                        </xsl:for-each>
+                                        <li><xsl:value-of select="//layout/note/text()"/></li>
+                                    </ul>
                                 </li>
-                                <li><span style="color:#be122a;">Ecriture</span>: <xsl:value-of select="//scriptDesc//p//text()"/></li>
+                                <li><span style="color:#be122a;">Ecriture</span>: <xsl:value-of
+                                        select="//scriptDesc//p//text()"/></li>
                             </ul>
                         </div>
                     </div>
-                    
+
                     <div class="row" style="margin:20px;">
                         <div class="col-sm-8">
                             <h4 style="color:#be122a;">La décoration du manuscrit</h4>
-                            <p><xsl:value-of select="//decoNote/note[2]/text()"/></p>
-                            <p>Pour les feuillets 169r et 169v, la décoration (absente mais dont la place a été laissée) est la suivante:
-                                <ul>
-                                        <li><span style="color:#be122a;">Miniature</span> de <xsl:value-of select="//decoNote[@type='miniature']/dimensions/height/text()"/> lignes de haut</li>
-                                        <li><span style="color:#be122a;">Grande initiale</span> de <xsl:value-of select="//decoNote[@type='grande_initiale']/dimensions/height/text()"/> lignes de haut</li>
-                                        <li><span style="color:#be122a;">Moyenne initiale</span> de <xsl:value-of select="//decoNote[@type='moyenne_initiale']/dimensions/height/text()"/> lignes de haut</li>
-                                        <li><span style="color:#be122a;">Petite initiale</span> de <xsl:value-of select="//decoNote[@type='petite_initiale']/dimensions/height/text()"/> lignes de haut</li>
-                                        <li><span style="color:#be122a;">Majuscule</span> de <xsl:value-of select="//decoNote[@type='majuscule']/dimensions/height/text()"/> ligne de haut</li>
-                                        <li><span style="color:#be122a;">Lettre d'attente</span>:  <xsl:value-of select="//decoNote[@type='lettre_attente']/note[1]//text()"/></li>
+                            <p>
+                                <xsl:value-of select="//decoNote/note[2]/text()"/>
+                            </p>
+                            <p>Pour les feuillets 169r et 169v, la décoration (absente mais dont la
+                                place a été laissée) est la suivante: <ul>
+                                    <li><span style="color:#be122a;">Miniature</span> de
+                                            <xsl:value-of
+                                            select="//decoNote[@type = 'miniature']/dimensions/height/text()"
+                                        /> lignes de haut</li>
+                                    <li><span style="color:#be122a;">Grande initiale</span> de
+                                            <xsl:value-of
+                                            select="//decoNote[@type = 'grande_initiale']/dimensions/height/text()"
+                                        /> lignes de haut</li>
+                                    <li><span style="color:#be122a;">Moyenne initiale</span> de
+                                            <xsl:value-of
+                                            select="//decoNote[@type = 'moyenne_initiale']/dimensions/height/text()"
+                                        /> lignes de haut</li>
+                                    <li><span style="color:#be122a;">Petite initiale</span> de
+                                            <xsl:value-of
+                                            select="//decoNote[@type = 'petite_initiale']/dimensions/height/text()"
+                                        /> lignes de haut</li>
+                                    <li><span style="color:#be122a;">Majuscule</span> de
+                                            <xsl:value-of
+                                            select="//decoNote[@type = 'majuscule']/dimensions/height/text()"
+                                        /> ligne de haut</li>
+                                    <li><span style="color:#be122a;">Lettre d'attente</span>:
+                                            <xsl:value-of
+                                            select="//decoNote[@type = 'lettre_attente']/note[1]//text()"
+                                        /></li>
                                 </ul>
                             </p>
                         </div>
@@ -170,9 +203,9 @@
                                 style="width:300px; height:auto;"/>
                         </div>
                         <div class="col-sm-8">
-                            <h4 style="color:#be122a;">Edition numérique réalisée à partir du manuscrit Français 411 de la
-                                Bibliothèque nationale de France, numérisé sur <a
-                                    href="{//body/div/@facs}">Gallica</a>.</h4>
+                            <h4 style="color:#be122a;">Edition numérique réalisée à partir du
+                                manuscrit Français 411 de la Bibliothèque nationale de France,
+                                numérisé sur <a href="{//body/div/@facs}">Gallica</a>.</h4>
                             <p>
                                 <ul>
                                     <li>Index <ul>
@@ -220,6 +253,7 @@
         </xsl:result-document>
 
         <!-- page des personnages -->
+        <!-- à partir de cette page, la plupart des chemins mis prennent "../" avant eux pour correspondre à l'arborescence de la sortie HTML due au sous-dossier "pages" -->
         <xsl:result-document href="{$pathIndexPers}" method="html" indent="yes">
             <html>
                 <head>
@@ -232,6 +266,7 @@
                 </head>
                 <body class="container">
 
+                    <!-- barre de menu -->
                     <nav class="navbar navbar-expand-lg navbar-light bg-light">
                         <a class="navbar-brand" href="{//titleStmt/title[1]}"
                             style="color: #be122a;font-weight:bold;">
@@ -246,18 +281,22 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mr-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{concat('../', $pathAccueil)}">Accueil</a>
+                                    <a class="nav-link" href="{concat('../', $pathAccueil)}"
+                                        >Accueil</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{concat('../', $pathAlloNorm)}">Comparaison</a>
+                                    <a class="nav-link" href="{concat('../', $pathAlloNorm)}"
+                                        >Comparaison</a>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
                                         role="button" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="false">Edition allographétique</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{concat('../',$pathAllo1)}">f169r</a>
-                                        <a class="dropdown-item" href="{concat('../',$pathAllo2)}">f169v</a>
+                                        <a class="dropdown-item" href="{concat('../',$pathAllo1)}"
+                                            >f169r</a>
+                                        <a class="dropdown-item" href="{concat('../',$pathAllo2)}"
+                                            >f169v</a>
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
@@ -265,8 +304,10 @@
                                         role="button" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="false">Edition normalisée</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{concat('../',$pathNorm1)}">f169r</a>
-                                        <a class="dropdown-item" href="{concat('../',$pathNorm2)}">f169v</a>
+                                        <a class="dropdown-item" href="{concat('../',$pathNorm1)}"
+                                            >f169r</a>
+                                        <a class="dropdown-item" href="{concat('../',$pathNorm2)}"
+                                            >f169v</a>
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
@@ -274,9 +315,10 @@
                                         role="button" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="false">Index</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{concat('../',$pathIndexPers)}"
-                                            >Personnages</a>
-                                        <a class="dropdown-item" href="{concat('../',$pathIndexLieux)}">Lieux</a>
+                                        <a class="dropdown-item"
+                                            href="{concat('../',$pathIndexPers)}">Personnages</a>
+                                        <a class="dropdown-item"
+                                            href="{concat('../',$pathIndexLieux)}">Lieux</a>
                                     </div>
                                 </li>
                             </ul>
@@ -288,18 +330,24 @@
                     </div>
                     <div class="row">
                         <xsl:for-each select="//person">
-                            <!-- création d'une page par personnage -->
+                            <!-- ce xsl:for-each créé à la fois une page HTML pour chaque personnage avec toutes les informations le concernant, et une card BootStrap pour la page d'index des personnages -->
+                            <!-- création d'une variable ayant le chemin vers le fichier HTML du personnage -->
                             <xsl:variable name="pathPersonne">
                                 <xsl:value-of
-                                    select="concat($file, 'personnages/', persName/forename[1]/text(), '.html')"/>
+                                    select="concat($file, 'personnages/', persName/forename[1]/text(), '.html')"
+                                />
                             </xsl:variable>
-                            <xsl:result-document href="{concat($file, 'pages/personnages/', persName/forename[1]/text(), '.html')}" method="html" indent="yes">
-                                <!-- mettre ici le squelette html, la navbar et le ffoter, et les infos de chacun -->
+                            <!-- création d'une page par personnage d'abord -->
+                            <xsl:result-document
+                                href="{concat($file, 'pages/personnages/', persName/forename[1]/text(), '.html')}"
+                                method="html" indent="yes">
+                                <!-- dans ce href, je n'ai pas pu mettre la variable précédement créée en raison du sous-dossier pages -->
                                 <html>
                                     <head>
                                         <meta http-equiv="Content-Type"
                                             content="text/html; charset=UTF-8"/>
-                                        <link rel="stylesheet" href="../../static/css/bootstrap.min.css"/>
+                                        <link rel="stylesheet"
+                                            href="../../static/css/bootstrap.min.css"/>
                                         <link rel="stylesheet" href="../../static/css/css.css"/>
                                         <title>
                                             <xsl:value-of select="//titleStmt/title[1]"/>
@@ -307,6 +355,7 @@
                                     </head>
                                     <body class="container">
 
+                                        <!-- barre de menu -->
                                         <nav class="navbar navbar-expand-lg navbar-light bg-light">
                                             <a class="navbar-brand" href="{//titleStmt/title[1]}"
                                                 style="color: #be122a;font-weight:bold;">
@@ -323,11 +372,13 @@
                                                 id="navbarSupportedContent">
                                                 <ul class="navbar-nav mr-auto">
                                                   <li class="nav-item">
-                                                  <a class="nav-link" href="{concat('../../', $pathAccueil)}"
+                                                  <a class="nav-link"
+                                                  href="{concat('../../', $pathAccueil)}"
                                                   >Accueil</a>
                                                   </li>
                                                   <li class="nav-item">
-                                                      <a class="nav-link" href="{concat('../../', $pathAlloNorm)}"
+                                                  <a class="nav-link"
+                                                  href="{concat('../../', $pathAlloNorm)}"
                                                   >Comparaison</a>
                                                   </li>
                                                   <li class="nav-item dropdown">
@@ -337,10 +388,10 @@
                                                   aria-expanded="false">Edition allographétique</a>
                                                   <div class="dropdown-menu"
                                                   aria-labelledby="navbarDropdown">
-                                                      <a class="dropdown-item" href="{concat('../../', $pathAllo1)}"
-                                                  >f169r</a>
-                                                      <a class="dropdown-item" href="{concat('../../', $pathAllo2)}"
-                                                  >f169v</a>
+                                                  <a class="dropdown-item"
+                                                  href="{concat('../../', $pathAllo1)}">f169r</a>
+                                                  <a class="dropdown-item"
+                                                  href="{concat('../../', $pathAllo2)}">f169v</a>
                                                   </div>
                                                   </li>
                                                   <li class="nav-item dropdown">
@@ -350,10 +401,10 @@
                                                   aria-expanded="false">Edition normalisée</a>
                                                   <div class="dropdown-menu"
                                                   aria-labelledby="navbarDropdown">
-                                                      <a class="dropdown-item" href="{concat('../../', $pathNorm1)}"
-                                                  >f169r</a>
-                                                      <a class="dropdown-item" href="{concat('../../', $pathNorm2)}"
-                                                  >f169v</a>
+                                                  <a class="dropdown-item"
+                                                  href="{concat('../../', $pathNorm1)}">f169r</a>
+                                                  <a class="dropdown-item"
+                                                  href="{concat('../../', $pathNorm2)}">f169v</a>
                                                   </div>
                                                   </li>
                                                   <li class="nav-item dropdown">
@@ -363,9 +414,11 @@
                                                   aria-expanded="false">Index</a>
                                                   <div class="dropdown-menu"
                                                   aria-labelledby="navbarDropdown">
-                                                      <a class="dropdown-item" href="{concat('../../', $pathIndexPers)}"
+                                                  <a class="dropdown-item"
+                                                  href="{concat('../../', $pathIndexPers)}"
                                                   >Personnages</a>
-                                                      <a class="dropdown-item" href="{concat('../../', $pathIndexLieux)}"
+                                                  <a class="dropdown-item"
+                                                  href="{concat('../../', $pathIndexLieux)}"
                                                   >Lieux</a>
                                                   </div>
                                                   </li>
@@ -373,17 +426,20 @@
                                             </div>
                                         </nav>
 
+                                        <!-- utilisation des informations de listPerson pour chacun des personnages -->
                                         <div class="row" style="margin-top:20px;">
                                             <div class="col-sm-4">
                                                 <h2 style="color:#be122a; font-weight:bold;">
+                                                    <!-- indication du premier foreName dont on dispose, qui est systématiquement indiqué, peu importe la langue -->
                                                   <xsl:value-of select="persName/forename[1]/text()"
                                                   />
                                                 </h2>
-                                                <!-- gestion des noms des personnes -->
+                                                <!-- gestion des noms des personnes en fonction des langues dont on dispose -->
                                                 <xsl:if test="persName/forename[@xml:lang = 'lat']">
                                                   <p>Variantes des noms de <xsl:value-of
                                                   select="persName/forename[1]/text()"/>: <ul>
                                                   <li>En français: <ul>
+                                                      <!-- indication des variantes de nom en français -->
                                                   <li><xsl:value-of
                                                   select="persName/roleName[@xml:lang = 'fre']/text()"
                                                   /><xsl:text> </xsl:text><xsl:value-of
@@ -407,6 +463,7 @@
                                                   </p>
                                                 </xsl:if>
                                             </div>
+                                            <!-- indication des informations de mort et de naissance si elles existent dans la TEI -->
                                             <div class="col-sm-4" style="margin-top:3em;">
                                                 <xsl:if test="birth">
                                                   <p>
@@ -445,6 +502,7 @@
                                                   depuis <xsl:value-of select="faith/@when"/></p>
                                                 </xsl:if>
                                             </div>
+                                            <!-- dans cette colonne se trouvent les activités de chaque personnage, si elles ont été renseignées -->
                                             <div class="col-sm-4" style="margin-top:3em;">
                                                 <xsl:if test="occupation">
                                                   <p style="font-weight:bold;">Activités: <ul>
@@ -466,6 +524,7 @@
                                             </div>
                                         </div>
 
+                                        <!-- si une description existe dans la TEI, elle est insérée ici, avec le lien vers la source (Wikipédia)-->
                                         <div class="row">
                                             <xsl:if test="note/@source">
                                                 <h5 style="color:#be122a;">Une courte description
@@ -475,7 +534,7 @@
                                             </xsl:if>
                                         </div>
 
-                                        <!-- gestion des lieux de résidence -->
+                                        <!-- gestion des lieux de résidence, s'ils existent -->
                                         <xsl:if test="residence">
                                             <div class="row" style="margin-top:20px;">
                                                 <div class="row">
@@ -521,6 +580,7 @@
                                                 </div>
                                             </div>
                                         </xsl:if>
+                                        
                                         <!-- utilitaires Bootstrap -->
                                         <script src="../../static/js/jquery-3.4.1.slim.min.js"/>
                                         <script src="../../static/js/popper.min.js"/>
@@ -529,7 +589,7 @@
                                 </html>
                             </xsl:result-document>
 
-                            <!-- création de cartes de personnes renvoyant vers les pages individuelles -->
+                            <!-- ensuite, création de cartes de personnes, dans le xsl:for-each, renvoyant vers les pages individuelles -->
                             <div class="card" style="width: 14rem;">
                                 <div class="card-body">
                                     <h5 class="card-title">
@@ -617,6 +677,7 @@
                 </head>
                 <body class="container">
 
+                    <!-- menu de navigation -->
                     <nav class="navbar navbar-expand-lg navbar-light bg-light">
                         <a class="navbar-brand" href="{//titleStmt/title[1]}"
                             style="color: #be122a;font-weight:bold;">
@@ -631,18 +692,22 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mr-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{concat('../', $pathAccueil)}">Accueil</a>
+                                    <a class="nav-link" href="{concat('../', $pathAccueil)}"
+                                        >Accueil</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{concat('../', $pathAlloNorm)}">Comparaison</a>
+                                    <a class="nav-link" href="{concat('../', $pathAlloNorm)}"
+                                        >Comparaison</a>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
                                         role="button" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="false">Edition allographétique</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{concat('../', $pathAllo1)}">f169r</a>
-                                        <a class="dropdown-item" href="{concat('../', $pathAllo2)}">f169v</a>
+                                        <a class="dropdown-item" href="{concat('../', $pathAllo1)}"
+                                            >f169r</a>
+                                        <a class="dropdown-item" href="{concat('../', $pathAllo2)}"
+                                            >f169v</a>
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
@@ -650,8 +715,10 @@
                                         role="button" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="false">Edition normalisée</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{concat('../', $pathNorm1)}">f169r</a>
-                                        <a class="dropdown-item" href="{concat('../', $pathNorm2)}">f169v</a>
+                                        <a class="dropdown-item" href="{concat('../', $pathNorm1)}"
+                                            >f169r</a>
+                                        <a class="dropdown-item" href="{concat('../', $pathNorm2)}"
+                                            >f169v</a>
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
@@ -659,9 +726,10 @@
                                         role="button" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="false">Index</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{concat('../', $pathIndexPers)}"
-                                            >Personnages</a>
-                                        <a class="dropdown-item" href="{concat('../', $pathIndexLieux)}">Lieux</a>
+                                        <a class="dropdown-item"
+                                            href="{concat('../', $pathIndexPers)}">Personnages</a>
+                                        <a class="dropdown-item"
+                                            href="{concat('../', $pathIndexLieux)}">Lieux</a>
                                     </div>
                                 </li>
                             </ul>
@@ -716,6 +784,7 @@
                 </head>
                 <body class="container">
 
+                    <!-- menu de navigation -->
                     <nav class="navbar navbar-expand-lg navbar-light bg-light">
                         <a class="navbar-brand" href="{//titleStmt/title[1]}"
                             style="color: #be122a;font-weight:bold;">
@@ -730,18 +799,22 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mr-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{concat('../', $pathAccueil)}">Accueil</a>
+                                    <a class="nav-link" href="{concat('../', $pathAccueil)}"
+                                        >Accueil</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{concat('../', $pathAlloNorm)}">Comparaison</a>
+                                    <a class="nav-link" href="{concat('../', $pathAlloNorm)}"
+                                        >Comparaison</a>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
                                         role="button" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="false">Edition allographétique</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{concat('../', $pathAllo1)}">f169r</a>
-                                        <a class="dropdown-item" href="{concat('../', $pathAllo2)}">f169v</a>
+                                        <a class="dropdown-item" href="{concat('../', $pathAllo1)}"
+                                            >f169r</a>
+                                        <a class="dropdown-item" href="{concat('../', $pathAllo2)}"
+                                            >f169v</a>
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
@@ -749,8 +822,10 @@
                                         role="button" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="false">Edition normalisée</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{concat('../', $pathNorm1)}">f169r</a>
-                                        <a class="dropdown-item" href="{concat('../', $pathNorm2)}">f169v</a>
+                                        <a class="dropdown-item" href="{concat('../', $pathNorm1)}"
+                                            >f169r</a>
+                                        <a class="dropdown-item" href="{concat('../', $pathNorm2)}"
+                                            >f169v</a>
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
@@ -758,9 +833,10 @@
                                         role="button" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="false">Index</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{concat('../', $pathIndexPers)}"
-                                            >Personnages</a>
-                                        <a class="dropdown-item" href="{concat('../', $pathIndexLieux)}">Lieux</a>
+                                        <a class="dropdown-item"
+                                            href="{concat('../', $pathIndexPers)}">Personnages</a>
+                                        <a class="dropdown-item"
+                                            href="{concat('../', $pathIndexLieux)}">Lieux</a>
                                     </div>
                                 </li>
                             </ul>
@@ -769,6 +845,7 @@
 
                     <div class="row">
                         <div class="col-sm-6">
+                            <!-- le h2 permet de récupérer les noms des folios transcrits et de mettre un lien vers son image Gallica -->
                             <h2 style="color: #be122a;text-align: right;">Transcription facsimilaire
                                 des folios <xsl:for-each select="//div[@type = 'folio']">
                                     <xsl:variable name="foliosN">
@@ -781,6 +858,7 @@
                                     <xsl:text> </xsl:text>
                                 </xsl:for-each>
                             </h2>
+                            <!-- pour la transcription facsimilaire, c'est le mode orig qui s'applique (voir les règles en bas de l'XSL) -->
                             <div class="col-sm-12" style="text-align: right;">
                                 <p>
                                     <xsl:apply-templates select="//text" mode="orig"/>
@@ -798,7 +876,8 @@
                                         <xsl:value-of select="@n"/>
                                     </a>
                                     <xsl:text> </xsl:text>
-                                </xsl:for-each></h2>
+                                    </xsl:for-each></h2>
+                            <!-- pour la transcription normalisée, c'est le mode reg qui s'applique (voir les règles en bas de l'XSL) -->
                             <p>
                                 <xsl:apply-templates select="//text" mode="reg"/>
                             </p>
@@ -818,6 +897,7 @@
             </html>
         </xsl:result-document>
 
+        <!-- page de présentation de l'édition allographétique du f.169r -->
         <xsl:result-document href="{$pathAllo1}" method="html" indent="yes">
             <html>
                 <head>
@@ -830,6 +910,7 @@
                 </head>
                 <body class="container page_img">
 
+                    <!-- barre de navigation -->
                     <nav class="navbar navbar-expand-lg navbar-light bg-light">
                         <a class="navbar-brand" href="{//titleStmt/title[1]}"
                             style="color: #be122a;font-weight:bold;">
@@ -844,18 +925,22 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mr-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{concat('../', $pathAccueil)}">Accueil</a>
+                                    <a class="nav-link" href="{concat('../', $pathAccueil)}"
+                                        >Accueil</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{concat('../', $pathAlloNorm)}">Comparaison</a>
+                                    <a class="nav-link" href="{concat('../', $pathAlloNorm)}"
+                                        >Comparaison</a>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
                                         role="button" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="false">Edition allographétique</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{concat('../', $pathAllo1)}">f169r</a>
-                                        <a class="dropdown-item" href="{concat('../', $pathAllo2)}">f169v</a>
+                                        <a class="dropdown-item" href="{concat('../', $pathAllo1)}"
+                                            >f169r</a>
+                                        <a class="dropdown-item" href="{concat('../', $pathAllo2)}"
+                                            >f169v</a>
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
@@ -863,8 +948,10 @@
                                         role="button" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="false">Edition normalisée</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{concat('../', $pathNorm1)}">f169r</a>
-                                        <a class="dropdown-item" href="{concat('../', $pathNorm2)}">f169v</a>
+                                        <a class="dropdown-item" href="{concat('../', $pathNorm1)}"
+                                            >f169r</a>
+                                        <a class="dropdown-item" href="{concat('../', $pathNorm2)}"
+                                            >f169v</a>
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
@@ -872,9 +959,10 @@
                                         role="button" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="false">Index</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{concat('../', $pathIndexPers)}"
-                                            >Personnages</a>
-                                        <a class="dropdown-item" href="{concat('../', $pathIndexLieux)}">Lieux</a>
+                                        <a class="dropdown-item"
+                                            href="{concat('../', $pathIndexPers)}">Personnages</a>
+                                        <a class="dropdown-item"
+                                            href="{concat('../', $pathIndexLieux)}">Lieux</a>
                                     </div>
                                 </li>
                             </ul>
@@ -888,16 +976,18 @@
 
                     <div class="row">
                         <div class="col-sm-8">
-                            <!-- image interactive inspirée d'après un morceau de javascript trouvé sur internet -->
+                            <!-- image interactive inspirée d'après un bout de code javascript trouvé sur le site de l'Ecole des Chartes -->
+                            <!-- les explications qui suivent sont valables pour $pathAllo1, $pathAllo2, $pathNorm1 et $pathNorm2 -->
                             <img usemap="#mapfax.jpg" src="../static/img/f174_demi.jpg" border="0"
                                 style="width: 800px;height: auto;"/>
                             <map name="mapfax.jpg">
+                                <!-- le but de cette balise map est de pouvoir présenter une image interactive basée sur les coordonnées stockées dans la TEI et la transcription liée à ces coordonnées -->
                                 <xsl:for-each select="//div[@n = '169r']//seg">
-                                    <!-- récupération de chaque l'id de chaque segment pour pouvoir le faire correspondre avec son facsimile -->
+                                    <!-- récupération de chaque l'id de chaque segment dans la varibale idSeg, pour pouvoir le faire correspondre avec son facsimile -->
                                     <xsl:variable name="idSeg">
                                         <xsl:value-of select="replace(@facs, '#', '')"/>
                                     </xsl:variable>
-                                    <!-- récupération du texte à insérer dans le popup javascript -->
+                                    <!-- récupération du texte à insérer dans la variable texte, dans le popup javascript -->
                                     <xsl:variable name="texte">
                                         <xsl:apply-templates select="." mode="orig"/>
                                     </xsl:variable>
@@ -959,6 +1049,7 @@
             </html>
         </xsl:result-document>
 
+        <!-- page de présentation de l'édition allographétique du f169v selon la manière strcuture que $pathAllo1-->
         <xsl:result-document href="{$pathAllo2}" method="html" indent="yes">
             <html>
                 <head>
@@ -985,18 +1076,22 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mr-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{concat('../', $pathAccueil)}">Accueil</a>
+                                    <a class="nav-link" href="{concat('../', $pathAccueil)}"
+                                        >Accueil</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{concat('../', $pathAlloNorm)}">Comparaison</a>
+                                    <a class="nav-link" href="{concat('../', $pathAlloNorm)}"
+                                        >Comparaison</a>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
                                         role="button" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="false">Edition allographétique</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{concat('../', $pathAllo1)}">f169r</a>
-                                        <a class="dropdown-item" href="{concat('../', $pathAllo2)}">f169v</a>
+                                        <a class="dropdown-item" href="{concat('../', $pathAllo1)}"
+                                            >f169r</a>
+                                        <a class="dropdown-item" href="{concat('../', $pathAllo2)}"
+                                            >f169v</a>
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
@@ -1004,8 +1099,10 @@
                                         role="button" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="false">Edition normalisée</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{concat('../', $pathNorm1)}">f169r</a>
-                                        <a class="dropdown-item" href="{concat('../', $pathNorm2)}">f169v</a>
+                                        <a class="dropdown-item" href="{concat('../', $pathNorm1)}"
+                                            >f169r</a>
+                                        <a class="dropdown-item" href="{concat('../', $pathNorm2)}"
+                                            >f169v</a>
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
@@ -1013,9 +1110,10 @@
                                         role="button" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="false">Index</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{concat('../', $pathIndexPers)}"
-                                            >Personnages</a>
-                                        <a class="dropdown-item" href="{concat('../', $pathIndexLieux)}">Lieux</a>
+                                        <a class="dropdown-item"
+                                            href="{concat('../', $pathIndexPers)}">Personnages</a>
+                                        <a class="dropdown-item"
+                                            href="{concat('../', $pathIndexLieux)}">Lieux</a>
                                     </div>
                                 </li>
                             </ul>
@@ -1029,20 +1127,16 @@
 
                     <div class="row">
                         <div class="col-sm-8">
-                            <!-- image interactive inspirée d'après un morceau de javascript trouvé sur internet -->
                             <img usemap="#mapfax.jpg" src="../static/img/f175_demi.jpg" border="0"
                                 style="width: 800px;height: auto;"/>
                             <map name="mapfax.jpg">
                                 <xsl:for-each select="//div[@n = '169v']//seg">
-                                    <!-- récupération de chaque l'id de chaque segment pour pouvoir le faire correspondre avec son facsimile -->
                                     <xsl:variable name="idSeg">
                                         <xsl:value-of select="replace(@facs, '#', '')"/>
                                     </xsl:variable>
-                                    <!-- récupération du texte à insérer dans le popup javascript -->
                                     <xsl:variable name="texte">
                                         <xsl:apply-templates select="." mode="orig"/>
                                     </xsl:variable>
-                                    <!-- création des variables de chaque coordonnée qui est à calculer en focntion de la taille de l'image dans la page html -->
                                     <xsl:variable name="ulx">
                                         <xsl:value-of
                                             select="800 * ancestor::TEI//zone[@xml:id = $idSeg]/@ulx div 4349"
@@ -1091,6 +1185,7 @@
             </html>
         </xsl:result-document>
 
+        <!-- page de présentation de l'édition normalisée du f169r, sur la même base que le $pathAllo1, seules les dimensions de l'image peuvent variées -->
         <xsl:result-document href="{$pathNorm1}" method="html" indent="yes">
             <html>
                 <head>
@@ -1117,18 +1212,22 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mr-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{concat('../', $pathAccueil)}">Accueil</a>
+                                    <a class="nav-link" href="{concat('../', $pathAccueil)}"
+                                        >Accueil</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{concat('../', $pathAlloNorm)}">Comparaison</a>
+                                    <a class="nav-link" href="{concat('../', $pathAlloNorm)}"
+                                        >Comparaison</a>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
                                         role="button" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="false">Edition allographétique</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{concat('../', $pathAllo1)}">f169r</a>
-                                        <a class="dropdown-item" href="{concat('../', $pathAllo2)}">f169v</a>
+                                        <a class="dropdown-item" href="{concat('../', $pathAllo1)}"
+                                            >f169r</a>
+                                        <a class="dropdown-item" href="{concat('../', $pathAllo2)}"
+                                            >f169v</a>
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
@@ -1136,8 +1235,10 @@
                                         role="button" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="false">Edition normalisée</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{concat('../', $pathNorm1)}">f169r</a>
-                                        <a class="dropdown-item" href="{concat('../', $pathNorm2)}">f169v</a>
+                                        <a class="dropdown-item" href="{concat('../', $pathNorm1)}"
+                                            >f169r</a>
+                                        <a class="dropdown-item" href="{concat('../', $pathNorm2)}"
+                                            >f169v</a>
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
@@ -1145,9 +1246,10 @@
                                         role="button" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="false">Index</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{concat('../', $pathIndexPers)}"
-                                            >Personnages</a>
-                                        <a class="dropdown-item" href="{concat('../', $pathIndexLieux)}">Lieux</a>
+                                        <a class="dropdown-item"
+                                            href="{concat('../', $pathIndexPers)}">Personnages</a>
+                                        <a class="dropdown-item"
+                                            href="{concat('../', $pathIndexLieux)}">Lieux</a>
                                     </div>
                                 </li>
                             </ul>
@@ -1161,16 +1263,13 @@
 
                     <div class="row">
                         <div class="col-sm-8">
-                            <!-- image interactive inspirée d'après un morceau de javascript trouvé sur internet -->
                             <img usemap="#mapfax.jpg" src="../static/img/f174_demi.jpg" border="0"
                                 style="width: 800px;height: auto;"/>
                             <map name="mapfax.jpg">
                                 <xsl:for-each select="//div[@n = '169r']//seg">
-                                    <!-- récupération de chaque l'id de chaque segment pour pouvoir le faire correspondre avec son facsimile -->
                                     <xsl:variable name="idSeg">
                                         <xsl:value-of select="replace(@facs, '#', '')"/>
                                     </xsl:variable>
-                                    <!-- récupération du texte à insérer dans le popup javascript -->
                                     <xsl:variable name="texte">
                                         <xsl:apply-templates select="." mode="reg"/>
                                     </xsl:variable>
@@ -1233,6 +1332,7 @@
             </html>
         </xsl:result-document>
 
+        <!-- page de présentation de l'édition normalisée du f169r, selon les mêmes principes que le $athNorm2 -->
         <xsl:result-document href="{$pathNorm2}" method="html" indent="yes">
             <html>
                 <head>
@@ -1259,18 +1359,22 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mr-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{concat('../', $pathAccueil)}">Accueil</a>
+                                    <a class="nav-link" href="{concat('../', $pathAccueil)}"
+                                        >Accueil</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{concat('../', $pathAlloNorm)}">Comparaison</a>
+                                    <a class="nav-link" href="{concat('../', $pathAlloNorm)}"
+                                        >Comparaison</a>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
                                         role="button" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="false">Edition allographétique</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{concat('../', $pathAllo1)}">f169r</a>
-                                        <a class="dropdown-item" href="{concat('../', $pathAllo2)}">f169v</a>
+                                        <a class="dropdown-item" href="{concat('../', $pathAllo1)}"
+                                            >f169r</a>
+                                        <a class="dropdown-item" href="{concat('../', $pathAllo2)}"
+                                            >f169v</a>
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
@@ -1278,8 +1382,10 @@
                                         role="button" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="false">Edition normalisée</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{concat('../', $pathNorm1)}">f169r</a>
-                                        <a class="dropdown-item" href="{concat('../', $pathNorm2)}">f169v</a>
+                                        <a class="dropdown-item" href="{concat('../', $pathNorm1)}"
+                                            >f169r</a>
+                                        <a class="dropdown-item" href="{concat('../', $pathNorm2)}"
+                                            >f169v</a>
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
@@ -1287,9 +1393,10 @@
                                         role="button" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="false">Index</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{concat('../', $pathIndexPers)}"
-                                            >Personnages</a>
-                                        <a class="dropdown-item" href="{concat('../', $pathIndexLieux)}">Lieux</a>
+                                        <a class="dropdown-item"
+                                            href="{concat('../', $pathIndexPers)}">Personnages</a>
+                                        <a class="dropdown-item"
+                                            href="{concat('../', $pathIndexLieux)}">Lieux</a>
                                     </div>
                                 </li>
                             </ul>
@@ -1303,20 +1410,16 @@
 
                     <div class="row">
                         <div class="col-sm-8">
-                            <!-- image interactive inspirée d'après un morceau de javascript trouvé sur internet -->
                             <img usemap="#mapfax.jpg" src="../static/img/f175_demi.jpg" border="0"
                                 style="width: 800px;height: auto;"/>
                             <map name="mapfax.jpg">
                                 <xsl:for-each select="//div[@n = '169v']//seg">
-                                    <!-- récupération de chaque l'id de chaque segment pour pouvoir le faire correspondre avec son facsimile -->
                                     <xsl:variable name="idSeg">
                                         <xsl:value-of select="replace(@facs, '#', '')"/>
                                     </xsl:variable>
-                                    <!-- récupération du texte à insérer dans le popup javascript -->
                                     <xsl:variable name="texte">
-                                       <xsl:apply-templates select="." mode="reg"/>
+                                        <xsl:apply-templates select="." mode="reg"/>
                                     </xsl:variable>
-                                    <!-- création des variables de chaque coordonnée qui est à calculer en focntion de la taille de l'image dans la page html -->
                                     <xsl:variable name="ulx">
                                         <xsl:value-of
                                             select="800 * ancestor::TEI//zone[@xml:id = $idSeg]/@ulx div 4349"
@@ -1366,15 +1469,18 @@
         </xsl:result-document>
 
     </xsl:template>
+
+
+    <!-- dans les templates qui suivent, je traite les différences entre les orig et les reg -->
     
-
     <!-- gestion de la partie originale -->
-
+    <!-- les seg représentent une ligne du manuscrit chacun, je les remplace donc par des sauts de ligne dans le HTML -->
     <xsl:template match="seg" mode="orig">
         <xsl:element name="br"/>
         <xsl:apply-templates mode="orig"/>
     </xsl:template>
 
+    <!-- pour récupérer le texte original, je conserve les orig et abbrev dans les balises choice -->
     <xsl:template match="choice" mode="orig">
         <xsl:value-of
             select="
@@ -1384,6 +1490,7 @@
         />
     </xsl:template>
 
+    <!--  pour que les liens hypertextes fonctionnent, que ce soit en mode orig ou reg, il faut récupérer l'id du personnage dans le TEI header-->
     <xsl:template match="body//persName" mode="orig">
         <xsl:variable name="refPers">
             <xsl:value-of select="replace(@ref, '#', '')"/>
@@ -1400,13 +1507,15 @@
     </xsl:template>
 
 
-    <!-- les vers -->
+    <!-- les vers en mode orig-->
+    <!-- les lg deviennent une liste HTML -->
     <xsl:template match="lg" mode="orig">
         <xsl:element name="ul">
             <xsl:apply-templates mode="orig"/>
         </xsl:element>
     </xsl:template>
 
+    <!-- récupération de l'original de chaque vers -->
     <xsl:template match="l" mode="orig">
         <li>
             <xsl:value-of
@@ -1421,16 +1530,19 @@
         <xsl:apply-templates mode="reg"/>
     </xsl:template>
 
+    <!-- rétablissement de la ponctuation -->
     <xsl:template match="reg[@type = 'ponctuation']" mode="reg">
         <xsl:value-of select="./text() | ./pc/text()"/>
     </xsl:template>
 
+    <!-- récupération de la graphie normalisée dans les balises choice -->
     <xsl:template match="choice" mode="reg">
         <xsl:value-of select="
                 .//reg/text() |
                 .//expan//text()"/>
     </xsl:template>
 
+    <!-- gestion des liens hypertextes -->
     <xsl:template match="body//persName" mode="reg">
         <xsl:variable name="refPers">
             <xsl:value-of select="replace(@ref, '#', '')"/>
@@ -1446,7 +1558,7 @@
         </a>
     </xsl:template>
 
-    <!-- les vers -->
+    <!-- les vers en mode reg-->
     <xsl:template match="lg" mode="reg">
         <xsl:element name="ul">
             <xsl:apply-templates mode="reg"/>
